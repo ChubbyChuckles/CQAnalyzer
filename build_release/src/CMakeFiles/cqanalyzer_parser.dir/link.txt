@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../lib/libcqanalyzer_parser.a CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.o CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o
-/usr/bin/ranlib ../lib/libcqanalyzer_parser.a
