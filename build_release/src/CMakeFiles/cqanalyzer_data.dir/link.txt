@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libcqanalyzer_data.a CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o
+/usr/bin/ranlib ../lib/libcqanalyzer_data.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libcqanalyzer_ui.a CMakeFiles/cqanalyzer_ui.dir/ui/cli_interface.c.o CMakeFiles/cqanalyzer_ui.dir/ui/input_handler.c.o CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.o
+/usr/bin/ranlib ../lib/libcqanalyzer_ui.a
