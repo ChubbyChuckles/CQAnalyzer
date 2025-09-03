@@ -5,10 +5,10 @@
 
 /**
  * @file ast_parser.h
- * @brief AST parsing functionality using libclang
+ * @brief AST parsing functionality for multiple languages
  *
  * Provides functions to parse source code and extract AST information
- * for code analysis.
+ * for code analysis across multiple programming languages.
  */
 
 /**
@@ -30,6 +30,14 @@ void ast_parser_shutdown(void);
  * @return Pointer to parsed AST data, or NULL on error
  */
 void *parse_source_file(const char *filepath);
+
+/**
+ * @brief Parse source file with language detection
+ *
+ * @param filepath Path to source file
+ * @return Pointer to parsed AST data, or NULL on error
+ */
+void *parse_source_file_with_detection(const char *filepath);
 
 /**
  * @brief Free AST data

@@ -6,6 +6,7 @@ add_library(cqanalyzer_parser STATIC
     parser/file_scanner.c
     parser/ast_parser.c
     parser/language_support.c
+    parser/generic_parser.c
 )
 
 target_include_directories(cqanalyzer_parser PUBLIC

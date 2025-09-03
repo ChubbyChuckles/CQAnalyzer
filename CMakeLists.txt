@@ -81,8 +81,18 @@ add_subdirectory(src)
 enable_testing()
 add_subdirectory(tests)
 
+# Add test parser executable
+add_executable(test_parser test_parser.c src/cqanalyzer.c)
+target_link_libraries(test_parser
+    cqanalyzer_parser
+    cqanalyzer_utils
+)
+
 # Add main executable
-add_executable(cqanalyzer src/main.c)
+add_executable(cqanalyzer
+    src/main.c
+    src/cqanalyzer.c
+)
 target_link_libraries(cqanalyzer
     cqanalyzer_parser
     cqanalyzer_analyzer

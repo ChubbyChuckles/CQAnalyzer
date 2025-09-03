@@ -4,6 +4,8 @@
 src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/complexity_analyzer.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/complexity_analyzer.c \
   /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/complexity_analyzer.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
@@ -88,6 +90,7 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: /home/chu
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/string.h \
+  /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
@@ -106,6 +109,7 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: /home/chu
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -114,7 +118,11 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: /home/chu
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -124,113 +132,156 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: /home/chu
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
+  /usr/lib/llvm-18/include/clang-c/BuildSystem.h \
+  /usr/lib/llvm-18/include/clang-c/CXDiagnostic.h \
+  /usr/lib/llvm-18/include/clang-c/CXErrorCode.h \
+  /usr/lib/llvm-18/include/clang-c/CXFile.h \
+  /usr/lib/llvm-18/include/clang-c/CXSourceLocation.h \
+  /usr/lib/llvm-18/include/clang-c/CXString.h \
+  /usr/lib/llvm-18/include/clang-c/ExternC.h \
+  /usr/lib/llvm-18/include/clang-c/Index.h \
+  /usr/lib/llvm-18/include/clang-c/Platform.h
 
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/lib/llvm-18/include/clang-c/Platform.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+/usr/lib/llvm-18/include/clang-c/Index.h:
 
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+/usr/lib/llvm-18/include/clang-c/ExternC.h:
 
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+/usr/lib/llvm-18/include/clang-c/CXSourceLocation.h:
 
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+/usr/lib/llvm-18/include/clang-c/CXDiagnostic.h:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
+/usr/lib/llvm-18/include/clang-c/BuildSystem.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/metric_calculator.c:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/features-time64.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/stdint.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h:
-
-/usr/include/stdio.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/ctype.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/complexity_analyzer.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/complexity_analyzer.c:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/duplication_detector.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/duplication_detector.c:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/string.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/metric_calculator.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/math.h:
+/usr/lib/llvm-18/include/clang-c/CXString.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
+/home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h:
+
+/usr/include/math.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/metric_calculator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/duplication_detector.c:
+
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/duplication_detector.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/complexity_analyzer.c:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/lib/llvm-18/include/clang-c/CXErrorCode.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/complexity_analyzer.h:
+
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/llvm-18/include/clang-c/CXFile.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/stdint.h:
+
+/usr/include/ctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/features-time64.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/metric_calculator.c:
+
+/usr/include/string.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:

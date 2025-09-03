@@ -4,6 +4,8 @@
 #include <clang-c/Index.h>
 
 #include "parser/ast_parser.h"
+#include "parser/generic_parser.h"
+#include "parser/language_support.h"
 #include "data/ast_types.h"
 #include "utils/logger.h"
 
@@ -11,11 +13,66 @@
 static CXIndex clang_index = NULL;
 
 /**
+ * @brief Context for AST visitor
+ */
+typedef struct {
+    ASTData *ast_data;
+    FunctionInfo *current_function;
+    int complexity_count;
+} VisitorContext;
+
+/**
+ * @brief Visitor function for counting decision points
+ */
+static enum CXChildVisitResult count_decision_points_visitor(CXCursor cursor, CXCursor parent, CXClientData client_data) {
+    int *count = (int *)client_data;
+    enum CXCursorKind kind = clang_getCursorKind(cursor);
+
+    switch (kind) {
+        case CXCursor_IfStmt:
+        case CXCursor_WhileStmt:
+        case CXCursor_ForStmt:
+        case CXCursor_DoStmt:
+        case CXCursor_SwitchStmt:
+            (*count)++;
+            break;
+        case CXCursor_CaseStmt:
+        case CXCursor_DefaultStmt:
+            (*count)++;
+            break;
+        case CXCursor_BinaryOperator: {
+            CXString spelling = clang_getCursorSpelling(cursor);
+            const char *op = clang_getCString(spelling);
+            if (strcmp(op, "&&") == 0 || strcmp(op, "||") == 0) {
+                (*count)++;
+            }
+            clang_disposeString(spelling);
+            break;
+        }
+        case CXCursor_ConditionalOperator: // ?:
+            (*count)++;
+            break;
+        default:
+            break;
+    }
+
+    return CXChildVisit_Recurse;
+}
+
+/**
+ * @brief Count decision points in a cursor subtree
+ */
+static void count_decision_points(CXCursor cursor, int *count) {
+    clang_visitChildren(cursor, count_decision_points_visitor, count);
+}
+
+/**
  * @brief AST visitor function for libclang
  */
 static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXClientData client_data)
 {
-    ASTData *ast_data = (ASTData *)client_data;
+    VisitorContext *context = (VisitorContext *)client_data;
+    ASTData *ast_data = context->ast_data;
     enum CXCursorKind kind = clang_getCursorKind(cursor);
 
     // Get cursor location
@@ -54,6 +111,13 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
                 int num_args = clang_Cursor_getNumArguments(cursor);
                 func->parameter_count = num_args;
 
+                // Calculate cyclomatic complexity
+                int decision_count = 0;
+                count_decision_points(cursor, &decision_count);
+                func->complexity = 1 + decision_count; // Base complexity + decision points
+
+                LOG_DEBUG("Function %s complexity: %u", name, func->complexity);
+
                 // Add to project's function list
                 func->next = ast_data->project->files->functions;
                 ast_data->project->files->functions = func;
@@ -67,7 +131,7 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
         case CXCursor_ClassDecl:
         {
             LOG_DEBUG("Found %s: %s at line %u",
-                     kind == CXCursor_StructDecl ? "struct" : "class", name, line);
+                      kind == CXCursor_StructDecl ? "struct" : "class", name, line);
 
             // Create class info
             ClassInfo *class_info = calloc(1, sizeof(ClassInfo));
@@ -128,8 +192,15 @@ static void traverse_ast(CXCursor root_cursor, ASTData *ast_data)
 
     ast_data->project->file_count = 1;
 
+    // Create visitor context
+    VisitorContext context = {
+        .ast_data = ast_data,
+        .current_function = NULL,
+        .complexity_count = 0
+    };
+
     // Visit all children of the root cursor
-    clang_visitChildren(root_cursor, ast_visitor, ast_data);
+    clang_visitChildren(root_cursor, ast_visitor, &context);
 
     LOG_INFO("AST traversal completed. Found %u functions, %u classes",
              ast_data->project->total_functions, ast_data->project->total_classes);
@@ -241,6 +312,38 @@ void *parse_source_file(const char *filepath)
     return ast_data;
 }
 
+void *parse_source_file_with_detection(const char *filepath)
+{
+    if (!filepath)
+    {
+        LOG_ERROR("Invalid filepath for parsing");
+        return NULL;
+    }
+
+    LOG_INFO("Detecting language for file: %s", filepath);
+
+    // Detect language from file extension
+    SupportedLanguage language = detect_language(filepath);
+    if (language == LANG_UNKNOWN)
+    {
+        LOG_WARNING("Unknown file type for: %s", filepath);
+        return NULL;
+    }
+
+    LOG_INFO("Detected language: %d for file: %s", language, filepath);
+
+    // Get appropriate parser for the language
+    ParserFunction parser = get_parser_for_language(language);
+    if (!parser)
+    {
+        LOG_ERROR("No parser available for language: %d", language);
+        return NULL;
+    }
+
+    // Parse the file using the appropriate parser
+    return parser(filepath, language);
+}
+
 void free_ast_data(void *data)
 {
     if (!data)
@@ -250,7 +353,7 @@ void free_ast_data(void *data)
 
     ASTData *ast_data = (ASTData *)data;
 
-    // Dispose translation unit
+    // Dispose translation unit (only for C/C++ files)
     if (ast_data->clang_translation_unit)
     {
         clang_disposeTranslationUnit((CXTranslationUnit)ast_data->clang_translation_unit);

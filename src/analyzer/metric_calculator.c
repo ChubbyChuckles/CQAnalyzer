@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
+#include <clang-c/Index.h>
 
 #include "analyzer/metric_calculator.h"
 #include "utils/logger.h"
@@ -102,6 +103,87 @@ CQError calculate_lines_of_code(const char *filepath, int *physical_loc,
 
     LOG_INFO("LOC calculation for %s: physical=%d, logical=%d, comments=%d",
              filepath, phys_lines, log_lines, comment_lines);
+
+    return CQ_SUCCESS;
+}
+
+CQError calculate_halstead_metrics(const char *filepath, HalsteadMetrics *metrics)
+{
+    if (!filepath || !metrics)
+    {
+        return CQ_ERROR_INVALID_ARGUMENT;
+    }
+
+    // Initialize metrics to zero
+    memset(metrics, 0, sizeof(HalsteadMetrics));
+
+    // For simplicity, use a basic token counting approach
+    // In a full implementation, this would use clang_tokenize
+
+    FILE *file = fopen(filepath, "r");
+    if (!file)
+    {
+        LOG_ERROR("Could not open file for Halstead calculation: %s", filepath);
+        return CQ_ERROR_FILE_NOT_FOUND;
+    }
+
+    // Simple token counting (operators and operands)
+    // This is a simplified implementation
+    char line[1024];
+    while (fgets(line, sizeof(line), file))
+    {
+        char *token = strtok(line, " \t\n\r;(){}[]");
+        while (token)
+        {
+            // Count operators
+            if (strcmp(token, "+") == 0 || strcmp(token, "-") == 0 ||
+                strcmp(token, "*") == 0 || strcmp(token, "/") == 0 ||
+                strcmp(token, "%") == 0 || strcmp(token, "=") == 0 ||
+                strcmp(token, "==") == 0 || strcmp(token, "!=") == 0 ||
+                strcmp(token, "<") == 0 || strcmp(token, ">") == 0 ||
+                strcmp(token, "<=") == 0 || strcmp(token, ">=") == 0 ||
+                strcmp(token, "&&") == 0 || strcmp(token, "||") == 0 ||
+                strcmp(token, "!") == 0 || strcmp(token, "if") == 0 ||
+                strcmp(token, "while") == 0 || strcmp(token, "for") == 0 ||
+                strcmp(token, "return") == 0)
+            {
+                metrics->N1++;
+                // For simplicity, assume all operators are distinct
+                metrics->n1++;
+            }
+            // Count operands (identifiers and literals)
+            else if (isalpha(token[0]) || token[0] == '_' ||
+                     (isdigit(token[0]) && strlen(token) > 1))
+            {
+                metrics->N2++;
+                // For simplicity, assume all operands are distinct
+                metrics->n2++;
+            }
+
+            token = strtok(NULL, " \t\n\r;(){}[]");
+        }
+    }
+
+    fclose(file);
+
+    // Calculate derived metrics
+    int N = metrics->N1 + metrics->N2;
+    int n = metrics->n1 + metrics->n2;
+
+    if (n > 0)
+    {
+        metrics->volume = N * log2((double)n);
+        if (metrics->n2 > 0)
+        {
+            metrics->difficulty = ((double)metrics->n1 / 2.0) * ((double)metrics->N2 / (double)metrics->n2);
+        }
+        metrics->effort = metrics->difficulty * metrics->volume;
+        metrics->time = metrics->effort / 18.0; // 18 seconds per unit effort
+        metrics->bugs = pow(metrics->effort, 2.0/3.0) / 3000.0;
+    }
+
+    LOG_INFO("Halstead metrics for %s: n1=%d, n2=%d, N1=%d, N2=%d, volume=%.2f",
+             filepath, metrics->n1, metrics->n2, metrics->N1, metrics->N2, metrics->volume);
 
     return CQ_SUCCESS;
 }

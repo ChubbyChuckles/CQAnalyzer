@@ -32,6 +32,30 @@ CQError calculate_lines_of_code(const char *filepath, int *physical_loc,
                                 int *logical_loc, int *comment_loc);
 
 /**
+ * @brief Halstead complexity metrics
+ */
+typedef struct {
+    int n1;  // Number of distinct operators
+    int n2;  // Number of distinct operands
+    int N1;  // Total number of operators
+    int N2;  // Total number of operands
+    double volume;      // Program volume
+    double difficulty;  // Program difficulty
+    double effort;      // Program effort
+    double time;        // Time to program (seconds)
+    double bugs;        // Estimated number of bugs
+} HalsteadMetrics;
+
+/**
+ * @brief Calculate Halstead complexity metrics
+ *
+ * @param filepath Source file path
+ * @param metrics Output Halstead metrics
+ * @return CQ_SUCCESS on success, error code on failure
+ */
+CQError calculate_halstead_metrics(const char *filepath, HalsteadMetrics *metrics);
+
+/**
  * @brief Calculate maintainability index
  *
  * @param complexity Cyclomatic complexity

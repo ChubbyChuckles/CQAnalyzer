@@ -33,6 +33,20 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/lib/llvm-18/include/clang-c/Index.h \
+ /usr/lib/llvm-18/include/clang-c/BuildSystem.h \
+ /usr/lib/llvm-18/include/clang-c/CXErrorCode.h \
+ /usr/lib/llvm-18/include/clang-c/ExternC.h \
+ /usr/lib/llvm-18/include/clang-c/Platform.h \
+ /usr/lib/llvm-18/include/clang-c/CXString.h \
+ /usr/lib/llvm-18/include/clang-c/CXDiagnostic.h \
+ /usr/lib/llvm-18/include/clang-c/CXSourceLocation.h \
+ /usr/lib/llvm-18/include/clang-c/CXFile.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/metric_calculator.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
