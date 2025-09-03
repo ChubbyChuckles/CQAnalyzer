@@ -237,19 +237,6 @@ cqanalyzer_data/fast:
 .PHONY : cqanalyzer_data/fast
 
 #=============================================================================
-# Target rules for targets named cqanalyzer_visualizer
-
-# Build rule for target.
-cqanalyzer_visualizer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cqanalyzer_visualizer
-.PHONY : cqanalyzer_visualizer
-
-# fast build rule for target.
-cqanalyzer_visualizer/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/build
-.PHONY : cqanalyzer_visualizer/fast
-
-#=============================================================================
 # Target rules for targets named cqanalyzer_ui
 
 # Build rule for target.
@@ -383,7 +370,6 @@ help:
 	@echo "... cqanalyzer_tests"
 	@echo "... cqanalyzer_ui"
 	@echo "... cqanalyzer_utils"
-	@echo "... cqanalyzer_visualizer"
 	@echo "... test_parser"
 	@echo "... src/cqanalyzer.o"
 	@echo "... src/cqanalyzer.i"

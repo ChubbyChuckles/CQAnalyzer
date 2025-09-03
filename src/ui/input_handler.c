@@ -11,6 +11,8 @@ static bool key_states[MAX_KEYS];
 static bool mouse_button_states[MAX_MOUSE_BUTTONS];
 static double mouse_x = 0.0;
 static double mouse_y = 0.0;
+static double scroll_x = 0.0;
+static double scroll_y = 0.0;
 
 CQError input_handler_init(void)
 {
@@ -71,7 +73,9 @@ void input_handle_scroll(double x_offset, double y_offset)
 {
     LOG_DEBUG("Mouse scroll: x=%.2f, y=%.2f", x_offset, y_offset);
 
-    // TODO: Handle scroll events for zooming, etc.
+    // Accumulate scroll deltas for renderer to process
+    scroll_x += x_offset;
+    scroll_y += y_offset;
 }
 
 bool input_is_key_pressed(int key)
@@ -92,4 +96,20 @@ bool input_is_mouse_button_pressed(int button)
     }
 
     return mouse_button_states[button];
+}
+
+void input_get_mouse_position(double *x, double *y)
+{
+    if (x) *x = mouse_x;
+    if (y) *y = mouse_y;
+}
+
+void input_get_scroll_delta(double *x, double *y)
+{
+    if (x) *x = scroll_x;
+    if (y) *y = scroll_y;
+
+    // Reset after reading
+    scroll_x = 0.0;
+    scroll_y = 0.0;
 }

@@ -3,6 +3,7 @@
 
 #include "cqanalyzer.h"
 #include "visualizer/color.h"
+#include "visualizer/visualization_filters.h"
 
 /**
  * @file scatter_plot.h
@@ -58,6 +59,56 @@ int scatter_plot_get_point_count(void);
  * @return CQ_SUCCESS on success, error code on failure
  */
 CQError scatter_plot_get_point(int index, float *x, float *y, float *z,
-                              Color *color, char *label);
+                               Color *color, char *label);
+
+/**
+ * @brief Create a 3D scatter plot with filters and display options
+ *
+ * @param x_metric Name of metric for X axis
+ * @param y_metric Name of metric for Y axis
+ * @param z_metric Name of metric for Z axis
+ * @param color_metric Name of metric for point coloring (optional, can be NULL)
+ * @param filters Pointer to visualization filters (can be NULL)
+ * @param options Pointer to display options (can be NULL)
+ * @return CQ_SUCCESS on success, error code on failure
+ */
+CQError scatter_plot_create_filtered(const char *x_metric, const char *y_metric,
+                                   const char *z_metric, const char *color_metric,
+                                   const VisualizationFilters *filters,
+                                   const DisplayOptions *options);
+
+/**
+ * @brief Set display options for scatter plot
+ *
+ * @param options Pointer to display options
+ */
+void scatter_plot_set_display_options(const DisplayOptions *options);
+
+/**
+ * @brief Get current display options
+ *
+ * @param options Pointer to store current display options
+ */
+void scatter_plot_get_display_options(DisplayOptions *options);
+
+/**
+ * @brief Toggle axes visibility
+ */
+void scatter_plot_toggle_axes(void);
+
+/**
+ * @brief Toggle labels visibility
+ */
+void scatter_plot_toggle_labels(void);
+
+/**
+ * @brief Toggle grid visibility
+ */
+void scatter_plot_toggle_grid(void);
+
+/**
+ * @brief Toggle points visibility
+ */
+void scatter_plot_toggle_points(void);
 
 #endif // SCATTER_PLOT_H

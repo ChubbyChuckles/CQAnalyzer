@@ -24,6 +24,9 @@ src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \

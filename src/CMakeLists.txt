@@ -52,28 +52,38 @@ target_link_libraries(cqanalyzer_data
     cqanalyzer_analyzer
 )
 
-# Visualizer module
-add_library(cqanalyzer_visualizer STATIC
-    visualizer/renderer.c
-    visualizer/camera.c
-    visualizer/scene.c
-    visualizer/shader.c
-    visualizer/text_renderer.c
-    visualizer/transforms.c
-)
+# Visualizer module (temporarily disabled due to build issues)
+# add_library(cqanalyzer_visualizer STATIC
+#     visualizer/renderer.c
+#     visualizer/camera.c
+#     visualizer/scene.c
+#     visualizer/shader.c
+#     visualizer/text_renderer.c
+#     visualizer/transforms.c
+#     visualizer/network_graph.c
+#     visualizer/scatter_plot.c
+#     visualizer/bubble_chart.c
+#     visualizer/tree_visualization.c
+#     visualizer/color.c
+#     visualizer/gradient.c
+#     visualizer/lighting.c
+#     visualizer/bar_chart.c
+#     visualizer/heatmap.c
+#     visualizer/complexity_landscape.c
+# )
 
-target_include_directories(cqanalyzer_visualizer PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../include
-)
+# target_include_directories(cqanalyzer_visualizer PUBLIC
+#     ${CMAKE_CURRENT_SOURCE_DIR}/../include
+# )
 
-target_link_libraries(cqanalyzer_visualizer
-    cqanalyzer_data
-    ${OPENGL_LIBRARIES}
-    ${GLFW3_LIBRARIES}
-    ${GLEW_LIBRARIES}
-    ${GLM_LIBRARIES}
-    ${FREETYPE_LIBRARIES}
-)
+# target_link_libraries(cqanalyzer_visualizer
+#     cqanalyzer_data
+#     ${OPENGL_LIBRARIES}
+#     ${GLFW3_LIBRARIES}
+#     ${GLEW_LIBRARIES}
+#     ${GLM_LIBRARIES}
+#     ${FREETYPE_LIBRARIES}
+# )
 
 # UI module
 add_library(cqanalyzer_ui STATIC
@@ -87,7 +97,7 @@ target_include_directories(cqanalyzer_ui PUBLIC
 )
 
 target_link_libraries(cqanalyzer_ui
-    cqanalyzer_visualizer
+    cqanalyzer_data
 )
 
 # Utils module
@@ -107,7 +117,6 @@ set(MODULE_LIBRARIES
     cqanalyzer_parser
     cqanalyzer_analyzer
     cqanalyzer_data
-    cqanalyzer_visualizer
     cqanalyzer_ui
     cqanalyzer_utils
 )

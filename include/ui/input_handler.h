@@ -74,4 +74,20 @@ bool input_is_key_pressed(int key);
  */
 bool input_is_mouse_button_pressed(int button);
 
+/**
+ * @brief Get current mouse position
+ *
+ * @param x Pointer to store X position
+ * @param y Pointer to store Y position
+ */
+void input_get_mouse_position(double *x, double *y);
+
+/**
+ * @brief Get accumulated scroll deltas and reset them
+ *
+ * @param x Pointer to store X scroll delta
+ * @param y Pointer to store Y scroll delta
+ */
+void input_get_scroll_delta(double *x, double *y);
+
 #endif // INPUT_HANDLER_H

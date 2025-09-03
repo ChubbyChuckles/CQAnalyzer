@@ -53,6 +53,14 @@ void renderer_render(void);
 void renderer_present(void);
 
 /**
+ * @brief Handle mouse scroll for camera zoom
+ *
+ * @param x_offset Scroll X offset
+ * @param y_offset Scroll Y offset
+ */
+void renderer_handle_scroll(double x_offset, double y_offset);
+
+/**
  * @brief Draw a 3D cube
  *
  * @param x X position

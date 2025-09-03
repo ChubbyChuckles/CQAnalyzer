@@ -88,7 +88,7 @@ target_link_libraries(test_parser
     cqanalyzer_utils
 )
 
-# Add main executable
+# Add main executable (without visualizer for now due to build issues)
 add_executable(cqanalyzer
     src/main.c
     src/cqanalyzer.c
@@ -97,13 +97,8 @@ target_link_libraries(cqanalyzer
     cqanalyzer_parser
     cqanalyzer_analyzer
     cqanalyzer_data
-    cqanalyzer_visualizer
     cqanalyzer_ui
     cqanalyzer_utils
-    ${OPENGL_LIBRARIES}
-    ${GLFW3_LIBRARIES}
-    ${GLEW_LIBRARIES}
-    ${FREETYPE_LIBRARIES}
     ${LIBCLANG_LIBRARY}
     Threads::Threads
     m  # Math library

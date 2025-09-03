@@ -88,7 +88,6 @@ clean: tests/clean
 src/all: src/CMakeFiles/cqanalyzer_parser.dir/all
 src/all: src/CMakeFiles/cqanalyzer_analyzer.dir/all
 src/all: src/CMakeFiles/cqanalyzer_data.dir/all
-src/all: src/CMakeFiles/cqanalyzer_visualizer.dir/all
 src/all: src/CMakeFiles/cqanalyzer_ui.dir/all
 src/all: src/CMakeFiles/cqanalyzer_utils.dir/all
 .PHONY : src/all
@@ -101,7 +100,6 @@ src/preinstall:
 src/clean: src/CMakeFiles/cqanalyzer_parser.dir/clean
 src/clean: src/CMakeFiles/cqanalyzer_analyzer.dir/clean
 src/clean: src/CMakeFiles/cqanalyzer_data.dir/clean
-src/clean: src/CMakeFiles/cqanalyzer_visualizer.dir/clean
 src/clean: src/CMakeFiles/cqanalyzer_ui.dir/clean
 src/clean: src/CMakeFiles/cqanalyzer_utils.dir/clean
 .PHONY : src/clean
@@ -129,7 +127,7 @@ CMakeFiles/test_parser.dir/all: src/CMakeFiles/cqanalyzer_parser.dir/all
 CMakeFiles/test_parser.dir/all: src/CMakeFiles/cqanalyzer_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=43,44,45 "Built target test_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=36,37,38 "Built target test_parser"
 .PHONY : CMakeFiles/test_parser.dir/all
 
 # Build rule for subdir invocation for target.
@@ -153,7 +151,6 @@ CMakeFiles/test_parser.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/cqanalyzer.dir/all: src/CMakeFiles/cqanalyzer_parser.dir/all
-CMakeFiles/cqanalyzer.dir/all: src/CMakeFiles/cqanalyzer_visualizer.dir/all
 CMakeFiles/cqanalyzer.dir/all: src/CMakeFiles/cqanalyzer_ui.dir/all
 CMakeFiles/cqanalyzer.dir/all: src/CMakeFiles/cqanalyzer_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/depend
@@ -163,7 +160,7 @@ CMakeFiles/cqanalyzer.dir/all: src/CMakeFiles/cqanalyzer_utils.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cqanalyzer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cqanalyzer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 0
 .PHONY : CMakeFiles/cqanalyzer.dir/rule
@@ -256,37 +253,10 @@ src/CMakeFiles/cqanalyzer_data.dir/clean:
 .PHONY : src/CMakeFiles/cqanalyzer_data.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/cqanalyzer_visualizer.dir
-
-# All Build rule for target.
-src/CMakeFiles/cqanalyzer_visualizer.dir/all: src/CMakeFiles/cqanalyzer_parser.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=36,37,38,39,40,41,42 "Built target cqanalyzer_visualizer"
-.PHONY : src/CMakeFiles/cqanalyzer_visualizer.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/cqanalyzer_visualizer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 23
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cqanalyzer_visualizer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 0
-.PHONY : src/CMakeFiles/cqanalyzer_visualizer.dir/rule
-
-# Convenience name for target.
-cqanalyzer_visualizer: src/CMakeFiles/cqanalyzer_visualizer.dir/rule
-.PHONY : cqanalyzer_visualizer
-
-# clean rule for target.
-src/CMakeFiles/cqanalyzer_visualizer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/clean
-.PHONY : src/CMakeFiles/cqanalyzer_visualizer.dir/clean
-
-#=============================================================================
 # Target rules for target src/CMakeFiles/cqanalyzer_ui.dir
 
 # All Build rule for target.
 src/CMakeFiles/cqanalyzer_ui.dir/all: src/CMakeFiles/cqanalyzer_parser.dir/all
-src/CMakeFiles/cqanalyzer_ui.dir/all: src/CMakeFiles/cqanalyzer_visualizer.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=27,28,29,30 "Built target cqanalyzer_ui"
@@ -294,7 +264,7 @@ src/CMakeFiles/cqanalyzer_ui.dir/all: src/CMakeFiles/cqanalyzer_visualizer.dir/a
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/cqanalyzer_ui.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cqanalyzer_ui.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 0
 .PHONY : src/CMakeFiles/cqanalyzer_ui.dir/rule
@@ -339,7 +309,6 @@ src/CMakeFiles/cqanalyzer_utils.dir/clean:
 
 # All Build rule for target.
 tests/CMakeFiles/cqanalyzer_tests.dir/all: src/CMakeFiles/cqanalyzer_parser.dir/all
-tests/CMakeFiles/cqanalyzer_tests.dir/all: src/CMakeFiles/cqanalyzer_visualizer.dir/all
 tests/CMakeFiles/cqanalyzer_tests.dir/all: src/CMakeFiles/cqanalyzer_ui.dir/all
 tests/CMakeFiles/cqanalyzer_tests.dir/all: src/CMakeFiles/cqanalyzer_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/depend
@@ -349,7 +318,7 @@ tests/CMakeFiles/cqanalyzer_tests.dir/all: src/CMakeFiles/cqanalyzer_utils.dir/a
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/cqanalyzer_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 39
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/cqanalyzer_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles 0
 .PHONY : tests/CMakeFiles/cqanalyzer_tests.dir/rule

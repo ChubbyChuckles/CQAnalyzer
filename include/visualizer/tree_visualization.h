@@ -4,6 +4,7 @@
 #include "cqanalyzer.h"
 #include "visualizer/color.h"
 #include "data/dependency_graph.h"
+#include "data/ast_types.h"
 
 /**
  * @file tree_visualization.h
@@ -21,6 +22,15 @@
  * @return CQ_SUCCESS on success, error code on failure
  */
 CQError tree_visualization_create(const DependencyGraph *dependency_graph, const char *color_metric);
+
+/**
+ * @brief Create a 3D tree visualization from project code structure
+ *
+ * @param project Pointer to project containing code structure
+ * @param color_metric Name of metric for node coloring (optional, can be NULL)
+ * @return CQ_SUCCESS on success, error code on failure
+ */
+CQError tree_visualization_create_from_project(const Project *project, const char *color_metric);
 
 /**
  * @brief Render the tree visualization

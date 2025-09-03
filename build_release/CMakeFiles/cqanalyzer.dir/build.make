@@ -111,14 +111,9 @@ bin/cqanalyzer: CMakeFiles/cqanalyzer.dir/build.make
 bin/cqanalyzer: lib/libcqanalyzer_parser.a
 bin/cqanalyzer: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer: lib/libcqanalyzer_data.a
-bin/cqanalyzer: lib/libcqanalyzer_visualizer.a
 bin/cqanalyzer: lib/libcqanalyzer_ui.a
 bin/cqanalyzer: lib/libcqanalyzer_utils.a
-bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libOpenGL.so
-bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libGLX.so
-bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libGLU.so
 bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libclang-18.so
-bin/cqanalyzer: lib/libcqanalyzer_visualizer.a
 bin/cqanalyzer: lib/libcqanalyzer_parser.a
 bin/cqanalyzer: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer: lib/libcqanalyzer_data.a
@@ -126,9 +121,6 @@ bin/cqanalyzer: lib/libcqanalyzer_parser.a
 bin/cqanalyzer: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer: lib/libcqanalyzer_data.a
 bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libclang-18.so
-bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libOpenGL.so
-bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libGLX.so
-bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libGLU.so
 bin/cqanalyzer: CMakeFiles/cqanalyzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable bin/cqanalyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer.dir/link.txt --verbose=$(VERBOSE)
