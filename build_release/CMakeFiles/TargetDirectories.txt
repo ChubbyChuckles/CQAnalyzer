@@ -1,3 +1,4 @@
+/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles/test_parser.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles/cqanalyzer.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles/test.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles/edit_cache.dir

@@ -21,6 +21,7 @@
 // Common constants
 #define MAX_PATH_LENGTH 4096
 #define MAX_NAME_LENGTH 256
+#define MAX_VALUE_LENGTH 1024
 #define MAX_ERROR_MESSAGE_LENGTH 512
 
 // Error codes

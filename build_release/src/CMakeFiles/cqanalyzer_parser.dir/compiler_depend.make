@@ -5,6 +5,9 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: /home/chubbychuckles
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
@@ -189,17 +192,15 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
 
 /usr/include/unistd.h:
 
-/usr/include/features.h:
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h:
+
+/usr/lib/llvm-18/include/clang-c/Platform.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/lib/llvm-18/include/clang-c/Index.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
@@ -211,17 +212,21 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
 
 /usr/lib/llvm-18/include/clang-c/ExternC.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
@@ -239,6 +244,18 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/parser/file_scanner.c:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/parser/ast_parser.c:
+
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+
+/usr/lib/llvm-18/include/clang-c/CXDiagnostic.h:
+
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/lib/llvm-18/include/clang-c/BuildSystem.h:
@@ -247,21 +264,7 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
-
-/usr/lib/llvm-18/include/clang-c/CXDiagnostic.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h:
-
-/usr/lib/llvm-18/include/clang-c/CXFile.h:
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
@@ -287,13 +290,25 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h:
 
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/lib/llvm-18/include/clang-c/CXFile.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/features-time64.h:
+
+/usr/include/stdint.h:
+
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/usr/include/stdint.h:
-
-/usr/include/features-time64.h:
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h:
 
 /usr/lib/llvm-18/include/clang-c/CXErrorCode.h:
 
@@ -316,11 +331,3 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/lib/llvm-18/include/clang-c/CXString.h:
-
-/usr/lib/llvm-18/include/clang-c/Platform.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/parser/ast_parser.c:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/parser/file_scanner.c:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h:

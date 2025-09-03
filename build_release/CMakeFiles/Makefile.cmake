@@ -58,6 +58,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/test_parser.dir/DependInfo.cmake"
   "CMakeFiles/cqanalyzer.dir/DependInfo.cmake"
   "src/CMakeFiles/cqanalyzer_parser.dir/DependInfo.cmake"
   "src/CMakeFiles/cqanalyzer_analyzer.dir/DependInfo.cmake"

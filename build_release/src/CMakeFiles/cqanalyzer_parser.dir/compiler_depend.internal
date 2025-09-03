@@ -6,6 +6,9 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h
  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h
  /usr/include/features-time64.h
  /usr/include/features.h

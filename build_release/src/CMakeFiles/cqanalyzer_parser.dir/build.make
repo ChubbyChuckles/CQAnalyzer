@@ -111,11 +111,41 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.s"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/parser/language_support.c -o CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.s
 
+src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o: src/CMakeFiles/cqanalyzer_parser.dir/flags.make
+src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/parser/generic_parser.c
+src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o: src/CMakeFiles/cqanalyzer_parser.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o -MF CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o.d -o CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/parser/generic_parser.c
+
+src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/parser/generic_parser.c > CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.i
+
+src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/parser/generic_parser.c -o CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.s
+
+src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o: src/CMakeFiles/cqanalyzer_parser.dir/flags.make
+src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/parser/preprocessor.c
+src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o: src/CMakeFiles/cqanalyzer_parser.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o -MF CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o.d -o CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/parser/preprocessor.c
+
+src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/parser/preprocessor.c > CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.i
+
+src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/parser/preprocessor.c -o CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.s
+
 # Object files for target cqanalyzer_parser
 cqanalyzer_parser_OBJECTS = \
 "CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.o" \
 "CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o" \
-"CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o"
+"CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o" \
+"CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o" \
+"CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o"
 
 # External object files for target cqanalyzer_parser
 cqanalyzer_parser_EXTERNAL_OBJECTS =
@@ -123,9 +153,11 @@ cqanalyzer_parser_EXTERNAL_OBJECTS =
 lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.o
 lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o
 lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o
+lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o
+lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o
 lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/build.make
 lib/libcqanalyzer_parser.a: src/CMakeFiles/cqanalyzer_parser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library ../lib/libcqanalyzer_parser.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library ../lib/libcqanalyzer_parser.a"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -P CMakeFiles/cqanalyzer_parser.dir/cmake_clean_target.cmake
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_parser.dir/link.txt --verbose=$(VERBOSE)
 

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.o"
+  "CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.o.d"
   "CMakeFiles/cqanalyzer.dir/src/main.c.o"
   "CMakeFiles/cqanalyzer.dir/src/main.c.o.d"
   "bin/cqanalyzer"

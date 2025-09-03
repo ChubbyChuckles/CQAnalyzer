@@ -6,6 +6,7 @@
 #include "parser/ast_parser.h"
 #include "parser/generic_parser.h"
 #include "parser/language_support.h"
+#include "parser/preprocessor.h"
 #include "data/ast_types.h"
 #include "utils/logger.h"
 
@@ -250,17 +251,58 @@ void *parse_source_file(const char *filepath)
 
     LOG_INFO("Parsing source file: %s", filepath);
 
-    // Parse the file with libclang
-    const char *args[] = {
-        "-I/usr/include",
-        "-I/usr/local/include",
-        "-std=c11"
-    };
+    // Initialize preprocessing context
+    PreprocessingContext *preproc_ctx = preprocessor_init();
+    if (!preproc_ctx)
+    {
+        LOG_ERROR("Failed to initialize preprocessing context");
+        return NULL;
+    }
 
+    // Determine project root (simplified - use file's directory)
+    char project_root[MAX_PATH_LENGTH];
+    char *last_slash = strrchr(filepath, '/');
+    if (last_slash)
+    {
+        size_t root_len = last_slash - filepath;
+        if (root_len < sizeof(project_root))
+        {
+            strncpy(project_root, filepath, root_len);
+            project_root[root_len] = '\0';
+        }
+        else
+        {
+            strcpy(project_root, ".");
+        }
+    }
+    else
+    {
+        strcpy(project_root, ".");
+    }
+
+    // Scan for include directories
+    if (preprocessor_scan_includes(preproc_ctx, project_root) != CQ_SUCCESS)
+    {
+        LOG_WARNING("Failed to scan include directories");
+    }
+
+    // Extract macros from the source file
+    if (preprocessor_extract_macros(preproc_ctx, filepath) != CQ_SUCCESS)
+    {
+        LOG_WARNING("Failed to extract macros from source file");
+    }
+
+    // Build command line arguments
+    const char *args[100]; // Reasonable maximum
+    int arg_count = preprocessor_build_args(preproc_ctx, args, 100);
+
+    LOG_DEBUG("Using %d preprocessing arguments for libclang", arg_count);
+
+    // Parse the file with libclang
     CXTranslationUnit tu = clang_parseTranslationUnit(
         clang_index,
         filepath,
-        args, 3,    // command line args
+        args, arg_count,    // command line args
         NULL, 0,    // unsaved files
         CXTranslationUnit_None
     );
@@ -268,6 +310,12 @@ void *parse_source_file(const char *filepath)
     if (!tu)
     {
         LOG_ERROR("Failed to parse translation unit for file: %s", filepath);
+        preprocessor_free(preproc_ctx);
+        // Free allocated args
+        for (int i = 0; i < arg_count; i++)
+        {
+            free((void *)args[i]);
+        }
         return NULL;
     }
 
@@ -277,6 +325,12 @@ void *parse_source_file(const char *filepath)
     {
         LOG_ERROR("Memory allocation failed for AST data");
         clang_disposeTranslationUnit(tu);
+        preprocessor_free(preproc_ctx);
+        // Free allocated args
+        for (int i = 0; i < arg_count; i++)
+        {
+            free((void *)args[i]);
+        }
         return NULL;
     }
 
@@ -290,23 +344,33 @@ void *parse_source_file(const char *filepath)
         LOG_ERROR("Memory allocation failed for project data");
         free(ast_data);
         clang_disposeTranslationUnit(tu);
+        preprocessor_free(preproc_ctx);
+        // Free allocated args
+        for (int i = 0; i < arg_count; i++)
+        {
+            free((void *)args[i]);
+        }
         return NULL;
     }
 
-    // Set project path (simplified - just the file's directory)
-    char *last_slash = strrchr(filepath, '/');
-    if (last_slash)
+    // Set project path
+    if (strlen(project_root) < sizeof(ast_data->project->root_path))
     {
-        size_t path_len = last_slash - filepath;
-        if (path_len < sizeof(ast_data->project->root_path))
-        {
-            strncpy(ast_data->project->root_path, filepath, path_len);
-        }
+        strcpy(ast_data->project->root_path, project_root);
     }
 
     // Traverse AST and extract information
     CXCursor root_cursor = clang_getTranslationUnitCursor(tu);
     traverse_ast(root_cursor, ast_data);
+
+    // Clean up preprocessing context
+    preprocessor_free(preproc_ctx);
+
+    // Free allocated args
+    for (int i = 0; i < arg_count; i++)
+    {
+        free((void *)args[i]);
+    }
 
     LOG_INFO("Successfully parsed file: %s", filepath);
     return ast_data;

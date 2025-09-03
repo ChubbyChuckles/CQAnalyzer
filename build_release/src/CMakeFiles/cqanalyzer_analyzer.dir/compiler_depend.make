@@ -44,11 +44,16 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o: /home/
   /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/duplication_detector.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
+  /usr/include/ctype.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -57,6 +62,7 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o: /home/
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -164,9 +170,9 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: /home/chu
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h:
 
-/usr/include/math.h:
-
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/math.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -268,20 +274,20 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: /home/chu
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/metric_calculator.c:
-
 /usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/metric_calculator.c:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:

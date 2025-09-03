@@ -1,5 +1,5 @@
-src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: \
- /home/chubbychuckles/Programming/CQAnalyzer/src/parser/ast_parser.c \
+CMakeFiles/test_parser.dir/test_parser.c.o: \
+ /home/chubbychuckles/Programming/CQAnalyzer/test_parser.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -23,24 +23,7 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
- /usr/lib/llvm-18/include/clang-c/Index.h \
- /usr/lib/llvm-18/include/clang-c/BuildSystem.h \
- /usr/lib/llvm-18/include/clang-c/CXErrorCode.h \
- /usr/lib/llvm-18/include/clang-c/ExternC.h \
- /usr/lib/llvm-18/include/clang-c/Platform.h \
- /usr/lib/llvm-18/include/clang-c/CXString.h \
- /usr/lib/llvm-18/include/clang-c/CXDiagnostic.h \
- /usr/lib/llvm-18/include/clang-c/CXSourceLocation.h \
- /usr/lib/llvm-18/include/clang-c/CXFile.h /usr/include/time.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -51,5 +34,5 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h

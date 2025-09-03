@@ -447,6 +447,30 @@ parser/file_scanner.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.s
 .PHONY : parser/file_scanner.c.s
 
+parser/generic_parser.o: parser/generic_parser.c.o
+.PHONY : parser/generic_parser.o
+
+# target to build an object file
+parser/generic_parser.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o
+.PHONY : parser/generic_parser.c.o
+
+parser/generic_parser.i: parser/generic_parser.c.i
+.PHONY : parser/generic_parser.i
+
+# target to preprocess a source file
+parser/generic_parser.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.i
+.PHONY : parser/generic_parser.c.i
+
+parser/generic_parser.s: parser/generic_parser.c.s
+.PHONY : parser/generic_parser.s
+
+# target to generate assembly for a file
+parser/generic_parser.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.s
+.PHONY : parser/generic_parser.c.s
+
 parser/language_support.o: parser/language_support.c.o
 .PHONY : parser/language_support.o
 
@@ -470,6 +494,30 @@ parser/language_support.s: parser/language_support.c.s
 parser/language_support.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.s
 .PHONY : parser/language_support.c.s
+
+parser/preprocessor.o: parser/preprocessor.c.o
+.PHONY : parser/preprocessor.o
+
+# target to build an object file
+parser/preprocessor.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.o
+.PHONY : parser/preprocessor.c.o
+
+parser/preprocessor.i: parser/preprocessor.c.i
+.PHONY : parser/preprocessor.i
+
+# target to preprocess a source file
+parser/preprocessor.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.i
+.PHONY : parser/preprocessor.c.i
+
+parser/preprocessor.s: parser/preprocessor.c.s
+.PHONY : parser/preprocessor.s
+
+# target to generate assembly for a file
+parser/preprocessor.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_parser.dir/build.make src/CMakeFiles/cqanalyzer_parser.dir/parser/preprocessor.c.s
+.PHONY : parser/preprocessor.c.s
 
 ui/cli_interface.o: ui/cli_interface.c.o
 .PHONY : ui/cli_interface.o
@@ -778,9 +826,15 @@ help:
 	@echo "... parser/file_scanner.o"
 	@echo "... parser/file_scanner.i"
 	@echo "... parser/file_scanner.s"
+	@echo "... parser/generic_parser.o"
+	@echo "... parser/generic_parser.i"
+	@echo "... parser/generic_parser.s"
 	@echo "... parser/language_support.o"
 	@echo "... parser/language_support.i"
 	@echo "... parser/language_support.s"
+	@echo "... parser/preprocessor.o"
+	@echo "... parser/preprocessor.i"
+	@echo "... parser/preprocessor.s"
 	@echo "... ui/cli_interface.o"
 	@echo "... ui/cli_interface.i"
 	@echo "... ui/cli_interface.s"

@@ -172,6 +172,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_parser
+
+# Build rule for target.
+test_parser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_parser
+.PHONY : test_parser
+
+# fast build rule for target.
+test_parser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
+.PHONY : test_parser/fast
+
+#=============================================================================
 # Target rules for targets named cqanalyzer
 
 # Build rule for target.
@@ -275,6 +288,33 @@ cqanalyzer_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/build
 .PHONY : cqanalyzer_tests/fast
 
+src/cqanalyzer.o: src/cqanalyzer.c.o
+.PHONY : src/cqanalyzer.o
+
+# target to build an object file
+src/cqanalyzer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/src/cqanalyzer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.o
+.PHONY : src/cqanalyzer.c.o
+
+src/cqanalyzer.i: src/cqanalyzer.c.i
+.PHONY : src/cqanalyzer.i
+
+# target to preprocess a source file
+src/cqanalyzer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/src/cqanalyzer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.i
+.PHONY : src/cqanalyzer.c.i
+
+src/cqanalyzer.s: src/cqanalyzer.c.s
+.PHONY : src/cqanalyzer.s
+
+# target to generate assembly for a file
+src/cqanalyzer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/src/cqanalyzer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.s
+.PHONY : src/cqanalyzer.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -299,6 +339,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+test_parser.o: test_parser.c.o
+.PHONY : test_parser.o
+
+# target to build an object file
+test_parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/test_parser.c.o
+.PHONY : test_parser.c.o
+
+test_parser.i: test_parser.c.i
+.PHONY : test_parser.i
+
+# target to preprocess a source file
+test_parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/test_parser.c.i
+.PHONY : test_parser.c.i
+
+test_parser.s: test_parser.c.s
+.PHONY : test_parser.s
+
+# target to generate assembly for a file
+test_parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/test_parser.c.s
+.PHONY : test_parser.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -320,9 +384,16 @@ help:
 	@echo "... cqanalyzer_ui"
 	@echo "... cqanalyzer_utils"
 	@echo "... cqanalyzer_visualizer"
+	@echo "... test_parser"
+	@echo "... src/cqanalyzer.o"
+	@echo "... src/cqanalyzer.i"
+	@echo "... src/cqanalyzer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... test_parser.o"
+	@echo "... test_parser.i"
+	@echo "... test_parser.s"
 .PHONY : help
 
 

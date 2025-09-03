@@ -40,7 +40,8 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/CUnit/Basic.h \
+ /usr/include/CUnit/Basic.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
@@ -50,4 +51,5 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h
