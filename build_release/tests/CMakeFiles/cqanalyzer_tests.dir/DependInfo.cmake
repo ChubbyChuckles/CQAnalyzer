@@ -10,8 +10,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_analyzer.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_analyzer.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_analyzer.c.o.d"
   "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_data.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_data.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_data.c.o.d"
+  "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_imgui_integration.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o.d"
   "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_main.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_main.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_main.c.o.d"
   "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_parser.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o.d"
+  "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_profiler.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o.d"
+  "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_renderer.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o.d"
   "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_ui.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o.d"
   "/home/chubbychuckles/Programming/CQAnalyzer/tests/test_utils.c" "tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o" "gcc" "tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o.d"
   )

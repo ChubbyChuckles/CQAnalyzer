@@ -6,9 +6,15 @@
 #include "cqanalyzer.h"
 #include "utils/logger.h"
 #include "utils/config.h"
+#include "utils/error.h"
+#include "utils/localization.h"
+#include "utils/dependency_manager.h"
 #include "ui/cli_interface.h"
 #include "ui/progress_display.h"
 #include "parser/generic_parser.h"
+
+// Forward declaration for GUI main
+int main_gui(int argc, char *argv[]);
 
 /**
  * @brief Main entry point for CQAnalyzer
@@ -29,12 +35,56 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
+    // Initialize error handling system
+    if (cq_error_init() != CQ_SUCCESS)
+    {
+        LOG_ERROR("Failed to initialize error handling system");
+        localization_shutdown();
+        dependency_manager_shutdown();
+        logger_shutdown();
+        return EXIT_FAILURE;
+    }
+
+    // Initialize localization system
+    if (localization_init() != CQ_SUCCESS)
+    {
+        LOG_ERROR("Failed to initialize localization system");
+        cq_error_shutdown();
+        dependency_manager_shutdown();
+        logger_shutdown();
+        return EXIT_FAILURE;
+    }
+
     LOG_INFO("CQAnalyzer starting up...");
+
+    // Initialize dependency manager
+    if (dependency_manager_init() != CQ_SUCCESS)
+    {
+        LOG_ERROR("Failed to initialize dependency manager");
+        logger_shutdown();
+        return EXIT_FAILURE;
+    }
+
+    // Print dependency status
+    dependency_print_status();
+
+    // Check if we can run at all
+    if (!dependency_can_run_cli_only())
+    {
+        LOG_ERROR("Critical dependencies missing. CQAnalyzer requires libclang for basic functionality.");
+        LOG_ERROR("Please install libclang and try again.");
+        dependency_manager_shutdown();
+        logger_shutdown();
+        return EXIT_FAILURE;
+    }
 
     // Initialize configuration system
     if (config_init() != 0)
     {
         LOG_ERROR("Failed to initialize configuration system");
+        dependency_manager_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
         logger_shutdown();
         return EXIT_FAILURE;
     }
@@ -63,6 +113,9 @@ int main(int argc, char *argv[])
     {
         LOG_ERROR("Failed to initialize progress display");
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_FAILURE;
     }
@@ -73,6 +126,9 @@ int main(int argc, char *argv[])
         LOG_ERROR("Failed to initialize language parsers");
         progress_display_shutdown();
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_FAILURE;
     }
@@ -85,6 +141,9 @@ int main(int argc, char *argv[])
         shutdown_language_parsers();
         progress_display_shutdown();
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_FAILURE;
     }
@@ -97,8 +156,43 @@ int main(int argc, char *argv[])
         shutdown_language_parsers();
         progress_display_shutdown();
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_SUCCESS;
+    }
+
+    // Launch GUI if requested
+    if (args.use_gui)
+    {
+        if (!feature_is_available(FEATURE_GUI))
+        {
+            LOG_ERROR("GUI mode requested but required dependencies are missing.");
+            LOG_ERROR("Missing dependencies for GUI:");
+            DependencyType missing_deps[10];
+            int num_missing = feature_get_missing_dependencies(FEATURE_GUI, missing_deps, 10);
+            for (int i = 0; i < num_missing; i++) {
+                const DependencyInfo *dep_info = dependency_get_info(missing_deps[i]);
+                if (dep_info) {
+                    LOG_ERROR("  - %s: %s", dep_info->name, dep_info->description);
+                }
+            }
+            LOG_ERROR("Falling back to CLI mode. Use --help for available options.");
+            args.use_gui = false; // Fall back to CLI
+        }
+        else
+        {
+            LOG_INFO("Launching GUI mode...");
+            shutdown_language_parsers();
+            progress_display_shutdown();
+            config_shutdown();
+            localization_shutdown();
+            cq_error_shutdown();
+            dependency_manager_shutdown();
+            logger_shutdown();
+            return main_gui(argc, argv);
+        }
     }
 
     // Display help if requested
@@ -108,6 +202,9 @@ int main(int argc, char *argv[])
         shutdown_language_parsers();
         progress_display_shutdown();
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_SUCCESS;
     }
@@ -120,6 +217,9 @@ int main(int argc, char *argv[])
         shutdown_language_parsers();
         progress_display_shutdown();
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_FAILURE;
     }
@@ -139,6 +239,9 @@ int main(int argc, char *argv[])
         shutdown_language_parsers();
         progress_display_shutdown();
         config_shutdown();
+        localization_shutdown();
+        cq_error_shutdown();
+        dependency_manager_shutdown();
         logger_shutdown();
         return EXIT_FAILURE;
     }
@@ -166,6 +269,9 @@ int main(int argc, char *argv[])
     shutdown_language_parsers();
     progress_display_shutdown();
     config_shutdown();
+    cq_error_shutdown();
+    localization_shutdown();
+    dependency_manager_shutdown();
     logger_shutdown();
 
     LOG_INFO("CQAnalyzer shutdown complete");

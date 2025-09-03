@@ -24,7 +24,7 @@
 #define MAX_VALUE_LENGTH 1024
 #define MAX_ERROR_MESSAGE_LENGTH 512
 
-// Error codes
+// Legacy error codes for backward compatibility
 typedef enum
 {
     CQ_SUCCESS = 0,
@@ -37,6 +37,8 @@ typedef enum
     CQ_ERROR_CONFIG_INVALID = -7,
     CQ_ERROR_UNKNOWN = -99
 } CQError;
+
+// Comprehensive error system is included separately where needed
 
 // Language support enumeration
 typedef enum
@@ -63,6 +65,7 @@ typedef struct
     char output_path[MAX_PATH_LENGTH];
     bool show_help;
     bool show_version;
+    bool use_gui; // Launch GUI instead of CLI
 } CLIArgs;
 
 // Function declarations for core functionality

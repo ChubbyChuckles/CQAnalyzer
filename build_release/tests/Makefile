@@ -233,6 +233,30 @@ test_data.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_data.c.s
 .PHONY : test_data.c.s
 
+test_imgui_integration.o: test_imgui_integration.c.o
+.PHONY : test_imgui_integration.o
+
+# target to build an object file
+test_imgui_integration.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o
+.PHONY : test_imgui_integration.c.o
+
+test_imgui_integration.i: test_imgui_integration.c.i
+.PHONY : test_imgui_integration.i
+
+# target to preprocess a source file
+test_imgui_integration.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.i
+.PHONY : test_imgui_integration.c.i
+
+test_imgui_integration.s: test_imgui_integration.c.s
+.PHONY : test_imgui_integration.s
+
+# target to generate assembly for a file
+test_imgui_integration.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.s
+.PHONY : test_imgui_integration.c.s
+
 test_main.o: test_main.c.o
 .PHONY : test_main.o
 
@@ -280,6 +304,54 @@ test_parser.s: test_parser.c.s
 test_parser.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.s
 .PHONY : test_parser.c.s
+
+test_profiler.o: test_profiler.c.o
+.PHONY : test_profiler.o
+
+# target to build an object file
+test_profiler.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o
+.PHONY : test_profiler.c.o
+
+test_profiler.i: test_profiler.c.i
+.PHONY : test_profiler.i
+
+# target to preprocess a source file
+test_profiler.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.i
+.PHONY : test_profiler.c.i
+
+test_profiler.s: test_profiler.c.s
+.PHONY : test_profiler.s
+
+# target to generate assembly for a file
+test_profiler.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.s
+.PHONY : test_profiler.c.s
+
+test_renderer.o: test_renderer.c.o
+.PHONY : test_renderer.o
+
+# target to build an object file
+test_renderer.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o
+.PHONY : test_renderer.c.o
+
+test_renderer.i: test_renderer.c.i
+.PHONY : test_renderer.i
+
+# target to preprocess a source file
+test_renderer.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.i
+.PHONY : test_renderer.c.i
+
+test_renderer.s: test_renderer.c.s
+.PHONY : test_renderer.s
+
+# target to generate assembly for a file
+test_renderer.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.s
+.PHONY : test_renderer.c.s
 
 test_ui.o: test_ui.c.o
 .PHONY : test_ui.o
@@ -349,12 +421,21 @@ help:
 	@echo "... test_data.o"
 	@echo "... test_data.i"
 	@echo "... test_data.s"
+	@echo "... test_imgui_integration.o"
+	@echo "... test_imgui_integration.i"
+	@echo "... test_imgui_integration.s"
 	@echo "... test_main.o"
 	@echo "... test_main.i"
 	@echo "... test_main.s"
 	@echo "... test_parser.o"
 	@echo "... test_parser.i"
 	@echo "... test_parser.s"
+	@echo "... test_profiler.o"
+	@echo "... test_profiler.i"
+	@echo "... test_profiler.s"
+	@echo "... test_renderer.o"
+	@echo "... test_renderer.i"
+	@echo "... test_renderer.s"
 	@echo "... test_ui.o"
 	@echo "... test_ui.i"
 	@echo "... test_ui.s"

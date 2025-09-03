@@ -210,4 +210,23 @@ void renderer_draw_cube_lit(float x, float y, float z, float size, const Materia
  */
 void renderer_draw_sphere_lit(float x, float y, float z, float radius, const Material *material, const Light *light);
 
+/**
+ * @brief Take a screenshot of the current frame
+ *
+ * @param filename Output filename for the screenshot
+ */
+void renderer_take_screenshot(const char *filename);
+
+/**
+ * @brief Start video recording
+ *
+ * @param filename_pattern Pattern for frame filenames (e.g., "frame_%04d.bmp")
+ */
+void renderer_start_video_recording(const char *filename_pattern);
+
+/**
+ * @brief Stop video recording
+ */
+void renderer_stop_video_recording(void);
+
 #endif // RENDERER_H

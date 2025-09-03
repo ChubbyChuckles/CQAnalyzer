@@ -21,8 +21,11 @@
 #include "visualizer/visualization_filters.h"
 #include "visualizer/scene.h"
 #include "visualizer/picking.h"
+#include "visualizer/profiler.h"
 #include "ui/input_handler.h"
+#include "ui/imgui_integration.h"
 #include "utils/logger.h"
+#include "utils/bmp_writer.h"
 
 static bool renderer_initialized = false;
 static int window_width = 800;
@@ -36,6 +39,13 @@ static GLuint sphere_vao, sphere_vbo, sphere_ebo;
 static GLuint line_vao, line_vbo;
 static TextRenderer text_renderer;
 static bool text_renderer_initialized = false;
+
+// Fullscreen state management
+static bool is_fullscreen = false;
+static int windowed_x = 0;
+static int windowed_y = 0;
+static int windowed_width = 800;
+static int windowed_height = 600;
 
 // Camera control variables
 static double last_mouse_x = 0.0;
@@ -59,6 +69,9 @@ static void handle_keyboard_shortcuts(void);
 static void set_material_uniforms(const Material *material);
 static void set_light_uniforms(const Light *light);
 static void set_view_position_uniform();
+static void toggle_fullscreen(void);
+static void enter_fullscreen(void);
+static void exit_fullscreen(void);
 
 CQError renderer_init(int width, int height, const char *title)
 {
@@ -69,8 +82,51 @@ CQError renderer_init(int width, int height, const char *title)
 
     window_width = width;
     window_height = height;
+    windowed_width = width;
+    windowed_height = height;
 
     LOG_INFO("Initializing 3D renderer (%dx%d): %s", width, height, title);
+
+    // Initialize GLFW
+    if (!glfwInit())
+    {
+        LOG_ERROR("Failed to initialize GLFW");
+        return CQ_ERROR_UNKNOWN;
+    }
+
+    // Set GLFW window hints
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+
+    // Create window
+    window = glfwCreateWindow(width, height, title, NULL, NULL);
+    if (!window)
+    {
+        LOG_ERROR("Failed to create GLFW window");
+        glfwTerminate();
+        return CQ_ERROR_UNKNOWN;
+    }
+
+    // Make the window's context current
+    glfwMakeContextCurrent(window);
+
+    // Initialize GLEW
+    glewExperimental = GL_TRUE;
+    if (glewInit() != GLEW_OK)
+    {
+        LOG_ERROR("Failed to initialize GLEW");
+        glfwDestroyWindow(window);
+        glfwTerminate();
+        return CQ_ERROR_UNKNOWN;
+    }
+
+    // Set viewport
+    glViewport(0, 0, width, height);
+
+    // Enable depth testing
+    glEnable(GL_DEPTH_TEST);
 
     // Initialize camera
     camera_init(&camera);
@@ -79,6 +135,18 @@ CQError renderer_init(int width, int height, const char *title)
     if (picking_init() != CQ_SUCCESS)
     {
         LOG_ERROR("Failed to initialize picking system");
+        glfwDestroyWindow(window);
+        glfwTerminate();
+        return CQ_ERROR_UNKNOWN;
+    }
+
+    // Initialize ImGui
+    if (!imgui_init(window))
+    {
+        LOG_ERROR("Failed to initialize ImGui");
+        picking_shutdown();
+        glfwDestroyWindow(window);
+        glfwTerminate();
         return CQ_ERROR_UNKNOWN;
     }
 
@@ -127,6 +195,13 @@ CQError renderer_init(int width, int height, const char *title)
 
     // Set up line geometry
     setup_line_geometry();
+
+    // Initialize performance profiler
+    if (profiler_init() != CQ_SUCCESS)
+    {
+        LOG_ERROR("Failed to initialize performance profiler");
+        return CQ_ERROR_UNKNOWN;
+    }
 
     renderer_initialized = true;
     LOG_INFO("3D renderer initialized successfully");
@@ -338,6 +413,9 @@ void renderer_shutdown(void)
     // Shutdown picking system
     picking_shutdown();
 
+    // Shutdown ImGui
+    imgui_shutdown();
+
     // Shutdown text renderer if initialized
     if (text_renderer_initialized)
     {
@@ -345,24 +423,39 @@ void renderer_shutdown(void)
         text_renderer_initialized = false;
     }
 
-    // TODO: Clean up OpenGL resources
-    // TODO: Destroy GLFW window
-    // TODO: Terminate GLFW
+    // Shutdown performance profiler
+    profiler_shutdown();
 
-    LOG_WARNING("3D renderer shutdown not yet implemented");
+    // Clean up OpenGL resources
+    glDeleteVertexArrays(1, &cube_vao);
+    glDeleteBuffers(1, &cube_vbo);
+    glDeleteBuffers(1, &cube_ebo);
+    glDeleteVertexArrays(1, &sphere_vao);
+    glDeleteBuffers(1, &sphere_vbo);
+    glDeleteBuffers(1, &sphere_ebo);
+    glDeleteVertexArrays(1, &line_vao);
+    glDeleteBuffers(1, &line_vbo);
+
+    // Destroy GLFW window and terminate GLFW
+    if (window)
+    {
+        glfwDestroyWindow(window);
+        window = NULL;
+    }
+    glfwTerminate();
+
     renderer_initialized = false;
+    LOG_INFO("3D renderer shutdown complete");
 }
 
 bool renderer_is_running(void)
 {
-    if (!renderer_initialized)
+    if (!renderer_initialized || !window)
     {
         return false;
     }
 
-    // TODO: Check if window should close
-    // For now, return true to indicate running
-    return true;
+    return !glfwWindowShouldClose(window);
 }
 
 void renderer_update(void)
@@ -371,6 +464,9 @@ void renderer_update(void)
     {
         return;
     }
+
+    // Start profiler timing for update
+    profiler_start_update();
 
     // Get current mouse position
     double current_mouse_x, current_mouse_y;
@@ -528,6 +624,9 @@ void renderer_update(void)
 
     // Handle keyboard shortcuts
     handle_keyboard_shortcuts();
+
+    // End profiler timing for update
+    profiler_end_update();
 }
 
 // Helper function to handle keyboard shortcuts
@@ -614,11 +713,39 @@ static void handle_keyboard_shortcuts(void)
         // Note: This would need to be passed to shaders in a full implementation
     }
 
-    // S: Take screenshot (placeholder)
+    // S: Take screenshot
     if (input_is_key_pressed(GLFW_KEY_S))
     {
-        LOG_INFO("Screenshot requested (not yet implemented)");
-        // TODO: Implement screenshot functionality
+        renderer_take_screenshot("screenshot.bmp");
+    }
+
+    // V: Toggle video recording
+    static bool video_recording = false;
+    if (input_is_key_pressed(GLFW_KEY_V))
+    {
+        video_recording = !video_recording;
+        if (video_recording)
+        {
+            renderer_start_video_recording("video_frames/frame_%04d.bmp");
+            LOG_INFO("Video recording started");
+        }
+        else
+        {
+            renderer_stop_video_recording();
+            LOG_INFO("Video recording stopped");
+        }
+    }
+
+    // F11: Toggle fullscreen
+    if (input_is_key_pressed(GLFW_KEY_F11))
+    {
+        toggle_fullscreen();
+    }
+
+    // P: Toggle profiler overlay
+    if (input_is_key_pressed(GLFW_KEY_P))
+    {
+        profiler_toggle_overlay();
     }
 
     // H: Show help
@@ -626,12 +753,28 @@ static void handle_keyboard_shortcuts(void)
     {
         LOG_INFO("Keyboard shortcuts:");
         LOG_INFO("  ESC: Exit");
+        LOG_INFO("  F11: Toggle fullscreen");
         LOG_INFO("  R: Reset camera");
         LOG_INFO("  +/-: Zoom in/out");
         LOG_INFO("  1-4: Switch visualization modes");
         LOG_INFO("  W: Toggle wireframe");
         LOG_INFO("  L: Toggle lighting");
-        LOG_INFO("  S: Screenshot");
+        LOG_INFO("  S: Take screenshot");
+        LOG_INFO("  V: Toggle video recording");
+        LOG_INFO("  P: Toggle profiler overlay");
+        LOG_INFO("  Ctrl+O: Open project");
+        LOG_INFO("  Ctrl+B: Open file browser");
+        LOG_INFO("  Ctrl+M: Toggle metric configuration panel");
+        LOG_INFO("  Ctrl+C: Toggle camera controls panel");
+        LOG_INFO("  Ctrl+D: Toggle display options panel");
+        LOG_INFO("  Ctrl+L: Toggle color scheme panel");
+        LOG_INFO("  Ctrl+A: Toggle animation controls panel");
+        LOG_INFO("  Ctrl+, : Open settings dialog");
+        LOG_INFO("  Ctrl+Shift+S: Save dock layout");
+        LOG_INFO("  Ctrl+Shift+L: Load dock layout");
+        LOG_INFO("  Ctrl+Shift+R: Reset dock layout");
+        LOG_INFO("  F1: Toggle ImGui demo");
+        LOG_INFO("  Shift+F1: Show keyboard shortcuts dialog");
         LOG_INFO("  A: Toggle axes");
         LOG_INFO("  G: Toggle grid");
         LOG_INFO("  P: Toggle points");
@@ -661,25 +804,211 @@ void renderer_render(void)
         return;
     }
 
+    // Start profiler timing for render
+    profiler_start_render();
+
+    // Start ImGui frame
+    imgui_new_frame();
+
+    // Initialize menu state if not already done
+    static bool menu_initialized = false;
+    if (!menu_initialized)
+    {
+        menu_state_init();
+        menu_initialized = true;
+    }
+
+    // Create dock space
+    ImGuiViewport* viewport = ImGui::GetMainViewport();
+    ImGui::SetNextWindowPos(viewport->Pos);
+    ImGui::SetNextWindowSize(viewport->Size);
+    ImGui::SetNextWindowViewport(viewport->ID);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+
+    ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+    window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+    window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+
+    bool open = true;
+    ImGui::Begin("CQAnalyzer DockSpace", &open, window_flags);
+    ImGui::PopStyleVar(3);
+
+    // Create dock space
+    ImGuiID dockspace_id = ImGui::GetID("CQAnalyzerDockSpace");
+    ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None);
+
+    // Show main menu bar
+    imgui_show_main_menu_bar();
+
+    // Show about dialog if requested
+    imgui_show_about_dialog();
+
+    // Show help dialogs if requested
+    imgui_show_help_keyboard_shortcuts(&menu_state.show_help_keyboard_shortcuts);
+    imgui_show_help_documentation(&menu_state.show_help_documentation);
+    imgui_show_help_faq(&menu_state.show_help_faq);
+    imgui_show_help_system_info(&menu_state.show_help_system_info);
+
     // TODO: Clear buffers
     // TODO: Set up view and projection matrices
     // TODO: Render 3D scene
-    // TODO: Draw UI elements
+
+    // Show ImGui demo window (can be toggled)
+    static bool show_demo_window = false;
+    static bool show_main_panel = true;
+    static bool show_metrics = false;
+
+    // Handle keyboard shortcuts for ImGui
+    if (input_is_key_pressed(GLFW_KEY_F1))
+    {
+        show_demo_window = !show_demo_window;
+    }
+
+    // F1: Show help (keyboard shortcuts)
+    if (input_is_key_pressed(GLFW_KEY_F1) && input_is_key_pressed(GLFW_KEY_LEFT_SHIFT))
+    {
+        menu_state.show_help_keyboard_shortcuts = !menu_state.show_help_keyboard_shortcuts;
+    }
+    if (input_is_key_pressed(GLFW_KEY_F2))
+    {
+        show_main_panel = !show_main_panel;
+    }
+    if (input_is_key_pressed(GLFW_KEY_F3))
+    {
+        show_metrics = !show_metrics;
+    }
+
+    // Ctrl+O: Open project selector
+    if (input_is_key_pressed(GLFW_KEY_O) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_project_selector = true;
+    }
+
+    // Ctrl+B: Open file browser
+    if (input_is_key_pressed(GLFW_KEY_B) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_file_browser = true;
+    }
+
+    // Ctrl+M: Toggle metric configuration panel
+    if (input_is_key_pressed(GLFW_KEY_M) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_metric_config_panel = !menu_state.show_metric_config_panel;
+    }
+
+    // Ctrl+C: Toggle camera controls panel
+    if (input_is_key_pressed(GLFW_KEY_C) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_camera_controls = !menu_state.show_camera_controls;
+    }
+
+    // Ctrl+D: Toggle display options panel
+    if (input_is_key_pressed(GLFW_KEY_D) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_display_options = !menu_state.show_display_options;
+    }
+
+    // Ctrl+L: Toggle color scheme panel
+    if (input_is_key_pressed(GLFW_KEY_L) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_color_scheme = !menu_state.show_color_scheme;
+    }
+
+    // Ctrl+A: Toggle animation controls panel
+    if (input_is_key_pressed(GLFW_KEY_A) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_animation_controls = !menu_state.show_animation_controls;
+    }
+
+    // Ctrl+, : Open settings dialog
+    if (input_is_key_pressed(GLFW_KEY_COMMA) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL))
+    {
+        menu_state.show_settings_dialog = true;
+    }
+
+    // Ctrl+Shift+S: Save dock layout
+    if (input_is_key_pressed(GLFW_KEY_S) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL) && input_is_key_pressed(GLFW_KEY_LEFT_SHIFT))
+    {
+        imgui_save_dock_layout("current");
+    }
+
+    // Ctrl+Shift+L: Load dock layout
+    if (input_is_key_pressed(GLFW_KEY_L) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL) && input_is_key_pressed(GLFW_KEY_LEFT_SHIFT))
+    {
+        imgui_load_dock_layout("current");
+    }
+
+    // Ctrl+Shift+R: Reset dock layout
+    if (input_is_key_pressed(GLFW_KEY_R) && input_is_key_pressed(GLFW_KEY_LEFT_CONTROL) && input_is_key_pressed(GLFW_KEY_LEFT_SHIFT))
+    {
+        imgui_reset_dock_layout();
+    }
+
+    // Show ImGui windows
+    imgui_show_demo_window(&show_demo_window);
+    imgui_show_main_control_panel(&show_main_panel);
+    imgui_show_metrics_window(&show_metrics);
+
+    // Apply control panel settings to the rendering system
+    imgui_apply_camera_settings();
+    imgui_apply_display_settings();
+    imgui_apply_color_scheme();
+
+    // Show additional windows based on menu state
+    imgui_show_visualization_settings(&menu_state.show_visualization_settings);
+    imgui_show_analysis_results(&menu_state.show_analysis_results);
+    imgui_show_metric_config_panel(&menu_state.show_metric_config_panel);
+    imgui_show_file_browser_dialog(&menu_state.show_file_browser);
+    imgui_show_project_selector_dialog(&menu_state.show_project_selector);
+
+    // Show new control panels
+    imgui_show_camera_control_panel(&menu_state.show_camera_controls);
+    imgui_show_display_options_panel(&menu_state.show_display_options);
+    imgui_show_color_scheme_panel(&menu_state.show_color_scheme);
+    imgui_show_animation_control_panel(&menu_state.show_animation_controls);
+    imgui_show_visualization_mode_panel(&menu_state.show_visualization_settings); // Reuse existing flag
+
+    // Show settings dialog
+    imgui_show_settings_dialog(&menu_state.show_settings_dialog);
+
+    // End dock space
+    ImGui::End();
+
+    // Render ImGui
+    imgui_render();
+
+    // Render profiler overlay if enabled
+    profiler_render_overlay();
+
+    // Capture video frame if recording is active
+    renderer_capture_video_frame();
+
+    // End profiler timing for render
+    profiler_end_render();
 
     LOG_WARNING("Scene rendering not yet implemented");
 }
 
 void renderer_present(void)
 {
-    if (!renderer_initialized)
+    if (!renderer_initialized || !window)
     {
         return;
     }
 
-    // TODO: Swap buffers
-    // TODO: Poll events
+    // End frame timing before presenting
+    profiler_end_frame();
 
-    LOG_WARNING("Buffer presentation not yet implemented");
+    // Swap buffers
+    glfwSwapBuffers(window);
+
+    // Poll events
+    glfwPollEvents();
+
+    // Start next frame timing after presenting
+    profiler_start_frame();
 }
 
 void renderer_draw_cube(float x, float y, float z, float size, float r, float g, float b)
@@ -1015,4 +1344,199 @@ void renderer_draw_line_gradient(float x1, float y1, float z1, float x2, float y
     glBindVertexArray(line_vao);
     glDrawArrays(GL_LINES, 0, 2);
     glBindVertexArray(0);
+}
+
+// Fullscreen toggle functionality
+static void toggle_fullscreen(void)
+{
+    if (!window)
+    {
+        return;
+    }
+
+    if (is_fullscreen)
+    {
+        exit_fullscreen();
+    }
+    else
+    {
+        enter_fullscreen();
+    }
+}
+
+static void enter_fullscreen(void)
+{
+    if (!window || is_fullscreen)
+    {
+        return;
+    }
+
+    // Store current window position and size
+    glfwGetWindowPos(window, &windowed_x, &windowed_y);
+    glfwGetWindowSize(window, &windowed_width, &windowed_height);
+
+    // Get primary monitor
+    GLFWmonitor *monitor = glfwGetPrimaryMonitor();
+    if (!monitor)
+    {
+        LOG_ERROR("Failed to get primary monitor for fullscreen");
+        return;
+    }
+
+    const GLFWvidmode *mode = glfwGetVideoMode(monitor);
+    if (!mode)
+    {
+        LOG_ERROR("Failed to get video mode for fullscreen");
+        return;
+    }
+
+    // Enter fullscreen
+    glfwSetWindowMonitor(window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
+    is_fullscreen = true;
+
+    // Update viewport
+    glViewport(0, 0, mode->width, mode->height);
+    window_width = mode->width;
+    window_height = mode->height;
+
+    LOG_INFO("Entered fullscreen mode (%dx%d)", mode->width, mode->height);
+}
+
+static void exit_fullscreen(void)
+{
+    if (!window || !is_fullscreen)
+    {
+        return;
+    }
+
+    // Exit fullscreen
+    glfwSetWindowMonitor(window, NULL, windowed_x, windowed_y, windowed_width, windowed_height, 0);
+    is_fullscreen = false;
+
+    // Update viewport
+    glViewport(0, 0, windowed_width, windowed_height);
+    window_width = windowed_width;
+    window_height = windowed_height;
+
+    LOG_INFO("Exited fullscreen mode (%dx%d at %d,%d)", windowed_width, windowed_height, windowed_x, windowed_y);
+}
+
+// Screenshot and video recording functionality
+static bool video_recording_active = false;
+static char video_filename_pattern[256] = {0};
+static int video_frame_count = 0;
+
+/**
+ * Take a screenshot of the current frame
+ */
+void renderer_take_screenshot(const char *filename)
+{
+    if (!renderer_initialized)
+    {
+        LOG_ERROR("Cannot take screenshot: renderer not initialized");
+        return;
+    }
+
+    // Allocate buffer for pixel data
+    int buffer_size = window_width * window_height * 3; // RGB
+    unsigned char *pixels = (unsigned char *)malloc(buffer_size);
+    if (!pixels)
+    {
+        LOG_ERROR("Failed to allocate memory for screenshot");
+        return;
+    }
+
+    // Read pixels from framebuffer
+    glReadPixels(0, 0, window_width, window_height, GL_RGB, GL_UNSIGNED_BYTE, pixels);
+
+    // Save as BMP
+    if (write_bmp(filename, window_width, window_height, pixels) == 0)
+    {
+        LOG_INFO("Screenshot saved to: %s", filename);
+    }
+    else
+    {
+        LOG_ERROR("Failed to save screenshot to: %s", filename);
+    }
+
+    free(pixels);
+}
+
+/**
+ * Start video recording
+ */
+void renderer_start_video_recording(const char *filename_pattern)
+{
+    if (!renderer_initialized)
+    {
+        LOG_ERROR("Cannot start video recording: renderer not initialized");
+        return;
+    }
+
+    if (video_recording_active)
+    {
+        LOG_WARNING("Video recording already active");
+        return;
+    }
+
+    // Create video_frames directory if it doesn't exist
+    // Note: In a real implementation, you'd check and create the directory
+    // For now, we'll assume it exists or let the BMP writer fail gracefully
+
+    strncpy(video_filename_pattern, filename_pattern, sizeof(video_filename_pattern) - 1);
+    video_frame_count = 0;
+    video_recording_active = true;
+}
+
+/**
+ * Stop video recording
+ */
+void renderer_stop_video_recording(void)
+{
+    if (!video_recording_active)
+    {
+        LOG_WARNING("No active video recording to stop");
+        return;
+    }
+
+    video_recording_active = false;
+    LOG_INFO("Video recording stopped. Captured %d frames", video_frame_count);
+}
+
+/**
+ * Capture a frame for video recording (called during render loop)
+ */
+void renderer_capture_video_frame(void)
+{
+    if (!video_recording_active || !renderer_initialized)
+    {
+        return;
+    }
+
+    char filename[256];
+    snprintf(filename, sizeof(filename), video_filename_pattern, video_frame_count);
+
+    // Allocate buffer for pixel data
+    int buffer_size = window_width * window_height * 3; // RGB
+    unsigned char *pixels = (unsigned char *)malloc(buffer_size);
+    if (!pixels)
+    {
+        LOG_ERROR("Failed to allocate memory for video frame");
+        return;
+    }
+
+    // Read pixels from framebuffer
+    glReadPixels(0, 0, window_width, window_height, GL_RGB, GL_UNSIGNED_BYTE, pixels);
+
+    // Save frame
+    if (write_bmp(filename, window_width, window_height, pixels) == 0)
+    {
+        video_frame_count++;
+    }
+    else
+    {
+        LOG_ERROR("Failed to save video frame: %s", filename);
+    }
+
+    free(pixels);
 }

@@ -16,6 +16,13 @@ add_executable(cqanalyzer_tests
     test_analyzer.c
     test_data.c
     test_ui.c
+    test_profiler.c
+    test_renderer.c
+    test_imgui_integration.c
+    test_theme_manager.c
+    test_error.c
+    test_localization.c
+    test_dependency_manager.c
 )
 
 # Link with main libraries and CUnit
@@ -27,6 +34,9 @@ target_link_libraries(cqanalyzer_tests
     cqanalyzer_ui
     cqanalyzer_utils
     ${CUNIT_LIBRARIES}
+    ${GLFW3_LIBRARIES}
+    ${GLEW_LIBRARIES}
+    ${OPENGL_LIBRARIES}
     m  # Math library
 )
 

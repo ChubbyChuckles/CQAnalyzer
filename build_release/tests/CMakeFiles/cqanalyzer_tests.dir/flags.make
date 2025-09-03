@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/chubbychuckles/Programming/CQAnalyzer/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/lib/llvm-18/include -I/home/chubbychuckles/Programming/CQAnalyzer/tests/../include -I/home/chubbychuckles/Programming/CQAnalyzer/src/../include
+C_INCLUDES = -I/home/chubbychuckles/Programming/CQAnalyzer/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui -I/home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends -I/usr/lib/llvm-18/include -I/home/chubbychuckles/Programming/CQAnalyzer/tests/../include -I/home/chubbychuckles/Programming/CQAnalyzer/src/../include
 
 C_FLAGS = -std=c11 -Wall -Wextra -Wpedantic
 

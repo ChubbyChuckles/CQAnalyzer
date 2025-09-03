@@ -18,6 +18,7 @@ static struct option long_options[] = {
     {"config", required_argument, 0, 'c'},
     {"help", no_argument, 0, 'h'},
     {"version", no_argument, 0, 'e'},
+    {"gui", no_argument, 0, 'g'},
     {0, 0, 0, 0}};
 
 CQError parse_cli_args(int argc, char *argv[], CLIArgs *args)
@@ -36,7 +37,7 @@ CQError parse_cli_args(int argc, char *argv[], CLIArgs *args)
     int opt;
     int option_index = 0;
 
-    while ((opt = getopt_long(argc, argv, "p:l:o:vVm:b:c:he",
+    while ((opt = getopt_long(argc, argv, "p:l:o:vVm:b:c:heg",
                               long_options, &option_index)) != -1)
     {
         switch (opt)
@@ -153,6 +154,10 @@ CQError parse_cli_args(int argc, char *argv[], CLIArgs *args)
             args->show_version = true;
             break;
 
+        case 'g':
+            args->use_gui = true;
+            break;
+
         case '?':
             // getopt_long already printed an error message
             return CQ_ERROR_INVALID_ARGUMENT;
@@ -192,6 +197,7 @@ void display_help(void)
     printf("                           Available: complexity, loc, maintainability, duplication, halstead\n");
     printf("  -b, --verbosity LEVEL    Set verbosity level (0-3, default: 1)\n");
     printf("  -c, --config FILE        Load configuration from file\n");
+    printf("  -g, --gui                Launch graphical user interface\n");
     printf("  -h, --help               Display this help message\n");
     printf("  -e, --version            Display version information\n");
     printf("\n");

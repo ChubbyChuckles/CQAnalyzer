@@ -111,11 +111,116 @@ src/CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.s"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/ui/progress_display.c -o CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.s
 
+src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/ui/imgui_integration.c
+src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o -MF CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o.d -o CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/ui/imgui_integration.c
+
+src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/ui/imgui_integration.c > CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/ui/imgui_integration.c -o CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.s
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o: /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui.cpp
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o -MF CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o.d -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o -c /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui.cpp
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui.cpp > CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui.cpp -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.s
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o: /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_draw.cpp
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o -MF CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o.d -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o -c /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_draw.cpp
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_draw.cpp > CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_draw.cpp -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.s
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o: /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_widgets.cpp
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o -MF CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o -c /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_widgets.cpp
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_widgets.cpp > CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_widgets.cpp -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.s
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o: /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_tables.cpp
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o -MF CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o.d -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o -c /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_tables.cpp
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_tables.cpp > CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/imgui_tables.cpp -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.s
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o: /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_glfw.cpp
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o -c /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_glfw.cpp
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/flags.make
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o: /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_opengl3.cpp
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o: src/CMakeFiles/cqanalyzer_ui.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_opengl3.cpp
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+
+src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/third_party/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+
 # Object files for target cqanalyzer_ui
 cqanalyzer_ui_OBJECTS = \
 "CMakeFiles/cqanalyzer_ui.dir/ui/cli_interface.c.o" \
 "CMakeFiles/cqanalyzer_ui.dir/ui/input_handler.c.o" \
-"CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.o"
+"CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.o" \
+"CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o" \
+"CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o" \
+"CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o" \
+"CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o" \
+"CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o"
 
 # External object files for target cqanalyzer_ui
 cqanalyzer_ui_EXTERNAL_OBJECTS =
@@ -123,9 +228,16 @@ cqanalyzer_ui_EXTERNAL_OBJECTS =
 lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/ui/cli_interface.c.o
 lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/ui/input_handler.c.o
 lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/build.make
 lib/libcqanalyzer_ui.a: src/CMakeFiles/cqanalyzer_ui.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library ../lib/libcqanalyzer_ui.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library ../lib/libcqanalyzer_ui.a"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -P CMakeFiles/cqanalyzer_ui.dir/cmake_clean_target.cmake
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_ui.dir/link.txt --verbose=$(VERBOSE)
 

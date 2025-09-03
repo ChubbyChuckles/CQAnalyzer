@@ -125,12 +125,42 @@ src/CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.s"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/utils/string_utils.c -o CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.s
 
+src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o: src/CMakeFiles/cqanalyzer_utils.dir/flags.make
+src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/utils/bmp_writer.c
+src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o: src/CMakeFiles/cqanalyzer_utils.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o -MF CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o.d -o CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/utils/bmp_writer.c
+
+src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/utils/bmp_writer.c > CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.i
+
+src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/utils/bmp_writer.c -o CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.s
+
+src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o: src/CMakeFiles/cqanalyzer_utils.dir/flags.make
+src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/profiler.c
+src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o: src/CMakeFiles/cqanalyzer_utils.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o -MF CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o.d -o CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/profiler.c
+
+src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/profiler.c > CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.i
+
+src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/profiler.c -o CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.s
+
 # Object files for target cqanalyzer_utils
 cqanalyzer_utils_OBJECTS = \
 "CMakeFiles/cqanalyzer_utils.dir/utils/logger.c.o" \
 "CMakeFiles/cqanalyzer_utils.dir/utils/config.c.o" \
 "CMakeFiles/cqanalyzer_utils.dir/utils/memory.c.o" \
-"CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.o"
+"CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.o" \
+"CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o" \
+"CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o"
 
 # External object files for target cqanalyzer_utils
 cqanalyzer_utils_EXTERNAL_OBJECTS =
@@ -139,9 +169,11 @@ lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/utils/logger.c.o
 lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/utils/config.c.o
 lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/utils/memory.c.o
 lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.o
+lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o
+lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o
 lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/build.make
 lib/libcqanalyzer_utils.a: src/CMakeFiles/cqanalyzer_utils.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library ../lib/libcqanalyzer_utils.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library ../lib/libcqanalyzer_utils.a"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -P CMakeFiles/cqanalyzer_utils.dir/cmake_clean_target.cmake
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_utils.dir/link.txt --verbose=$(VERBOSE)
 

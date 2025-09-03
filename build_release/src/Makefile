@@ -214,6 +214,20 @@ cqanalyzer_data/fast:
 .PHONY : cqanalyzer_data/fast
 
 # Convenience name for target.
+src/CMakeFiles/cqanalyzer_visualizer.dir/rule:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cqanalyzer_visualizer.dir/rule
+.PHONY : src/CMakeFiles/cqanalyzer_visualizer.dir/rule
+
+# Convenience name for target.
+cqanalyzer_visualizer: src/CMakeFiles/cqanalyzer_visualizer.dir/rule
+.PHONY : cqanalyzer_visualizer
+
+# fast build rule for target.
+cqanalyzer_visualizer/fast:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/build
+.PHONY : cqanalyzer_visualizer/fast
+
+# Convenience name for target.
 src/CMakeFiles/cqanalyzer_ui.dir/rule:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cqanalyzer_ui.dir/rule
 .PHONY : src/CMakeFiles/cqanalyzer_ui.dir/rule
@@ -240,6 +254,150 @@ cqanalyzer_utils: src/CMakeFiles/cqanalyzer_utils.dir/rule
 cqanalyzer_utils/fast:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/build
 .PHONY : cqanalyzer_utils/fast
+
+__/third_party/imgui/backends/imgui_impl_glfw.o: __/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : __/third_party/imgui/backends/imgui_impl_glfw.o
+
+# target to build an object file
+__/third_party/imgui/backends/imgui_impl_glfw.cpp.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : __/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+
+__/third_party/imgui/backends/imgui_impl_glfw.i: __/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : __/third_party/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+__/third_party/imgui/backends/imgui_impl_glfw.cpp.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : __/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+
+__/third_party/imgui/backends/imgui_impl_glfw.s: __/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : __/third_party/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+__/third_party/imgui/backends/imgui_impl_glfw.cpp.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : __/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+
+__/third_party/imgui/backends/imgui_impl_opengl3.o: __/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
+.PHONY : __/third_party/imgui/backends/imgui_impl_opengl3.o
+
+# target to build an object file
+__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
+.PHONY : __/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
+
+__/third_party/imgui/backends/imgui_impl_opengl3.i: __/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+.PHONY : __/third_party/imgui/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+__/third_party/imgui/backends/imgui_impl_opengl3.cpp.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+.PHONY : __/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+
+__/third_party/imgui/backends/imgui_impl_opengl3.s: __/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+.PHONY : __/third_party/imgui/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+__/third_party/imgui/backends/imgui_impl_opengl3.cpp.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+.PHONY : __/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+
+__/third_party/imgui/imgui.o: __/third_party/imgui/imgui.cpp.o
+.PHONY : __/third_party/imgui/imgui.o
+
+# target to build an object file
+__/third_party/imgui/imgui.cpp.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.o
+.PHONY : __/third_party/imgui/imgui.cpp.o
+
+__/third_party/imgui/imgui.i: __/third_party/imgui/imgui.cpp.i
+.PHONY : __/third_party/imgui/imgui.i
+
+# target to preprocess a source file
+__/third_party/imgui/imgui.cpp.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.i
+.PHONY : __/third_party/imgui/imgui.cpp.i
+
+__/third_party/imgui/imgui.s: __/third_party/imgui/imgui.cpp.s
+.PHONY : __/third_party/imgui/imgui.s
+
+# target to generate assembly for a file
+__/third_party/imgui/imgui.cpp.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui.cpp.s
+.PHONY : __/third_party/imgui/imgui.cpp.s
+
+__/third_party/imgui/imgui_draw.o: __/third_party/imgui/imgui_draw.cpp.o
+.PHONY : __/third_party/imgui/imgui_draw.o
+
+# target to build an object file
+__/third_party/imgui/imgui_draw.cpp.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.o
+.PHONY : __/third_party/imgui/imgui_draw.cpp.o
+
+__/third_party/imgui/imgui_draw.i: __/third_party/imgui/imgui_draw.cpp.i
+.PHONY : __/third_party/imgui/imgui_draw.i
+
+# target to preprocess a source file
+__/third_party/imgui/imgui_draw.cpp.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.i
+.PHONY : __/third_party/imgui/imgui_draw.cpp.i
+
+__/third_party/imgui/imgui_draw.s: __/third_party/imgui/imgui_draw.cpp.s
+.PHONY : __/third_party/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+__/third_party/imgui/imgui_draw.cpp.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_draw.cpp.s
+.PHONY : __/third_party/imgui/imgui_draw.cpp.s
+
+__/third_party/imgui/imgui_tables.o: __/third_party/imgui/imgui_tables.cpp.o
+.PHONY : __/third_party/imgui/imgui_tables.o
+
+# target to build an object file
+__/third_party/imgui/imgui_tables.cpp.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.o
+.PHONY : __/third_party/imgui/imgui_tables.cpp.o
+
+__/third_party/imgui/imgui_tables.i: __/third_party/imgui/imgui_tables.cpp.i
+.PHONY : __/third_party/imgui/imgui_tables.i
+
+# target to preprocess a source file
+__/third_party/imgui/imgui_tables.cpp.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.i
+.PHONY : __/third_party/imgui/imgui_tables.cpp.i
+
+__/third_party/imgui/imgui_tables.s: __/third_party/imgui/imgui_tables.cpp.s
+.PHONY : __/third_party/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+__/third_party/imgui/imgui_tables.cpp.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_tables.cpp.s
+.PHONY : __/third_party/imgui/imgui_tables.cpp.s
+
+__/third_party/imgui/imgui_widgets.o: __/third_party/imgui/imgui_widgets.cpp.o
+.PHONY : __/third_party/imgui/imgui_widgets.o
+
+# target to build an object file
+__/third_party/imgui/imgui_widgets.cpp.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.o
+.PHONY : __/third_party/imgui/imgui_widgets.cpp.o
+
+__/third_party/imgui/imgui_widgets.i: __/third_party/imgui/imgui_widgets.cpp.i
+.PHONY : __/third_party/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+__/third_party/imgui/imgui_widgets.cpp.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.i
+.PHONY : __/third_party/imgui/imgui_widgets.cpp.i
+
+__/third_party/imgui/imgui_widgets.s: __/third_party/imgui/imgui_widgets.cpp.s
+.PHONY : __/third_party/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+__/third_party/imgui/imgui_widgets.cpp.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/__/third_party/imgui/imgui_widgets.cpp.s
+.PHONY : __/third_party/imgui/imgui_widgets.cpp.s
 
 analyzer/complexity_analyzer.o: analyzer/complexity_analyzer.c.o
 .PHONY : analyzer/complexity_analyzer.o
@@ -577,6 +735,30 @@ ui/cli_interface.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/ui/cli_interface.c.s
 .PHONY : ui/cli_interface.c.s
 
+ui/imgui_integration.o: ui/imgui_integration.c.o
+.PHONY : ui/imgui_integration.o
+
+# target to build an object file
+ui/imgui_integration.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.o
+.PHONY : ui/imgui_integration.c.o
+
+ui/imgui_integration.i: ui/imgui_integration.c.i
+.PHONY : ui/imgui_integration.i
+
+# target to preprocess a source file
+ui/imgui_integration.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.i
+.PHONY : ui/imgui_integration.c.i
+
+ui/imgui_integration.s: ui/imgui_integration.c.s
+.PHONY : ui/imgui_integration.s
+
+# target to generate assembly for a file
+ui/imgui_integration.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/ui/imgui_integration.c.s
+.PHONY : ui/imgui_integration.c.s
+
 ui/input_handler.o: ui/input_handler.c.o
 .PHONY : ui/input_handler.o
 
@@ -624,6 +806,30 @@ ui/progress_display.s: ui/progress_display.c.s
 ui/progress_display.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_ui.dir/build.make src/CMakeFiles/cqanalyzer_ui.dir/ui/progress_display.c.s
 .PHONY : ui/progress_display.c.s
+
+utils/bmp_writer.o: utils/bmp_writer.c.o
+.PHONY : utils/bmp_writer.o
+
+# target to build an object file
+utils/bmp_writer.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o
+.PHONY : utils/bmp_writer.c.o
+
+utils/bmp_writer.i: utils/bmp_writer.c.i
+.PHONY : utils/bmp_writer.i
+
+# target to preprocess a source file
+utils/bmp_writer.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.i
+.PHONY : utils/bmp_writer.c.i
+
+utils/bmp_writer.s: utils/bmp_writer.c.s
+.PHONY : utils/bmp_writer.s
+
+# target to generate assembly for a file
+utils/bmp_writer.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.s
+.PHONY : utils/bmp_writer.c.s
 
 utils/config.o: utils/config.c.o
 .PHONY : utils/config.o
@@ -721,6 +927,414 @@ utils/string_utils.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.s
 .PHONY : utils/string_utils.c.s
 
+visualizer/bar_chart.o: visualizer/bar_chart.c.o
+.PHONY : visualizer/bar_chart.o
+
+# target to build an object file
+visualizer/bar_chart.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/bar_chart.c.o
+.PHONY : visualizer/bar_chart.c.o
+
+visualizer/bar_chart.i: visualizer/bar_chart.c.i
+.PHONY : visualizer/bar_chart.i
+
+# target to preprocess a source file
+visualizer/bar_chart.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/bar_chart.c.i
+.PHONY : visualizer/bar_chart.c.i
+
+visualizer/bar_chart.s: visualizer/bar_chart.c.s
+.PHONY : visualizer/bar_chart.s
+
+# target to generate assembly for a file
+visualizer/bar_chart.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/bar_chart.c.s
+.PHONY : visualizer/bar_chart.c.s
+
+visualizer/bubble_chart.o: visualizer/bubble_chart.c.o
+.PHONY : visualizer/bubble_chart.o
+
+# target to build an object file
+visualizer/bubble_chart.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/bubble_chart.c.o
+.PHONY : visualizer/bubble_chart.c.o
+
+visualizer/bubble_chart.i: visualizer/bubble_chart.c.i
+.PHONY : visualizer/bubble_chart.i
+
+# target to preprocess a source file
+visualizer/bubble_chart.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/bubble_chart.c.i
+.PHONY : visualizer/bubble_chart.c.i
+
+visualizer/bubble_chart.s: visualizer/bubble_chart.c.s
+.PHONY : visualizer/bubble_chart.s
+
+# target to generate assembly for a file
+visualizer/bubble_chart.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/bubble_chart.c.s
+.PHONY : visualizer/bubble_chart.c.s
+
+visualizer/camera.o: visualizer/camera.c.o
+.PHONY : visualizer/camera.o
+
+# target to build an object file
+visualizer/camera.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.o
+.PHONY : visualizer/camera.c.o
+
+visualizer/camera.i: visualizer/camera.c.i
+.PHONY : visualizer/camera.i
+
+# target to preprocess a source file
+visualizer/camera.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.i
+.PHONY : visualizer/camera.c.i
+
+visualizer/camera.s: visualizer/camera.c.s
+.PHONY : visualizer/camera.s
+
+# target to generate assembly for a file
+visualizer/camera.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.s
+.PHONY : visualizer/camera.c.s
+
+visualizer/color.o: visualizer/color.c.o
+.PHONY : visualizer/color.o
+
+# target to build an object file
+visualizer/color.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/color.c.o
+.PHONY : visualizer/color.c.o
+
+visualizer/color.i: visualizer/color.c.i
+.PHONY : visualizer/color.i
+
+# target to preprocess a source file
+visualizer/color.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/color.c.i
+.PHONY : visualizer/color.c.i
+
+visualizer/color.s: visualizer/color.c.s
+.PHONY : visualizer/color.s
+
+# target to generate assembly for a file
+visualizer/color.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/color.c.s
+.PHONY : visualizer/color.c.s
+
+visualizer/complexity_landscape.o: visualizer/complexity_landscape.c.o
+.PHONY : visualizer/complexity_landscape.o
+
+# target to build an object file
+visualizer/complexity_landscape.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/complexity_landscape.c.o
+.PHONY : visualizer/complexity_landscape.c.o
+
+visualizer/complexity_landscape.i: visualizer/complexity_landscape.c.i
+.PHONY : visualizer/complexity_landscape.i
+
+# target to preprocess a source file
+visualizer/complexity_landscape.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/complexity_landscape.c.i
+.PHONY : visualizer/complexity_landscape.c.i
+
+visualizer/complexity_landscape.s: visualizer/complexity_landscape.c.s
+.PHONY : visualizer/complexity_landscape.s
+
+# target to generate assembly for a file
+visualizer/complexity_landscape.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/complexity_landscape.c.s
+.PHONY : visualizer/complexity_landscape.c.s
+
+visualizer/gradient.o: visualizer/gradient.c.o
+.PHONY : visualizer/gradient.o
+
+# target to build an object file
+visualizer/gradient.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/gradient.c.o
+.PHONY : visualizer/gradient.c.o
+
+visualizer/gradient.i: visualizer/gradient.c.i
+.PHONY : visualizer/gradient.i
+
+# target to preprocess a source file
+visualizer/gradient.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/gradient.c.i
+.PHONY : visualizer/gradient.c.i
+
+visualizer/gradient.s: visualizer/gradient.c.s
+.PHONY : visualizer/gradient.s
+
+# target to generate assembly for a file
+visualizer/gradient.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/gradient.c.s
+.PHONY : visualizer/gradient.c.s
+
+visualizer/heatmap.o: visualizer/heatmap.c.o
+.PHONY : visualizer/heatmap.o
+
+# target to build an object file
+visualizer/heatmap.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/heatmap.c.o
+.PHONY : visualizer/heatmap.c.o
+
+visualizer/heatmap.i: visualizer/heatmap.c.i
+.PHONY : visualizer/heatmap.i
+
+# target to preprocess a source file
+visualizer/heatmap.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/heatmap.c.i
+.PHONY : visualizer/heatmap.c.i
+
+visualizer/heatmap.s: visualizer/heatmap.c.s
+.PHONY : visualizer/heatmap.s
+
+# target to generate assembly for a file
+visualizer/heatmap.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/heatmap.c.s
+.PHONY : visualizer/heatmap.c.s
+
+visualizer/lighting.o: visualizer/lighting.c.o
+.PHONY : visualizer/lighting.o
+
+# target to build an object file
+visualizer/lighting.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/lighting.c.o
+.PHONY : visualizer/lighting.c.o
+
+visualizer/lighting.i: visualizer/lighting.c.i
+.PHONY : visualizer/lighting.i
+
+# target to preprocess a source file
+visualizer/lighting.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/lighting.c.i
+.PHONY : visualizer/lighting.c.i
+
+visualizer/lighting.s: visualizer/lighting.c.s
+.PHONY : visualizer/lighting.s
+
+# target to generate assembly for a file
+visualizer/lighting.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/lighting.c.s
+.PHONY : visualizer/lighting.c.s
+
+visualizer/network_graph.o: visualizer/network_graph.c.o
+.PHONY : visualizer/network_graph.o
+
+# target to build an object file
+visualizer/network_graph.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/network_graph.c.o
+.PHONY : visualizer/network_graph.c.o
+
+visualizer/network_graph.i: visualizer/network_graph.c.i
+.PHONY : visualizer/network_graph.i
+
+# target to preprocess a source file
+visualizer/network_graph.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/network_graph.c.i
+.PHONY : visualizer/network_graph.c.i
+
+visualizer/network_graph.s: visualizer/network_graph.c.s
+.PHONY : visualizer/network_graph.s
+
+# target to generate assembly for a file
+visualizer/network_graph.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/network_graph.c.s
+.PHONY : visualizer/network_graph.c.s
+
+visualizer/profiler.o: visualizer/profiler.c.o
+.PHONY : visualizer/profiler.o
+
+# target to build an object file
+visualizer/profiler.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o
+.PHONY : visualizer/profiler.c.o
+
+visualizer/profiler.i: visualizer/profiler.c.i
+.PHONY : visualizer/profiler.i
+
+# target to preprocess a source file
+visualizer/profiler.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.i
+.PHONY : visualizer/profiler.c.i
+
+visualizer/profiler.s: visualizer/profiler.c.s
+.PHONY : visualizer/profiler.s
+
+# target to generate assembly for a file
+visualizer/profiler.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_utils.dir/build.make src/CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.s
+.PHONY : visualizer/profiler.c.s
+
+visualizer/renderer.o: visualizer/renderer.c.o
+.PHONY : visualizer/renderer.o
+
+# target to build an object file
+visualizer/renderer.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/renderer.c.o
+.PHONY : visualizer/renderer.c.o
+
+visualizer/renderer.i: visualizer/renderer.c.i
+.PHONY : visualizer/renderer.i
+
+# target to preprocess a source file
+visualizer/renderer.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/renderer.c.i
+.PHONY : visualizer/renderer.c.i
+
+visualizer/renderer.s: visualizer/renderer.c.s
+.PHONY : visualizer/renderer.s
+
+# target to generate assembly for a file
+visualizer/renderer.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/renderer.c.s
+.PHONY : visualizer/renderer.c.s
+
+visualizer/scatter_plot.o: visualizer/scatter_plot.c.o
+.PHONY : visualizer/scatter_plot.o
+
+# target to build an object file
+visualizer/scatter_plot.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scatter_plot.c.o
+.PHONY : visualizer/scatter_plot.c.o
+
+visualizer/scatter_plot.i: visualizer/scatter_plot.c.i
+.PHONY : visualizer/scatter_plot.i
+
+# target to preprocess a source file
+visualizer/scatter_plot.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scatter_plot.c.i
+.PHONY : visualizer/scatter_plot.c.i
+
+visualizer/scatter_plot.s: visualizer/scatter_plot.c.s
+.PHONY : visualizer/scatter_plot.s
+
+# target to generate assembly for a file
+visualizer/scatter_plot.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scatter_plot.c.s
+.PHONY : visualizer/scatter_plot.c.s
+
+visualizer/scene.o: visualizer/scene.c.o
+.PHONY : visualizer/scene.o
+
+# target to build an object file
+visualizer/scene.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.o
+.PHONY : visualizer/scene.c.o
+
+visualizer/scene.i: visualizer/scene.c.i
+.PHONY : visualizer/scene.i
+
+# target to preprocess a source file
+visualizer/scene.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.i
+.PHONY : visualizer/scene.c.i
+
+visualizer/scene.s: visualizer/scene.c.s
+.PHONY : visualizer/scene.s
+
+# target to generate assembly for a file
+visualizer/scene.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.s
+.PHONY : visualizer/scene.c.s
+
+visualizer/shader.o: visualizer/shader.c.o
+.PHONY : visualizer/shader.o
+
+# target to build an object file
+visualizer/shader.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.o
+.PHONY : visualizer/shader.c.o
+
+visualizer/shader.i: visualizer/shader.c.i
+.PHONY : visualizer/shader.i
+
+# target to preprocess a source file
+visualizer/shader.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.i
+.PHONY : visualizer/shader.c.i
+
+visualizer/shader.s: visualizer/shader.c.s
+.PHONY : visualizer/shader.s
+
+# target to generate assembly for a file
+visualizer/shader.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.s
+.PHONY : visualizer/shader.c.s
+
+visualizer/text_renderer.o: visualizer/text_renderer.c.o
+.PHONY : visualizer/text_renderer.o
+
+# target to build an object file
+visualizer/text_renderer.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o
+.PHONY : visualizer/text_renderer.c.o
+
+visualizer/text_renderer.i: visualizer/text_renderer.c.i
+.PHONY : visualizer/text_renderer.i
+
+# target to preprocess a source file
+visualizer/text_renderer.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.i
+.PHONY : visualizer/text_renderer.c.i
+
+visualizer/text_renderer.s: visualizer/text_renderer.c.s
+.PHONY : visualizer/text_renderer.s
+
+# target to generate assembly for a file
+visualizer/text_renderer.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.s
+.PHONY : visualizer/text_renderer.c.s
+
+visualizer/transforms.o: visualizer/transforms.c.o
+.PHONY : visualizer/transforms.o
+
+# target to build an object file
+visualizer/transforms.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o
+.PHONY : visualizer/transforms.c.o
+
+visualizer/transforms.i: visualizer/transforms.c.i
+.PHONY : visualizer/transforms.i
+
+# target to preprocess a source file
+visualizer/transforms.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.i
+.PHONY : visualizer/transforms.c.i
+
+visualizer/transforms.s: visualizer/transforms.c.s
+.PHONY : visualizer/transforms.s
+
+# target to generate assembly for a file
+visualizer/transforms.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.s
+.PHONY : visualizer/transforms.c.s
+
+visualizer/tree_visualization.o: visualizer/tree_visualization.c.o
+.PHONY : visualizer/tree_visualization.o
+
+# target to build an object file
+visualizer/tree_visualization.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/tree_visualization.c.o
+.PHONY : visualizer/tree_visualization.c.o
+
+visualizer/tree_visualization.i: visualizer/tree_visualization.c.i
+.PHONY : visualizer/tree_visualization.i
+
+# target to preprocess a source file
+visualizer/tree_visualization.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/tree_visualization.c.i
+.PHONY : visualizer/tree_visualization.c.i
+
+visualizer/tree_visualization.s: visualizer/tree_visualization.c.s
+.PHONY : visualizer/tree_visualization.s
+
+# target to generate assembly for a file
+visualizer/tree_visualization.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/tree_visualization.c.s
+.PHONY : visualizer/tree_visualization.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -739,6 +1353,25 @@ help:
 	@echo "... cqanalyzer_parser"
 	@echo "... cqanalyzer_ui"
 	@echo "... cqanalyzer_utils"
+	@echo "... cqanalyzer_visualizer"
+	@echo "... __/third_party/imgui/backends/imgui_impl_glfw.o"
+	@echo "... __/third_party/imgui/backends/imgui_impl_glfw.i"
+	@echo "... __/third_party/imgui/backends/imgui_impl_glfw.s"
+	@echo "... __/third_party/imgui/backends/imgui_impl_opengl3.o"
+	@echo "... __/third_party/imgui/backends/imgui_impl_opengl3.i"
+	@echo "... __/third_party/imgui/backends/imgui_impl_opengl3.s"
+	@echo "... __/third_party/imgui/imgui.o"
+	@echo "... __/third_party/imgui/imgui.i"
+	@echo "... __/third_party/imgui/imgui.s"
+	@echo "... __/third_party/imgui/imgui_draw.o"
+	@echo "... __/third_party/imgui/imgui_draw.i"
+	@echo "... __/third_party/imgui/imgui_draw.s"
+	@echo "... __/third_party/imgui/imgui_tables.o"
+	@echo "... __/third_party/imgui/imgui_tables.i"
+	@echo "... __/third_party/imgui/imgui_tables.s"
+	@echo "... __/third_party/imgui/imgui_widgets.o"
+	@echo "... __/third_party/imgui/imgui_widgets.i"
+	@echo "... __/third_party/imgui/imgui_widgets.s"
 	@echo "... analyzer/complexity_analyzer.o"
 	@echo "... analyzer/complexity_analyzer.i"
 	@echo "... analyzer/complexity_analyzer.s"
@@ -781,12 +1414,18 @@ help:
 	@echo "... ui/cli_interface.o"
 	@echo "... ui/cli_interface.i"
 	@echo "... ui/cli_interface.s"
+	@echo "... ui/imgui_integration.o"
+	@echo "... ui/imgui_integration.i"
+	@echo "... ui/imgui_integration.s"
 	@echo "... ui/input_handler.o"
 	@echo "... ui/input_handler.i"
 	@echo "... ui/input_handler.s"
 	@echo "... ui/progress_display.o"
 	@echo "... ui/progress_display.i"
 	@echo "... ui/progress_display.s"
+	@echo "... utils/bmp_writer.o"
+	@echo "... utils/bmp_writer.i"
+	@echo "... utils/bmp_writer.s"
 	@echo "... utils/config.o"
 	@echo "... utils/config.i"
 	@echo "... utils/config.s"
@@ -799,6 +1438,57 @@ help:
 	@echo "... utils/string_utils.o"
 	@echo "... utils/string_utils.i"
 	@echo "... utils/string_utils.s"
+	@echo "... visualizer/bar_chart.o"
+	@echo "... visualizer/bar_chart.i"
+	@echo "... visualizer/bar_chart.s"
+	@echo "... visualizer/bubble_chart.o"
+	@echo "... visualizer/bubble_chart.i"
+	@echo "... visualizer/bubble_chart.s"
+	@echo "... visualizer/camera.o"
+	@echo "... visualizer/camera.i"
+	@echo "... visualizer/camera.s"
+	@echo "... visualizer/color.o"
+	@echo "... visualizer/color.i"
+	@echo "... visualizer/color.s"
+	@echo "... visualizer/complexity_landscape.o"
+	@echo "... visualizer/complexity_landscape.i"
+	@echo "... visualizer/complexity_landscape.s"
+	@echo "... visualizer/gradient.o"
+	@echo "... visualizer/gradient.i"
+	@echo "... visualizer/gradient.s"
+	@echo "... visualizer/heatmap.o"
+	@echo "... visualizer/heatmap.i"
+	@echo "... visualizer/heatmap.s"
+	@echo "... visualizer/lighting.o"
+	@echo "... visualizer/lighting.i"
+	@echo "... visualizer/lighting.s"
+	@echo "... visualizer/network_graph.o"
+	@echo "... visualizer/network_graph.i"
+	@echo "... visualizer/network_graph.s"
+	@echo "... visualizer/profiler.o"
+	@echo "... visualizer/profiler.i"
+	@echo "... visualizer/profiler.s"
+	@echo "... visualizer/renderer.o"
+	@echo "... visualizer/renderer.i"
+	@echo "... visualizer/renderer.s"
+	@echo "... visualizer/scatter_plot.o"
+	@echo "... visualizer/scatter_plot.i"
+	@echo "... visualizer/scatter_plot.s"
+	@echo "... visualizer/scene.o"
+	@echo "... visualizer/scene.i"
+	@echo "... visualizer/scene.s"
+	@echo "... visualizer/shader.o"
+	@echo "... visualizer/shader.i"
+	@echo "... visualizer/shader.s"
+	@echo "... visualizer/text_renderer.o"
+	@echo "... visualizer/text_renderer.i"
+	@echo "... visualizer/text_renderer.s"
+	@echo "... visualizer/transforms.o"
+	@echo "... visualizer/transforms.i"
+	@echo "... visualizer/transforms.s"
+	@echo "... visualizer/tree_visualization.o"
+	@echo "... visualizer/tree_visualization.i"
+	@echo "... visualizer/tree_visualization.s"
 .PHONY : help
 
 

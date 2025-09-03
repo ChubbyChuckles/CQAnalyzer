@@ -1,7 +1,6 @@
 ### commands
 
-Read the "roadmaps/implementation_plan.txt" and choose the next feature in line to be implemented. Implement the feature and when it is done go back to the "roadmaps/implementation_plan.txt" and mark the feature as done.
-
+Read the "roadmaps/implementation_plan.txt" and choose the next feature in line to be implemented. Implement the feature and when it is done go back to the "roadmaps/implementation_plan.txt" and mark the feature as done. Make sure the program builds and compiles with all unit tests. Commit the changes to the remote repository with a concise commit message. Iterate like this through the whole file until all tasks are implemented and add a unit test for every feature you add to verify no regression.
 
 ### style
 

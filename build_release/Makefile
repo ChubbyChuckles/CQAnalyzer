@@ -237,6 +237,19 @@ cqanalyzer_data/fast:
 .PHONY : cqanalyzer_data/fast
 
 #=============================================================================
+# Target rules for targets named cqanalyzer_visualizer
+
+# Build rule for target.
+cqanalyzer_visualizer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cqanalyzer_visualizer
+.PHONY : cqanalyzer_visualizer
+
+# fast build rule for target.
+cqanalyzer_visualizer/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/build
+.PHONY : cqanalyzer_visualizer/fast
+
+#=============================================================================
 # Target rules for targets named cqanalyzer_ui
 
 # Build rule for target.
@@ -326,6 +339,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/main_gui.o: src/main_gui.c.o
+.PHONY : src/main_gui.o
+
+# target to build an object file
+src/main_gui.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/main_gui.c.o
+.PHONY : src/main_gui.c.o
+
+src/main_gui.i: src/main_gui.c.i
+.PHONY : src/main_gui.i
+
+# target to preprocess a source file
+src/main_gui.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/main_gui.c.i
+.PHONY : src/main_gui.c.i
+
+src/main_gui.s: src/main_gui.c.s
+.PHONY : src/main_gui.s
+
+# target to generate assembly for a file
+src/main_gui.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cqanalyzer.dir/build.make CMakeFiles/cqanalyzer.dir/src/main_gui.c.s
+.PHONY : src/main_gui.c.s
+
 test_parser.o: test_parser.c.o
 .PHONY : test_parser.o
 
@@ -370,6 +407,7 @@ help:
 	@echo "... cqanalyzer_tests"
 	@echo "... cqanalyzer_ui"
 	@echo "... cqanalyzer_utils"
+	@echo "... cqanalyzer_visualizer"
 	@echo "... test_parser"
 	@echo "... src/cqanalyzer.o"
 	@echo "... src/cqanalyzer.i"
@@ -377,6 +415,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/main_gui.o"
+	@echo "... src/main_gui.i"
+	@echo "... src/main_gui.s"
 	@echo "... test_parser.o"
 	@echo "... test_parser.i"
 	@echo "... test_parser.s"

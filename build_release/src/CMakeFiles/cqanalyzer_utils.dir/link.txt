@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../lib/libcqanalyzer_utils.a CMakeFiles/cqanalyzer_utils.dir/utils/logger.c.o CMakeFiles/cqanalyzer_utils.dir/utils/config.c.o CMakeFiles/cqanalyzer_utils.dir/utils/memory.c.o CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.o
+/usr/bin/ar qc ../lib/libcqanalyzer_utils.a CMakeFiles/cqanalyzer_utils.dir/utils/logger.c.o CMakeFiles/cqanalyzer_utils.dir/utils/config.c.o CMakeFiles/cqanalyzer_utils.dir/utils/memory.c.o CMakeFiles/cqanalyzer_utils.dir/utils/string_utils.c.o CMakeFiles/cqanalyzer_utils.dir/utils/bmp_writer.c.o CMakeFiles/cqanalyzer_utils.dir/visualizer/profiler.c.o
 /usr/bin/ranlib ../lib/libcqanalyzer_utils.a

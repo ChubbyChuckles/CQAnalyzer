@@ -10,6 +10,7 @@
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/cqanalyzer_parser.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/cqanalyzer_analyzer.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/cqanalyzer_data.dir
+/home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/cqanalyzer_visualizer.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/cqanalyzer_ui.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/cqanalyzer_utils.dir
 /home/chubbychuckles/Programming/CQAnalyzer/build_release/src/CMakeFiles/test.dir

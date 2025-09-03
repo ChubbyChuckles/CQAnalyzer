@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/chubbychuckles/Programming/CQAnalyzer/src/cqanalyzer.c" "CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.o" "gcc" "CMakeFiles/cqanalyzer.dir/src/cqanalyzer.c.o.d"
   "/home/chubbychuckles/Programming/CQAnalyzer/src/main.c" "CMakeFiles/cqanalyzer.dir/src/main.c.o" "gcc" "CMakeFiles/cqanalyzer.dir/src/main.c.o.d"
+  "/home/chubbychuckles/Programming/CQAnalyzer/src/main_gui.c" "CMakeFiles/cqanalyzer.dir/src/main_gui.c.o" "gcc" "CMakeFiles/cqanalyzer.dir/src/main_gui.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -153,6 +153,48 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_tests.dir/test_ui.c.s"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/tests/test_ui.c -o CMakeFiles/cqanalyzer_tests.dir/test_ui.c.s
 
+tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o: tests/CMakeFiles/cqanalyzer_tests.dir/flags.make
+tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o: /home/chubbychuckles/Programming/CQAnalyzer/tests/test_profiler.c
+tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o: tests/CMakeFiles/cqanalyzer_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o -MF CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o.d -o CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/tests/test_profiler.c
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/tests/test_profiler.c > CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.i
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/tests/test_profiler.c -o CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.s
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o: tests/CMakeFiles/cqanalyzer_tests.dir/flags.make
+tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o: /home/chubbychuckles/Programming/CQAnalyzer/tests/test_renderer.c
+tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o: tests/CMakeFiles/cqanalyzer_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o -MF CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o.d -o CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/tests/test_renderer.c
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/tests/test_renderer.c > CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.i
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/tests/test_renderer.c -o CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.s
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o: tests/CMakeFiles/cqanalyzer_tests.dir/flags.make
+tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o: /home/chubbychuckles/Programming/CQAnalyzer/tests/test_imgui_integration.c
+tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o: tests/CMakeFiles/cqanalyzer_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o -MF CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o.d -o CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/tests/test_imgui_integration.c
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/tests/test_imgui_integration.c > CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.i
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/tests/test_imgui_integration.c -o CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.s
+
 # Object files for target cqanalyzer_tests
 cqanalyzer_tests_OBJECTS = \
 "CMakeFiles/cqanalyzer_tests.dir/test_main.c.o" \
@@ -160,7 +202,10 @@ cqanalyzer_tests_OBJECTS = \
 "CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o" \
 "CMakeFiles/cqanalyzer_tests.dir/test_analyzer.c.o" \
 "CMakeFiles/cqanalyzer_tests.dir/test_data.c.o" \
-"CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o"
+"CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o" \
+"CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o" \
+"CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o" \
+"CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o"
 
 # External object files for target cqanalyzer_tests
 cqanalyzer_tests_EXTERNAL_OBJECTS =
@@ -171,12 +216,19 @@ bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o
 bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_analyzer.c.o
 bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_data.c.o
 bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o
+bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_profiler.c.o
+bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_renderer.c.o
+bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/test_imgui_integration.c.o
 bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/build.make
 bin/cqanalyzer_tests: lib/libcqanalyzer_parser.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_data.a
+bin/cqanalyzer_tests: lib/libcqanalyzer_visualizer.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_ui.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_utils.a
+bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libGLX.so
+bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libGLU.so
 bin/cqanalyzer_tests: lib/libcqanalyzer_parser.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_data.a
@@ -185,7 +237,7 @@ bin/cqanalyzer_tests: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_data.a
 bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libclang-18.so
 bin/cqanalyzer_tests: tests/CMakeFiles/cqanalyzer_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable ../bin/cqanalyzer_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ../bin/cqanalyzer_tests"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

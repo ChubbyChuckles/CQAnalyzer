@@ -1,31 +1,41 @@
 #include "cqanalyzer.h"
+#include "utils/error.h"
 
 /**
- * @brief Convert error code to string
+ * @brief Convert error code to string (legacy compatibility)
  */
 const char *cq_error_to_string(CQError error)
 {
-    switch (error)
+    // For legacy error codes (negative values), use direct mapping
+    if (error < 0)
     {
-    case CQ_SUCCESS:
-        return "Success";
-    case CQ_ERROR_INVALID_ARGUMENT:
-        return "Invalid argument";
-    case CQ_ERROR_FILE_NOT_FOUND:
-        return "File not found";
-    case CQ_ERROR_MEMORY_ALLOCATION:
-        return "Memory allocation failed";
-    case CQ_ERROR_PARSING_FAILED:
-        return "Parsing failed";
-    case CQ_ERROR_ANALYSIS_FAILED:
-        return "Analysis failed";
-    case CQ_ERROR_RENDERING_FAILED:
-        return "Rendering failed";
-    case CQ_ERROR_CONFIG_INVALID:
-        return "Configuration invalid";
-    case CQ_ERROR_UNKNOWN:
-    default:
-        return "Unknown error";
+        switch (error)
+        {
+        case CQ_SUCCESS:
+            return "Success";
+        case CQ_ERROR_INVALID_ARGUMENT:
+            return "Invalid argument";
+        case CQ_ERROR_FILE_NOT_FOUND:
+            return "File not found";
+        case CQ_ERROR_MEMORY_ALLOCATION:
+            return "Memory allocation failed";
+        case CQ_ERROR_PARSING_FAILED:
+            return "Parsing failed";
+        case CQ_ERROR_ANALYSIS_FAILED:
+            return "Analysis failed";
+        case CQ_ERROR_RENDERING_FAILED:
+            return "Rendering failed";
+        case CQ_ERROR_CONFIG_INVALID:
+            return "Configuration invalid";
+        case CQ_ERROR_UNKNOWN:
+        default:
+            return "Unknown error";
+        }
+    }
+    else
+    {
+        // Use new error system for positive error codes
+        return cq_error_code_to_string((CQErrorCode)error);
     }
 }
 

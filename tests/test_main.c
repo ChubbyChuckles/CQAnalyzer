@@ -36,8 +36,11 @@ int main(int argc, char *argv[])
     CU_pSuite parser_suite = CU_add_suite("Parser Tests", init_test_suite, cleanup_test_suite);
     CU_pSuite analyzer_suite = CU_add_suite("Analyzer Tests", init_test_suite, cleanup_test_suite);
     CU_pSuite data_suite = CU_add_suite("Data Tests", init_test_suite, cleanup_test_suite);
+    CU_pSuite renderer_suite = CU_add_suite("Renderer Tests", init_test_suite, cleanup_test_suite);
+    CU_pSuite ui_suite = CU_add_suite("UI Tests", init_test_suite, cleanup_test_suite);
+    CU_pSuite dependency_suite = CU_add_suite("Dependency Manager Tests", init_test_suite, cleanup_test_suite);
 
-    if (!utils_suite || !parser_suite || !analyzer_suite || !data_suite)
+    if (!utils_suite || !parser_suite || !analyzer_suite || !data_suite || !renderer_suite || !ui_suite || !dependency_suite)
     {
         CU_cleanup_registry();
         return CU_get_error();
@@ -49,11 +52,21 @@ int main(int argc, char *argv[])
     extern void add_parser_tests(CU_pSuite);
     extern void add_analyzer_tests(CU_pSuite);
     extern void add_ui_tests(CU_pSuite);
+    extern void add_renderer_tests(CU_pSuite);
+    extern void add_theme_manager_tests(CU_pSuite);
+    extern CU_SuiteInfo dependency_manager_test_suite;
 
     add_utils_tests(utils_suite);
     add_parser_tests(parser_suite);
     add_analyzer_tests(analyzer_suite);
     add_ui_tests(data_suite); // Add UI tests to data suite for now
+    add_renderer_tests(renderer_suite);
+    add_theme_manager_tests(ui_suite);
+
+    // Add dependency manager tests
+    if (CU_register_nsuites(1, &dependency_manager_test_suite) != CUE_SUCCESS) {
+        fprintf(stderr, "Failed to register dependency manager test suite\n");
+    }
 
     // Run tests
     CU_basic_set_mode(CU_BRM_VERBOSE);
