@@ -14,7 +14,8 @@
  */
 
 // Log levels
-typedef enum {
+typedef enum
+{
     LOG_LEVEL_DEBUG = 0,
     LOG_LEVEL_INFO = 1,
     LOG_LEVEL_WARNING = 2,
@@ -23,7 +24,8 @@ typedef enum {
 } LogLevel;
 
 // Log output destinations
-typedef enum {
+typedef enum
+{
     LOG_OUTPUT_CONSOLE = 1 << 0,
     LOG_OUTPUT_FILE = 1 << 1
 } LogOutput;
@@ -60,7 +62,7 @@ void logger_set_outputs(int outputs);
  * @param filepath Path to log file
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError logger_set_file(const char* filepath);
+CQError logger_set_file(const char *filepath);
 
 /**
  * @brief Log a debug message
@@ -68,7 +70,7 @@ CQError logger_set_file(const char* filepath);
  * @param format Format string (printf-style)
  * @param ... Variable arguments
  */
-void LOG_DEBUG(const char* format, ...);
+void LOG_DEBUG(const char *format, ...);
 
 /**
  * @brief Log an info message
@@ -76,7 +78,7 @@ void LOG_DEBUG(const char* format, ...);
  * @param format Format string (printf-style)
  * @param ... Variable arguments
  */
-void LOG_INFO(const char* format, ...);
+void LOG_INFO(const char *format, ...);
 
 /**
  * @brief Log a warning message
@@ -84,7 +86,7 @@ void LOG_INFO(const char* format, ...);
  * @param format Format string (printf-style)
  * @param ... Variable arguments
  */
-void LOG_WARNING(const char* format, ...);
+void LOG_WARNING(const char *format, ...);
 
 /**
  * @brief Log an error message
@@ -92,6 +94,6 @@ void LOG_WARNING(const char* format, ...);
  * @param format Format string (printf-style)
  * @param ... Variable arguments
  */
-void LOG_ERROR(const char* format, ...);
+void LOG_ERROR(const char *format, ...);
 
 #endif // LOGGER_H

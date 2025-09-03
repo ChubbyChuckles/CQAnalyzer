@@ -16,8 +16,10 @@
  * @param max_files Maximum number of files to find
  * @return Number of files found, or -1 on error
  */
-int scan_directory(const char* path, char** files, int max_files) {
-    if (!path || !files) {
+int scan_directory(const char *path, char **files, int max_files)
+{
+    if (!path || !files)
+    {
         LOG_ERROR("Invalid arguments to scan_directory");
         return -1;
     }
@@ -39,8 +41,10 @@ int scan_directory(const char* path, char** files, int max_files) {
  * @param language Programming language
  * @return true if supported, false otherwise
  */
-bool is_source_file(const char* filename, SupportedLanguage language) {
-    if (!filename) {
+bool is_source_file(const char *filename, SupportedLanguage language)
+{
+    if (!filename)
+    {
         return false;
     }
 

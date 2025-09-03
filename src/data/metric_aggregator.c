@@ -3,8 +3,10 @@
 #include "data/metric_aggregator.h"
 #include "utils/logger.h"
 
-CQError aggregate_project_metrics(const char* project_name) {
-    if (!project_name) {
+CQError aggregate_project_metrics(const char *project_name)
+{
+    if (!project_name)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -16,9 +18,11 @@ CQError aggregate_project_metrics(const char* project_name) {
     return CQ_SUCCESS;
 }
 
-CQError calculate_metric_statistics(const char* metric_name, double* mean,
-                                   double* median, double* stddev) {
-    if (!metric_name || !mean || !median || !stddev) {
+CQError calculate_metric_statistics(const char *metric_name, double *mean,
+                                    double *median, double *stddev)
+{
+    if (!metric_name || !mean || !median || !stddev)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -34,8 +38,10 @@ CQError calculate_metric_statistics(const char* metric_name, double* mean,
     return CQ_SUCCESS;
 }
 
-CQError get_project_summary(int* total_files, int* total_loc, double* avg_complexity) {
-    if (!total_files || !total_loc || !avg_complexity) {
+CQError get_project_summary(int *total_files, int *total_loc, double *avg_complexity)
+{
+    if (!total_files || !total_loc || !avg_complexity)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 

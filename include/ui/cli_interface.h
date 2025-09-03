@@ -19,7 +19,7 @@
  * @param args Pointer to CLIArgs structure to fill
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError parse_cli_args(int argc, char *argv[], CLIArgs* args);
+CQError parse_cli_args(int argc, char *argv[], CLIArgs *args);
 
 /**
  * @brief Display help information

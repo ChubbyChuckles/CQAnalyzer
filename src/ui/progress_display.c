@@ -11,7 +11,8 @@ static int total_items = 0;
 static int current_item = 0;
 static clock_t start_time;
 
-CQError progress_display_init(void) {
+CQError progress_display_init(void)
+{
     memset(current_title, 0, sizeof(current_title));
     total_items = 0;
     current_item = 0;
@@ -20,12 +21,15 @@ CQError progress_display_init(void) {
     return CQ_SUCCESS;
 }
 
-void progress_display_shutdown(void) {
+void progress_display_shutdown(void)
+{
     LOG_INFO("Progress display shutdown");
 }
 
-void progress_start(const char* title, int items) {
-    if (!title) {
+void progress_start(const char *title, int items)
+{
+    if (!title)
+    {
         LOG_ERROR("Invalid progress title");
         return;
     }
@@ -37,7 +41,8 @@ void progress_start(const char* title, int items) {
 
     printf("\n%s\n", title);
     printf("Progress: [");
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 50; i++)
+    {
         printf(" ");
     }
     printf("] 0%%\n");
@@ -45,10 +50,12 @@ void progress_start(const char* title, int items) {
     LOG_INFO("Started progress tracking: %s (%d items)", title, items);
 }
 
-void progress_update(int item, const char* status) {
+void progress_update(int item, const char *status)
+{
     current_item = item;
 
-    if (total_items <= 0) {
+    if (total_items <= 0)
+    {
         return;
     }
 
@@ -64,22 +71,30 @@ void progress_update(int item, const char* status) {
     // Update progress bar
     printf("\rProgress: [");
     int filled = (int)(progress * 50.0f);
-    for (int i = 0; i < 50; i++) {
-        if (i < filled) {
+    for (int i = 0; i < 50; i++)
+    {
+        if (i < filled)
+        {
             printf("=");
-        } else if (i == filled) {
+        }
+        else if (i == filled)
+        {
             printf(">");
-        } else {
+        }
+        else
+        {
             printf(" ");
         }
     }
     printf("] %d%% (%d/%d)", percent, current_item, total_items);
 
-    if (status && strlen(status) > 0) {
+    if (status && strlen(status) > 0)
+    {
         printf(" - %s", status);
     }
 
-    if (eta > 0.0) {
+    if (eta > 0.0)
+    {
         printf(" ETA: %.1fs", eta);
     }
 
@@ -87,21 +102,25 @@ void progress_update(int item, const char* status) {
 
     // Log progress periodically
     static int last_logged_percent = -1;
-    if (percent >= last_logged_percent + 10 || percent == 100) {
+    if (percent >= last_logged_percent + 10 || percent == 100)
+    {
         LOG_INFO("Progress: %d%% (%d/%d)", percent, current_item, total_items);
         last_logged_percent = percent;
     }
 }
 
-void progress_complete(const char* message) {
+void progress_complete(const char *message)
+{
     // Complete the progress bar
     printf("\rProgress: [");
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 50; i++)
+    {
         printf("=");
     }
     printf("] 100%% (%d/%d)", total_items, total_items);
 
-    if (message && strlen(message) > 0) {
+    if (message && strlen(message) > 0)
+    {
         printf(" - %s", message);
     }
 
@@ -120,8 +139,10 @@ void progress_complete(const char* message) {
     current_item = 0;
 }
 
-void progress_display_error(const char* message) {
-    if (!message) {
+void progress_display_error(const char *message)
+{
+    if (!message)
+    {
         return;
     }
 
@@ -129,8 +150,10 @@ void progress_display_error(const char* message) {
     LOG_ERROR("%s", message);
 }
 
-void progress_display_warning(const char* message) {
-    if (!message) {
+void progress_display_warning(const char *message)
+{
+    if (!message)
+    {
         return;
     }
 
@@ -138,8 +161,10 @@ void progress_display_warning(const char* message) {
     LOG_WARNING("%s", message);
 }
 
-void progress_display_info(const char* message) {
-    if (!message) {
+void progress_display_info(const char *message)
+{
+    if (!message)
+    {
         return;
     }
 

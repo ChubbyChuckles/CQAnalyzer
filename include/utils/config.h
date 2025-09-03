@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 #include "cqanalyzer.h"
-#include "utils/logger.h"  // For LogLevel type
+#include "utils/logger.h" // For LogLevel type
 
 /**
  * @file config.h
@@ -13,7 +13,8 @@
  */
 
 // Configuration structure
-typedef struct {
+typedef struct
+{
     char log_file[MAX_PATH_LENGTH];
     LogLevel log_level;
     int log_outputs;
@@ -42,7 +43,7 @@ void config_shutdown(void);
  * @param filepath Path to configuration file
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError config_load_from_file(const char* filepath);
+CQError config_load_from_file(const char *filepath);
 
 /**
  * @brief Save current configuration to file
@@ -50,14 +51,14 @@ CQError config_load_from_file(const char* filepath);
  * @param filepath Path to save configuration file
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError config_save_to_file(const char* filepath);
+CQError config_save_to_file(const char *filepath);
 
 /**
  * @brief Get the current configuration
  *
  * @return Pointer to current configuration structure
  */
-const Config* config_get(void);
+const Config *config_get(void);
 
 /**
  * @brief Set a configuration value
@@ -66,7 +67,7 @@ const Config* config_get(void);
  * @param value Configuration value
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError config_set(const char* key, const char* value);
+CQError config_set(const char *key, const char *value);
 
 /**
  * @brief Get a configuration value as string
@@ -74,7 +75,7 @@ CQError config_set(const char* key, const char* value);
  * @param key Configuration key
  * @return Configuration value string, or NULL if not found
  */
-const char* config_get_string(const char* key);
+const char *config_get_string(const char *key);
 
 /**
  * @brief Get a configuration value as integer
@@ -83,7 +84,7 @@ const char* config_get_string(const char* key);
  * @param default_value Default value if key not found
  * @return Configuration value as integer
  */
-int config_get_int(const char* key, int default_value);
+int config_get_int(const char *key, int default_value);
 
 /**
  * @brief Get a configuration value as boolean
@@ -92,6 +93,6 @@ int config_get_int(const char* key, int default_value);
  * @param default_value Default value if key not found
  * @return Configuration value as boolean
  */
-bool config_get_bool(const char* key, bool default_value);
+bool config_get_bool(const char *key, bool default_value);
 
 #endif // CONFIG_H

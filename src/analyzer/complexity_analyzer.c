@@ -3,8 +3,10 @@
 #include "analyzer/complexity_analyzer.h"
 #include "utils/logger.h"
 
-CQError analyze_function_complexity(void* ast_data, int* complexity) {
-    if (!ast_data || !complexity) {
+CQError analyze_function_complexity(void *ast_data, int *complexity)
+{
+    if (!ast_data || !complexity)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -18,8 +20,10 @@ CQError analyze_function_complexity(void* ast_data, int* complexity) {
     return CQ_SUCCESS;
 }
 
-CQError analyze_file_complexity(const char* filepath, int* complexity) {
-    if (!filepath || !complexity) {
+CQError analyze_file_complexity(const char *filepath, int *complexity)
+{
+    if (!filepath || !complexity)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 

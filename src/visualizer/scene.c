@@ -6,13 +6,15 @@
 
 #define MAX_SCENE_OBJECTS 1000
 
-static SceneObject* scene_objects = NULL;
+static SceneObject *scene_objects = NULL;
 static int num_objects = 0;
 static int max_objects = 0;
 
-CQError scene_init(void) {
-    scene_objects = (SceneObject*)malloc(MAX_SCENE_OBJECTS * sizeof(SceneObject));
-    if (!scene_objects) {
+CQError scene_init(void)
+{
+    scene_objects = (SceneObject *)malloc(MAX_SCENE_OBJECTS * sizeof(SceneObject));
+    if (!scene_objects)
+    {
         LOG_ERROR("Failed to allocate memory for scene objects");
         return CQ_ERROR_MEMORY_ALLOCATION;
     }
@@ -24,8 +26,10 @@ CQError scene_init(void) {
     return CQ_SUCCESS;
 }
 
-void scene_shutdown(void) {
-    if (scene_objects) {
+void scene_shutdown(void)
+{
+    if (scene_objects)
+    {
         free(scene_objects);
         scene_objects = NULL;
     }
@@ -36,12 +40,15 @@ void scene_shutdown(void) {
     LOG_INFO("3D scene shutdown");
 }
 
-CQError scene_add_object(const SceneObject* object) {
-    if (!object) {
+CQError scene_add_object(const SceneObject *object)
+{
+    if (!object)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    if (num_objects >= max_objects) {
+    if (num_objects >= max_objects)
+    {
         LOG_ERROR("Scene is full (%d objects)", max_objects);
         return CQ_ERROR_UNKNOWN;
     }
@@ -53,14 +60,17 @@ CQError scene_add_object(const SceneObject* object) {
     return CQ_SUCCESS;
 }
 
-CQError scene_remove_object(int index) {
-    if (index < 0 || index >= num_objects) {
+CQError scene_remove_object(int index)
+{
+    if (index < 0 || index >= num_objects)
+    {
         LOG_ERROR("Invalid object index: %d", index);
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
     // Shift remaining objects
-    for (int i = index; i < num_objects - 1; i++) {
+    for (int i = index; i < num_objects - 1; i++)
+    {
         scene_objects[i] = scene_objects[i + 1];
     }
 
@@ -70,13 +80,16 @@ CQError scene_remove_object(int index) {
     return CQ_SUCCESS;
 }
 
-void scene_update(float delta_time) {
+void scene_update(float delta_time)
+{
     // TODO: Update object positions, animations, etc.
     LOG_WARNING("Scene update not yet implemented");
 }
 
-void scene_render(void) {
-    if (num_objects == 0) {
+void scene_render(void)
+{
+    if (num_objects == 0)
+    {
         return;
     }
 
@@ -84,7 +97,8 @@ void scene_render(void) {
     LOG_WARNING("Scene rendering not yet implemented");
 }
 
-void scene_clear(void) {
+void scene_clear(void)
+{
     num_objects = 0;
     LOG_DEBUG("Scene cleared");
 }

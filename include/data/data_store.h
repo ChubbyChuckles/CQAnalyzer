@@ -30,7 +30,7 @@ void data_store_shutdown(void);
  * @param language Programming language
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError data_store_add_file(const char* filepath, SupportedLanguage language);
+CQError data_store_add_file(const char *filepath, SupportedLanguage language);
 
 /**
  * @brief Add metric data for a file
@@ -40,7 +40,7 @@ CQError data_store_add_file(const char* filepath, SupportedLanguage language);
  * @param value Metric value
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError data_store_add_metric(const char* filepath, const char* metric_name, double value);
+CQError data_store_add_metric(const char *filepath, const char *metric_name, double value);
 
 /**
  * @brief Get metric value for a file
@@ -49,6 +49,6 @@ CQError data_store_add_metric(const char* filepath, const char* metric_name, dou
  * @param metric_name Name of the metric
  * @return Metric value, or -1.0 if not found
  */
-double data_store_get_metric(const char* filepath, const char* metric_name);
+double data_store_get_metric(const char *filepath, const char *metric_name);
 
 #endif // DATA_STORE_H

@@ -7,8 +7,10 @@
 #include "analyzer/metric_calculator.h"
 #include "utils/logger.h"
 
-int calculate_cyclomatic_complexity(void* ast_data) {
-    if (!ast_data) {
+int calculate_cyclomatic_complexity(void *ast_data)
+{
+    if (!ast_data)
+    {
         LOG_ERROR("Invalid AST data for complexity calculation");
         return -1;
     }
@@ -21,14 +23,17 @@ int calculate_cyclomatic_complexity(void* ast_data) {
     return 1; // Default complexity
 }
 
-CQError calculate_lines_of_code(const char* filepath, int* physical_loc,
-                               int* logical_loc, int* comment_loc) {
-    if (!filepath || !physical_loc || !logical_loc || !comment_loc) {
+CQError calculate_lines_of_code(const char *filepath, int *physical_loc,
+                                int *logical_loc, int *comment_loc)
+{
+    if (!filepath || !physical_loc || !logical_loc || !comment_loc)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    FILE* file = fopen(filepath, "r");
-    if (!file) {
+    FILE *file = fopen(filepath, "r");
+    if (!file)
+    {
         LOG_ERROR("Could not open file for LOC calculation: %s", filepath);
         return CQ_ERROR_FILE_NOT_FOUND;
     }
@@ -39,40 +44,48 @@ CQError calculate_lines_of_code(const char* filepath, int* physical_loc,
     int comment_lines = 0;
     bool in_multiline_comment = false;
 
-    while (fgets(line, sizeof(line), file)) {
+    while (fgets(line, sizeof(line), file))
+    {
         phys_lines++;
 
         // Remove trailing whitespace
-        char* end = line + strlen(line) - 1;
-        while (end > line && isspace(*end)) *end-- = '\0';
+        char *end = line + strlen(line) - 1;
+        while (end > line && isspace(*end))
+            *end-- = '\0';
 
         // Skip empty lines
-        if (line[0] == '\0') {
+        if (line[0] == '\0')
+        {
             continue;
         }
 
         // Check for comments
-        char* comment_start = strstr(line, "/*");
-        char* comment_end = strstr(line, "*/");
-        char* line_comment = strstr(line, "//");
+        char *comment_start = strstr(line, "/*");
+        char *comment_end = strstr(line, "*/");
+        char *line_comment = strstr(line, "//");
 
-        if (in_multiline_comment) {
+        if (in_multiline_comment)
+        {
             comment_lines++;
-            if (comment_end) {
+            if (comment_end)
+            {
                 in_multiline_comment = false;
             }
             continue;
         }
 
-        if (comment_start && (!line_comment || comment_start < line_comment)) {
+        if (comment_start && (!line_comment || comment_start < line_comment))
+        {
             comment_lines++;
-            if (!comment_end) {
+            if (!comment_end)
+            {
                 in_multiline_comment = true;
             }
             continue;
         }
 
-        if (line_comment) {
+        if (line_comment)
+        {
             comment_lines++;
             continue;
         }
@@ -93,8 +106,10 @@ CQError calculate_lines_of_code(const char* filepath, int* physical_loc,
     return CQ_SUCCESS;
 }
 
-double calculate_maintainability_index(int complexity, int loc, double comment_ratio) {
-    if (loc <= 0) {
+double calculate_maintainability_index(int complexity, int loc, double comment_ratio)
+{
+    if (loc <= 0)
+    {
         return 0.0;
     }
 
@@ -109,8 +124,10 @@ double calculate_maintainability_index(int complexity, int loc, double comment_r
     mi += comment_ratio * 20.0;
 
     // Clamp to 0-100 range
-    if (mi < 0.0) mi = 0.0;
-    if (mi > 100.0) mi = 100.0;
+    if (mi < 0.0)
+        mi = 0.0;
+    if (mi > 100.0)
+        mi = 100.0;
 
     return mi;
 }

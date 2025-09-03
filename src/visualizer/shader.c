@@ -5,8 +5,10 @@
 #include "visualizer/shader.h"
 #include "utils/logger.h"
 
-CQError shader_load_from_source(const char* vertex_source, const char* fragment_source, Shader* shader) {
-    if (!vertex_source || !fragment_source || !shader) {
+CQError shader_load_from_source(const char *vertex_source, const char *fragment_source, Shader *shader)
+{
+    if (!vertex_source || !fragment_source || !shader)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -22,8 +24,10 @@ CQError shader_load_from_source(const char* vertex_source, const char* fragment_
     return CQ_ERROR_UNKNOWN;
 }
 
-CQError shader_load_from_files(const char* vertex_file, const char* fragment_file, Shader* shader) {
-    if (!vertex_file || !fragment_file || !shader) {
+CQError shader_load_from_files(const char *vertex_file, const char *fragment_file, Shader *shader)
+{
+    if (!vertex_file || !fragment_file || !shader)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -38,8 +42,10 @@ CQError shader_load_from_files(const char* vertex_file, const char* fragment_fil
     return CQ_ERROR_UNKNOWN;
 }
 
-void shader_use(const Shader* shader) {
-    if (!shader || !shader->is_loaded) {
+void shader_use(const Shader *shader)
+{
+    if (!shader || !shader->is_loaded)
+    {
         LOG_WARNING("Cannot use invalid or unloaded shader");
         return;
     }
@@ -48,12 +54,15 @@ void shader_use(const Shader* shader) {
     LOG_WARNING("Shader use not yet implemented");
 }
 
-void shader_delete(Shader* shader) {
-    if (!shader) {
+void shader_delete(Shader *shader)
+{
+    if (!shader)
+    {
         return;
     }
 
-    if (shader->is_loaded) {
+    if (shader->is_loaded)
+    {
         // TODO: Delete OpenGL shader program
         LOG_WARNING("Shader deletion not yet implemented");
     }
@@ -62,8 +71,10 @@ void shader_delete(Shader* shader) {
     shader->is_loaded = false;
 }
 
-void shader_set_float(const Shader* shader, const char* name, float value) {
-    if (!shader || !shader->is_loaded || !name) {
+void shader_set_float(const Shader *shader, const char *name, float value)
+{
+    if (!shader || !shader->is_loaded || !name)
+    {
         return;
     }
 
@@ -71,8 +82,10 @@ void shader_set_float(const Shader* shader, const char* name, float value) {
     LOG_WARNING("Shader set float not yet implemented");
 }
 
-void shader_set_vec3(const Shader* shader, const char* name, float x, float y, float z) {
-    if (!shader || !shader->is_loaded || !name) {
+void shader_set_vec3(const Shader *shader, const char *name, float x, float y, float z)
+{
+    if (!shader || !shader->is_loaded || !name)
+    {
         return;
     }
 

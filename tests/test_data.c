@@ -8,7 +8,8 @@
 /**
  * @brief Test data store
  */
-void test_data_store(void) {
+void test_data_store(void)
+{
     CU_ASSERT_EQUAL(data_store_init(), CQ_SUCCESS);
 
     CU_ASSERT_EQUAL(data_store_add_file("test.c", LANG_C), CQ_SUCCESS);
@@ -23,7 +24,8 @@ void test_data_store(void) {
 /**
  * @brief Test metric aggregation
  */
-void test_metric_aggregator(void) {
+void test_metric_aggregator(void)
+{
     CU_ASSERT_EQUAL(aggregate_project_metrics("test_project"), CQ_SUCCESS);
 
     double mean, median, stddev;
@@ -33,7 +35,8 @@ void test_metric_aggregator(void) {
 /**
  * @brief Test serialization
  */
-void test_serialization(void) {
+void test_serialization(void)
+{
     // TODO: Implement serialization tests
     CU_PASS("Serialization test placeholder");
 }
@@ -41,7 +44,8 @@ void test_serialization(void) {
 /**
  * @brief Add data tests to suite
  */
-void add_data_tests(CU_pSuite suite) {
+void add_data_tests(CU_pSuite suite)
+{
     CU_add_test(suite, "Data Store Test", test_data_store);
     CU_add_test(suite, "Metric Aggregator Test", test_metric_aggregator);
     CU_add_test(suite, "Serialization Test", test_serialization);

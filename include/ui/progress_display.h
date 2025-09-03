@@ -29,7 +29,7 @@ void progress_display_shutdown(void);
  * @param title Progress title
  * @param total_items Total number of items to process
  */
-void progress_start(const char* title, int total_items);
+void progress_start(const char *title, int total_items);
 
 /**
  * @brief Update progress
@@ -37,34 +37,34 @@ void progress_start(const char* title, int total_items);
  * @param current_item Current item being processed
  * @param status Optional status message
  */
-void progress_update(int current_item, const char* status);
+void progress_update(int current_item, const char *status);
 
 /**
  * @brief Complete progress
  *
  * @param message Completion message
  */
-void progress_complete(const char* message);
+void progress_complete(const char *message);
 
 /**
  * @brief Display error message
  *
  * @param message Error message
  */
-void progress_display_error(const char* message);
+void progress_display_error(const char *message);
 
 /**
  * @brief Display warning message
  *
  * @param message Warning message
  */
-void progress_display_warning(const char* message);
+void progress_display_warning(const char *message);
 
 /**
  * @brief Display info message
  *
  * @param message Info message
  */
-void progress_display_info(const char* message);
+void progress_display_info(const char *message);
 
 #endif // PROGRESS_DISPLAY_H

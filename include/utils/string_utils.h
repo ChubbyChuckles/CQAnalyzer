@@ -20,7 +20,7 @@
  * @param src Source string
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError cq_strcpy_safe(char* dest, size_t dest_size, const char* src);
+CQError cq_strcpy_safe(char *dest, size_t dest_size, const char *src);
 
 /**
  * @brief Safe string concatenation with bounds checking
@@ -30,7 +30,7 @@ CQError cq_strcpy_safe(char* dest, size_t dest_size, const char* src);
  * @param src Source string
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError cq_strcat_safe(char* dest, size_t dest_size, const char* src);
+CQError cq_strcat_safe(char *dest, size_t dest_size, const char *src);
 
 /**
  * @brief Check if string starts with prefix
@@ -39,7 +39,7 @@ CQError cq_strcat_safe(char* dest, size_t dest_size, const char* src);
  * @param prefix Prefix to look for
  * @return true if string starts with prefix, false otherwise
  */
-bool cq_starts_with(const char* str, const char* prefix);
+bool cq_starts_with(const char *str, const char *prefix);
 
 /**
  * @brief Check if string ends with suffix
@@ -48,28 +48,28 @@ bool cq_starts_with(const char* str, const char* prefix);
  * @param suffix Suffix to look for
  * @return true if string ends with suffix, false otherwise
  */
-bool cq_ends_with(const char* str, const char* suffix);
+bool cq_ends_with(const char *str, const char *suffix);
 
 /**
  * @brief Convert string to lowercase
  *
  * @param str String to convert (modified in place)
  */
-void cq_to_lower(char* str);
+void cq_to_lower(char *str);
 
 /**
  * @brief Convert string to uppercase
  *
  * @param str String to convert (modified in place)
  */
-void cq_to_upper(char* str);
+void cq_to_upper(char *str);
 
 /**
  * @brief Trim whitespace from both ends of string
  *
  * @param str String to trim (modified in place)
  */
-void cq_trim(char* str);
+void cq_trim(char *str);
 
 /**
  * @brief Get file extension from path
@@ -77,6 +77,6 @@ void cq_trim(char* str);
  * @param path File path
  * @return Pointer to extension (including dot), or NULL if no extension
  */
-const char* cq_get_file_extension(const char* path);
+const char *cq_get_file_extension(const char *path);
 
 #endif // STRING_UTILS_H

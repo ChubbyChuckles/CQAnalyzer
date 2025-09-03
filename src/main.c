@@ -18,9 +18,11 @@
  * @param argv Array of command line argument strings
  * @return Exit status (0 for success, non-zero for error)
  */
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     // Initialize logging system
-    if (logger_init() != 0) {
+    if (logger_init() != 0)
+    {
         fprintf(stderr, "Failed to initialize logging system\n");
         return EXIT_FAILURE;
     }
@@ -28,7 +30,8 @@ int main(int argc, char *argv[]) {
     LOG_INFO("CQAnalyzer starting up...");
 
     // Initialize configuration system
-    if (config_init() != 0) {
+    if (config_init() != 0)
+    {
         LOG_ERROR("Failed to initialize configuration system");
         logger_shutdown();
         return EXIT_FAILURE;
@@ -36,7 +39,8 @@ int main(int argc, char *argv[]) {
 
     // Parse command line arguments
     CLIArgs args;
-    if (parse_cli_args(argc, argv, &args) != 0) {
+    if (parse_cli_args(argc, argv, &args) != 0)
+    {
         LOG_ERROR("Failed to parse command line arguments");
         config_shutdown();
         logger_shutdown();
@@ -44,7 +48,8 @@ int main(int argc, char *argv[]) {
     }
 
     // Display version information if requested
-    if (args.show_version) {
+    if (args.show_version)
+    {
         printf("CQAnalyzer v%s\n", CQANALYZER_VERSION);
         printf("Code Quality Analyzer with 3D Visualization\n");
         config_shutdown();
@@ -53,7 +58,8 @@ int main(int argc, char *argv[]) {
     }
 
     // Display help if requested
-    if (args.show_help) {
+    if (args.show_help)
+    {
         display_help();
         config_shutdown();
         logger_shutdown();
@@ -61,7 +67,8 @@ int main(int argc, char *argv[]) {
     }
 
     // Validate arguments
-    if (!args.project_path) {
+    if (!args.project_path)
+    {
         LOG_ERROR("Project path is required. Use -p or --project to specify.");
         display_help();
         config_shutdown();

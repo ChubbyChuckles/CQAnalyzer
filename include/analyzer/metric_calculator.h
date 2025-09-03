@@ -17,7 +17,7 @@
  * @param ast_data Parsed AST data
  * @return Cyclomatic complexity value
  */
-int calculate_cyclomatic_complexity(void* ast_data);
+int calculate_cyclomatic_complexity(void *ast_data);
 
 /**
  * @brief Calculate lines of code metrics
@@ -28,8 +28,8 @@ int calculate_cyclomatic_complexity(void* ast_data);
  * @param comment_loc Comment lines of code
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError calculate_lines_of_code(const char* filepath, int* physical_loc,
-                               int* logical_loc, int* comment_loc);
+CQError calculate_lines_of_code(const char *filepath, int *physical_loc,
+                                int *logical_loc, int *comment_loc);
 
 /**
  * @brief Calculate maintainability index

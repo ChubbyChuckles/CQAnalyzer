@@ -20,7 +20,7 @@
  * @param max_files Maximum number of files to find
  * @return Number of files found, or -1 on error
  */
-int scan_directory(const char* path, char** files, int max_files);
+int scan_directory(const char *path, char **files, int max_files);
 
 /**
  * @brief Check if file is a supported source file
@@ -29,6 +29,6 @@ int scan_directory(const char* path, char** files, int max_files);
  * @param language Programming language
  * @return true if supported, false otherwise
  */
-bool is_source_file(const char* filename, SupportedLanguage language);
+bool is_source_file(const char *filename, SupportedLanguage language);
 
 #endif // FILE_SCANNER_H

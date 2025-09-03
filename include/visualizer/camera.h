@@ -10,7 +10,8 @@
  * Provides functions to control the 3D camera for visualization.
  */
 
-typedef struct {
+typedef struct
+{
     float position[3];
     float target[3];
     float up[3];
@@ -24,7 +25,7 @@ typedef struct {
  *
  * @param camera Camera to initialize
  */
-void camera_init(Camera* camera);
+void camera_init(Camera *camera);
 
 /**
  * @brief Set camera position
@@ -34,7 +35,7 @@ void camera_init(Camera* camera);
  * @param y Y position
  * @param z Z position
  */
-void camera_set_position(Camera* camera, float x, float y, float z);
+void camera_set_position(Camera *camera, float x, float y, float z);
 
 /**
  * @brief Set camera target
@@ -44,7 +45,7 @@ void camera_set_position(Camera* camera, float x, float y, float z);
  * @param y Y target
  * @param z Z target
  */
-void camera_set_target(Camera* camera, float x, float y, float z);
+void camera_set_target(Camera *camera, float x, float y, float z);
 
 /**
  * @brief Move camera
@@ -54,7 +55,7 @@ void camera_set_target(Camera* camera, float x, float y, float z);
  * @param dy Y movement
  * @param dz Z movement
  */
-void camera_move(Camera* camera, float dx, float dy, float dz);
+void camera_move(Camera *camera, float dx, float dy, float dz);
 
 /**
  * @brief Rotate camera around target
@@ -63,7 +64,7 @@ void camera_move(Camera* camera, float dx, float dy, float dz);
  * @param yaw Yaw angle in radians
  * @param pitch Pitch angle in radians
  */
-void camera_rotate(Camera* camera, float yaw, float pitch);
+void camera_rotate(Camera *camera, float yaw, float pitch);
 
 /**
  * @brief Zoom camera
@@ -71,6 +72,6 @@ void camera_rotate(Camera* camera, float yaw, float pitch);
  * @param camera Camera to modify
  * @param factor Zoom factor
  */
-void camera_zoom(Camera* camera, float factor);
+void camera_zoom(Camera *camera, float factor);
 
 #endif // CAMERA_H

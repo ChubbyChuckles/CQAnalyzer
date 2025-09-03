@@ -24,7 +24,8 @@
 #define MAX_ERROR_MESSAGE_LENGTH 512
 
 // Error codes
-typedef enum {
+typedef enum
+{
     CQ_SUCCESS = 0,
     CQ_ERROR_INVALID_ARGUMENT = -1,
     CQ_ERROR_FILE_NOT_FOUND = -2,
@@ -37,7 +38,8 @@ typedef enum {
 } CQError;
 
 // Language support enumeration
-typedef enum {
+typedef enum
+{
     LANG_C,
     LANG_CPP,
     LANG_JAVA,
@@ -56,7 +58,8 @@ typedef struct MetricData MetricData;
 typedef struct VisualizationData VisualizationData;
 
 // Common data structures
-typedef struct {
+typedef struct
+{
     char project_path[MAX_PATH_LENGTH];
     SupportedLanguage language;
     bool enable_visualization;
@@ -68,7 +71,7 @@ typedef struct {
 } CLIArgs;
 
 // Function declarations for core functionality
-const char* cq_error_to_string(CQError error);
-const char* language_to_string(SupportedLanguage lang);
+const char *cq_error_to_string(CQError error);
+const char *language_to_string(SupportedLanguage lang);
 
 #endif // CQANALYZER_H

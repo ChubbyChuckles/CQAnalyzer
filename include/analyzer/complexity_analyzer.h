@@ -17,7 +17,7 @@
  * @param complexity Output complexity value
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError analyze_function_complexity(void* ast_data, int* complexity);
+CQError analyze_function_complexity(void *ast_data, int *complexity);
 
 /**
  * @brief Analyze file complexity
@@ -26,6 +26,6 @@ CQError analyze_function_complexity(void* ast_data, int* complexity);
  * @param complexity Output complexity value
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError analyze_file_complexity(const char* filepath, int* complexity);
+CQError analyze_file_complexity(const char *filepath, int *complexity);
 
 #endif // COMPLEXITY_ANALYZER_H

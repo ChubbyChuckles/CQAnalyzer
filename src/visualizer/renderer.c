@@ -8,8 +8,10 @@ static bool renderer_initialized = false;
 static int window_width = 800;
 static int window_height = 600;
 
-CQError renderer_init(int width, int height, const char* title) {
-    if (renderer_initialized) {
+CQError renderer_init(int width, int height, const char *title)
+{
+    if (renderer_initialized)
+    {
         return CQ_SUCCESS;
     }
 
@@ -31,8 +33,10 @@ CQError renderer_init(int width, int height, const char* title) {
     return CQ_SUCCESS;
 }
 
-void renderer_shutdown(void) {
-    if (!renderer_initialized) {
+void renderer_shutdown(void)
+{
+    if (!renderer_initialized)
+    {
         return;
     }
 
@@ -46,8 +50,10 @@ void renderer_shutdown(void) {
     renderer_initialized = false;
 }
 
-bool renderer_is_running(void) {
-    if (!renderer_initialized) {
+bool renderer_is_running(void)
+{
+    if (!renderer_initialized)
+    {
         return false;
     }
 
@@ -56,8 +62,10 @@ bool renderer_is_running(void) {
     return true;
 }
 
-void renderer_update(void) {
-    if (!renderer_initialized) {
+void renderer_update(void)
+{
+    if (!renderer_initialized)
+    {
         return;
     }
 
@@ -68,8 +76,10 @@ void renderer_update(void) {
     LOG_WARNING("Renderer update not yet implemented");
 }
 
-void renderer_render(void) {
-    if (!renderer_initialized) {
+void renderer_render(void)
+{
+    if (!renderer_initialized)
+    {
         return;
     }
 
@@ -81,8 +91,10 @@ void renderer_render(void) {
     LOG_WARNING("Scene rendering not yet implemented");
 }
 
-void renderer_present(void) {
-    if (!renderer_initialized) {
+void renderer_present(void)
+{
+    if (!renderer_initialized)
+    {
         return;
     }
 

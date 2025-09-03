@@ -9,7 +9,8 @@
 /**
  * @brief Test logger functionality
  */
-void test_logger(void) {
+void test_logger(void)
+{
     CU_ASSERT_EQUAL(logger_init(), CQ_SUCCESS);
     LOG_INFO("Logger test message");
     logger_shutdown();
@@ -18,7 +19,8 @@ void test_logger(void) {
 /**
  * @brief Test configuration system
  */
-void test_config(void) {
+void test_config(void)
+{
     CU_ASSERT_EQUAL(config_init(), CQ_SUCCESS);
 
     // Test setting and getting values
@@ -31,12 +33,13 @@ void test_config(void) {
 /**
  * @brief Test memory utilities
  */
-void test_memory(void) {
-    void* ptr = cq_malloc(100);
+void test_memory(void)
+{
+    void *ptr = cq_malloc(100);
     CU_ASSERT_PTR_NOT_NULL(ptr);
     cq_free(ptr);
 
-    char* str = cq_strdup("test");
+    char *str = cq_strdup("test");
     CU_ASSERT_PTR_NOT_NULL(str);
     CU_ASSERT_STRING_EQUAL(str, "test");
     cq_free(str);
@@ -45,7 +48,8 @@ void test_memory(void) {
 /**
  * @brief Test string utilities
  */
-void test_string_utils(void) {
+void test_string_utils(void)
+{
     char buffer[100];
 
     CU_ASSERT_EQUAL(cq_strcpy_safe(buffer, sizeof(buffer), "test"), CQ_SUCCESS);
@@ -61,7 +65,8 @@ void test_string_utils(void) {
 /**
  * @brief Add utils tests to suite
  */
-void add_utils_tests(CU_pSuite suite) {
+void add_utils_tests(CU_pSuite suite)
+{
     CU_add_test(suite, "Logger Test", test_logger);
     CU_add_test(suite, "Config Test", test_config);
     CU_add_test(suite, "Memory Test", test_memory);

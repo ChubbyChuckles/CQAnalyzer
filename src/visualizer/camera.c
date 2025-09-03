@@ -3,8 +3,10 @@
 #include "visualizer/camera.h"
 #include "utils/logger.h"
 
-void camera_init(Camera* camera) {
-    if (!camera) {
+void camera_init(Camera *camera)
+{
+    if (!camera)
+    {
         LOG_ERROR("Invalid camera pointer");
         return;
     }
@@ -32,8 +34,10 @@ void camera_init(Camera* camera) {
     LOG_DEBUG("Camera initialized");
 }
 
-void camera_set_position(Camera* camera, float x, float y, float z) {
-    if (!camera) {
+void camera_set_position(Camera *camera, float x, float y, float z)
+{
+    if (!camera)
+    {
         return;
     }
 
@@ -44,8 +48,10 @@ void camera_set_position(Camera* camera, float x, float y, float z) {
     LOG_DEBUG("Camera position set to (%.2f, %.2f, %.2f)", x, y, z);
 }
 
-void camera_set_target(Camera* camera, float x, float y, float z) {
-    if (!camera) {
+void camera_set_target(Camera *camera, float x, float y, float z)
+{
+    if (!camera)
+    {
         return;
     }
 
@@ -56,8 +62,10 @@ void camera_set_target(Camera* camera, float x, float y, float z) {
     LOG_DEBUG("Camera target set to (%.2f, %.2f, %.2f)", x, y, z);
 }
 
-void camera_move(Camera* camera, float dx, float dy, float dz) {
-    if (!camera) {
+void camera_move(Camera *camera, float dx, float dy, float dz)
+{
+    if (!camera)
+    {
         return;
     }
 
@@ -68,7 +76,8 @@ void camera_move(Camera* camera, float dx, float dy, float dz) {
     LOG_DEBUG("Camera moved by (%.2f, %.2f, %.2f)", dx, dy, dz);
 }
 
-void camera_rotate(Camera* camera, float yaw, float pitch) {
+void camera_rotate(Camera *camera, float yaw, float pitch)
+{
     // TODO: Implement camera rotation
     // TODO: Calculate new position based on yaw and pitch
     // TODO: Keep camera at constant distance from target
@@ -76,8 +85,10 @@ void camera_rotate(Camera* camera, float yaw, float pitch) {
     LOG_WARNING("Camera rotation not yet implemented");
 }
 
-void camera_zoom(Camera* camera, float factor) {
-    if (!camera) {
+void camera_zoom(Camera *camera, float factor)
+{
+    if (!camera)
+    {
         return;
     }
 

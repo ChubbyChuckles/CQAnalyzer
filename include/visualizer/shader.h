@@ -11,7 +11,8 @@
  * Provides functions to load, compile, and manage OpenGL shaders.
  */
 
-typedef struct {
+typedef struct
+{
     unsigned int program_id;
     bool is_loaded;
 } Shader;
@@ -24,7 +25,7 @@ typedef struct {
  * @param shader Output shader structure
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError shader_load_from_source(const char* vertex_source, const char* fragment_source, Shader* shader);
+CQError shader_load_from_source(const char *vertex_source, const char *fragment_source, Shader *shader);
 
 /**
  * @brief Load shader from files
@@ -34,21 +35,21 @@ CQError shader_load_from_source(const char* vertex_source, const char* fragment_
  * @param shader Output shader structure
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError shader_load_from_files(const char* vertex_file, const char* fragment_file, Shader* shader);
+CQError shader_load_from_files(const char *vertex_file, const char *fragment_file, Shader *shader);
 
 /**
  * @brief Use shader program
  *
  * @param shader Shader to use
  */
-void shader_use(const Shader* shader);
+void shader_use(const Shader *shader);
 
 /**
  * @brief Delete shader program
  *
  * @param shader Shader to delete
  */
-void shader_delete(Shader* shader);
+void shader_delete(Shader *shader);
 
 /**
  * @brief Set uniform float value
@@ -57,7 +58,7 @@ void shader_delete(Shader* shader);
  * @param name Uniform name
  * @param value Float value
  */
-void shader_set_float(const Shader* shader, const char* name, float value);
+void shader_set_float(const Shader *shader, const char *name, float value);
 
 /**
  * @brief Set uniform vec3 value
@@ -68,6 +69,6 @@ void shader_set_float(const Shader* shader, const char* name, float value);
  * @param y Y component
  * @param z Z component
  */
-void shader_set_vec3(const Shader* shader, const char* name, float x, float y, float z);
+void shader_set_vec3(const Shader *shader, const char *name, float x, float y, float z);
 
 #endif // SHADER_H

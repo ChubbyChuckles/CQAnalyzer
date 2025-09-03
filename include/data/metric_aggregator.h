@@ -17,7 +17,7 @@
  * @param project_name Name of the project
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError aggregate_project_metrics(const char* project_name);
+CQError aggregate_project_metrics(const char *project_name);
 
 /**
  * @brief Calculate statistical measures for a metric
@@ -28,8 +28,8 @@ CQError aggregate_project_metrics(const char* project_name);
  * @param stddev Output standard deviation
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError calculate_metric_statistics(const char* metric_name, double* mean,
-                                   double* median, double* stddev);
+CQError calculate_metric_statistics(const char *metric_name, double *mean,
+                                    double *median, double *stddev);
 
 /**
  * @brief Get project summary
@@ -39,6 +39,6 @@ CQError calculate_metric_statistics(const char* metric_name, double* mean,
  * @param avg_complexity Output average complexity
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError get_project_summary(int* total_files, int* total_loc, double* avg_complexity);
+CQError get_project_summary(int *total_files, int *total_loc, double *avg_complexity);
 
 #endif // METRIC_AGGREGATOR_H

@@ -19,7 +19,7 @@
  * @param title Window title
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError renderer_init(int width, int height, const char* title);
+CQError renderer_init(int width, int height, const char *title);
 
 /**
  * @brief Shutdown 3D renderer

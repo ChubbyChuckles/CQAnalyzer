@@ -7,23 +7,27 @@
 /**
  * @brief Test suite initialization
  */
-int init_test_suite(void) {
+int init_test_suite(void)
+{
     return 0; // Success
 }
 
 /**
  * @brief Test suite cleanup
  */
-int cleanup_test_suite(void) {
+int cleanup_test_suite(void)
+{
     return 0; // Success
 }
 
 /**
  * @brief Main test function
  */
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     // Initialize CUnit test registry
-    if (CU_initialize_registry() != CUE_SUCCESS) {
+    if (CU_initialize_registry() != CUE_SUCCESS)
+    {
         return CU_get_error();
     }
 
@@ -33,7 +37,8 @@ int main(int argc, char *argv[]) {
     CU_pSuite analyzer_suite = CU_add_suite("Analyzer Tests", init_test_suite, cleanup_test_suite);
     CU_pSuite data_suite = CU_add_suite("Data Tests", init_test_suite, cleanup_test_suite);
 
-    if (!utils_suite || !parser_suite || !analyzer_suite || !data_suite) {
+    if (!utils_suite || !parser_suite || !analyzer_suite || !data_suite)
+    {
         CU_cleanup_registry();
         return CU_get_error();
     }

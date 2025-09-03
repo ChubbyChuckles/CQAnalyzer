@@ -19,7 +19,7 @@
  * @param size Size in bytes to allocate
  * @return Pointer to allocated memory, or NULL on failure
  */
-void* cq_malloc(size_t size);
+void *cq_malloc(size_t size);
 
 /**
  * @brief Safe memory reallocation with error checking
@@ -28,14 +28,14 @@ void* cq_malloc(size_t size);
  * @param size New size in bytes
  * @return Pointer to reallocated memory, or NULL on failure
  */
-void* cq_realloc(void* ptr, size_t size);
+void *cq_realloc(void *ptr, size_t size);
 
 /**
  * @brief Safe memory deallocation
  *
  * @param ptr Pointer to memory to free
  */
-void cq_free(void* ptr);
+void cq_free(void *ptr);
 
 /**
  * @brief Safe string duplication
@@ -43,7 +43,7 @@ void cq_free(void* ptr);
  * @param str String to duplicate
  * @return Pointer to duplicated string, or NULL on failure
  */
-char* cq_strdup(const char* str);
+char *cq_strdup(const char *str);
 
 /**
  * @brief Safe memory copy with bounds checking
@@ -54,6 +54,6 @@ char* cq_strdup(const char* str);
  * @param src_size Size of source buffer
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError cq_memcpy_safe(void* dest, size_t dest_size, const void* src, size_t src_size);
+CQError cq_memcpy_safe(void *dest, size_t dest_size, const void *src, size_t src_size);
 
 #endif // MEMORY_H

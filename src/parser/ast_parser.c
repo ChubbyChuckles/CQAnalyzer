@@ -4,7 +4,8 @@
 #include "parser/ast_parser.h"
 #include "utils/logger.h"
 
-CQError ast_parser_init(void) {
+CQError ast_parser_init(void)
+{
     LOG_INFO("Initializing AST parser");
 
     // TODO: Initialize libclang index
@@ -14,14 +15,17 @@ CQError ast_parser_init(void) {
     return CQ_SUCCESS;
 }
 
-void ast_parser_shutdown(void) {
+void ast_parser_shutdown(void)
+{
     LOG_INFO("Shutting down AST parser");
 
     // TODO: Clean up libclang resources
 }
 
-void* parse_source_file(const char* filepath) {
-    if (!filepath) {
+void *parse_source_file(const char *filepath)
+{
+    if (!filepath)
+    {
         LOG_ERROR("Invalid filepath for AST parsing");
         return NULL;
     }
@@ -36,8 +40,10 @@ void* parse_source_file(const char* filepath) {
     return NULL;
 }
 
-void free_ast_data(void* ast_data) {
-    if (!ast_data) {
+void free_ast_data(void *ast_data)
+{
+    if (!ast_data)
+    {
         return;
     }
 

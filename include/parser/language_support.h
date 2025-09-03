@@ -16,7 +16,7 @@
  * @param filename File name to analyze
  * @return Detected language, or LANG_UNKNOWN if not recognized
  */
-SupportedLanguage detect_language(const char* filename);
+SupportedLanguage detect_language(const char *filename);
 
 /**
  * @brief Get file extensions for a programming language
@@ -24,7 +24,7 @@ SupportedLanguage detect_language(const char* filename);
  * @param language Programming language
  * @return Array of file extensions (NULL-terminated)
  */
-const char** get_language_extensions(SupportedLanguage language);
+const char **get_language_extensions(SupportedLanguage language);
 
 /**
  * @brief Check if language is supported

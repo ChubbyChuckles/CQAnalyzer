@@ -17,7 +17,7 @@
  * @param filepath Output file path
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError serialize_to_json(const char* filepath);
+CQError serialize_to_json(const char *filepath);
 
 /**
  * @brief Deserialize project data from JSON
@@ -25,7 +25,7 @@ CQError serialize_to_json(const char* filepath);
  * @param filepath Input file path
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError deserialize_from_json(const char* filepath);
+CQError deserialize_from_json(const char *filepath);
 
 /**
  * @brief Export metrics to CSV
@@ -33,7 +33,7 @@ CQError deserialize_from_json(const char* filepath);
  * @param filepath Output file path
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError export_to_csv(const char* filepath);
+CQError export_to_csv(const char *filepath);
 
 /**
  * @brief Save analysis results in binary format
@@ -41,7 +41,7 @@ CQError export_to_csv(const char* filepath);
  * @param filepath Output file path
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError save_binary_results(const char* filepath);
+CQError save_binary_results(const char *filepath);
 
 /**
  * @brief Load analysis results from binary format
@@ -49,6 +49,6 @@ CQError save_binary_results(const char* filepath);
  * @param filepath Input file path
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError load_binary_results(const char* filepath);
+CQError load_binary_results(const char *filepath);
 
 #endif // SERIALIZATION_H

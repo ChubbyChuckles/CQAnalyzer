@@ -3,8 +3,10 @@
 #include "analyzer/duplication_detector.h"
 #include "utils/logger.h"
 
-CQError detect_file_duplication(const char* filepath, double* duplication_ratio) {
-    if (!filepath || !duplication_ratio) {
+CQError detect_file_duplication(const char *filepath, double *duplication_ratio)
+{
+    if (!filepath || !duplication_ratio)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -19,8 +21,10 @@ CQError detect_file_duplication(const char* filepath, double* duplication_ratio)
     return CQ_SUCCESS;
 }
 
-CQError detect_project_duplication(const char** filepaths, int num_files, double* duplication_ratio) {
-    if (!filepaths || num_files <= 0 || !duplication_ratio) {
+CQError detect_project_duplication(const char **filepaths, int num_files, double *duplication_ratio)
+{
+    if (!filepaths || num_files <= 0 || !duplication_ratio)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 

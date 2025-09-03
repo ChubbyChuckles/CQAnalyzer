@@ -3,8 +3,10 @@
 #include "data/serialization.h"
 #include "utils/logger.h"
 
-CQError serialize_to_json(const char* filepath) {
-    if (!filepath) {
+CQError serialize_to_json(const char *filepath)
+{
+    if (!filepath)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -16,8 +18,10 @@ CQError serialize_to_json(const char* filepath) {
     return CQ_ERROR_UNKNOWN;
 }
 
-CQError deserialize_from_json(const char* filepath) {
-    if (!filepath) {
+CQError deserialize_from_json(const char *filepath)
+{
+    if (!filepath)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -29,8 +33,10 @@ CQError deserialize_from_json(const char* filepath) {
     return CQ_ERROR_UNKNOWN;
 }
 
-CQError export_to_csv(const char* filepath) {
-    if (!filepath) {
+CQError export_to_csv(const char *filepath)
+{
+    if (!filepath)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -42,8 +48,10 @@ CQError export_to_csv(const char* filepath) {
     return CQ_ERROR_UNKNOWN;
 }
 
-CQError save_binary_results(const char* filepath) {
-    if (!filepath) {
+CQError save_binary_results(const char *filepath)
+{
+    if (!filepath)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -55,8 +63,10 @@ CQError save_binary_results(const char* filepath) {
     return CQ_ERROR_UNKNOWN;
 }
 
-CQError load_binary_results(const char* filepath) {
-    if (!filepath) {
+CQError load_binary_results(const char *filepath)
+{
+    if (!filepath)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 

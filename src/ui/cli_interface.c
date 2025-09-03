@@ -18,11 +18,12 @@ static struct option long_options[] = {
     {"config", required_argument, 0, 'c'},
     {"help", no_argument, 0, 'h'},
     {"version", no_argument, 0, 'e'},
-    {0, 0, 0, 0}
-};
+    {0, 0, 0, 0}};
 
-CQError parse_cli_args(int argc, char *argv[], CLIArgs* args) {
-    if (!args) {
+CQError parse_cli_args(int argc, char *argv[], CLIArgs *args)
+{
+    if (!args)
+    {
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
@@ -36,108 +37,138 @@ CQError parse_cli_args(int argc, char *argv[], CLIArgs* args) {
     int option_index = 0;
 
     while ((opt = getopt_long(argc, argv, "p:l:o:vVm:b:c:he",
-                              long_options, &option_index)) != -1) {
-        switch (opt) {
-            case 'p':
-                if (strlen(optarg) >= MAX_PATH_LENGTH) {
-                    LOG_ERROR("Project path too long");
-                    return CQ_ERROR_INVALID_ARGUMENT;
-                }
-                strcpy(args->project_path, optarg);
-                break;
+                              long_options, &option_index)) != -1)
+    {
+        switch (opt)
+        {
+        case 'p':
+            if (strlen(optarg) >= MAX_PATH_LENGTH)
+            {
+                LOG_ERROR("Project path too long");
+                return CQ_ERROR_INVALID_ARGUMENT;
+            }
+            strcpy(args->project_path, optarg);
+            break;
 
-            case 'l':
-                if (strcmp(optarg, "c") == 0 || strcmp(optarg, "C") == 0) {
-                    args->language = LANG_C;
-                } else if (strcmp(optarg, "cpp") == 0 || strcmp(optarg, "C++") == 0) {
-                    args->language = LANG_CPP;
-                } else if (strcmp(optarg, "java") == 0) {
-                    args->language = LANG_JAVA;
-                } else if (strcmp(optarg, "python") == 0) {
-                    args->language = LANG_PYTHON;
-                } else if (strcmp(optarg, "javascript") == 0 || strcmp(optarg, "js") == 0) {
-                    args->language = LANG_JAVASCRIPT;
-                } else if (strcmp(optarg, "typescript") == 0 || strcmp(optarg, "ts") == 0) {
-                    args->language = LANG_TYPESCRIPT;
-                } else {
-                    LOG_ERROR("Unsupported language: %s", optarg);
-                    return CQ_ERROR_INVALID_ARGUMENT;
-                }
-                break;
+        case 'l':
+            if (strcmp(optarg, "c") == 0 || strcmp(optarg, "C") == 0)
+            {
+                args->language = LANG_C;
+            }
+            else if (strcmp(optarg, "cpp") == 0 || strcmp(optarg, "C++") == 0)
+            {
+                args->language = LANG_CPP;
+            }
+            else if (strcmp(optarg, "java") == 0)
+            {
+                args->language = LANG_JAVA;
+            }
+            else if (strcmp(optarg, "python") == 0)
+            {
+                args->language = LANG_PYTHON;
+            }
+            else if (strcmp(optarg, "javascript") == 0 || strcmp(optarg, "js") == 0)
+            {
+                args->language = LANG_JAVASCRIPT;
+            }
+            else if (strcmp(optarg, "typescript") == 0 || strcmp(optarg, "ts") == 0)
+            {
+                args->language = LANG_TYPESCRIPT;
+            }
+            else
+            {
+                LOG_ERROR("Unsupported language: %s", optarg);
+                return CQ_ERROR_INVALID_ARGUMENT;
+            }
+            break;
 
-            case 'o':
-                if (strlen(optarg) >= MAX_PATH_LENGTH) {
-                    LOG_ERROR("Output path too long");
-                    return CQ_ERROR_INVALID_ARGUMENT;
-                }
-                strcpy(args->output_path, optarg);
-                break;
+        case 'o':
+            if (strlen(optarg) >= MAX_PATH_LENGTH)
+            {
+                LOG_ERROR("Output path too long");
+                return CQ_ERROR_INVALID_ARGUMENT;
+            }
+            strcpy(args->output_path, optarg);
+            break;
 
-            case 'v':
-                args->enable_visualization = true;
-                break;
+        case 'v':
+            args->enable_visualization = true;
+            break;
 
-            case 'V':
-                args->enable_visualization = false;
-                break;
+        case 'V':
+            args->enable_visualization = false;
+            break;
 
-            case 'm':
-                // Parse metrics string (comma-separated)
+        case 'm':
+            // Parse metrics string (comma-separated)
+            {
+                char *token = strtok(optarg, ",");
+                while (token)
                 {
-                    char* token = strtok(optarg, ",");
-                    while (token) {
-                        if (strcmp(token, "complexity") == 0) {
-                            args->enable_metrics[0] = true;
-                        } else if (strcmp(token, "loc") == 0) {
-                            args->enable_metrics[1] = true;
-                        } else if (strcmp(token, "maintainability") == 0) {
-                            args->enable_metrics[2] = true;
-                        } else if (strcmp(token, "duplication") == 0) {
-                            args->enable_metrics[3] = true;
-                        } else if (strcmp(token, "halstead") == 0) {
-                            args->enable_metrics[4] = true;
-                        }
-                        token = strtok(NULL, ",");
+                    if (strcmp(token, "complexity") == 0)
+                    {
+                        args->enable_metrics[0] = true;
                     }
+                    else if (strcmp(token, "loc") == 0)
+                    {
+                        args->enable_metrics[1] = true;
+                    }
+                    else if (strcmp(token, "maintainability") == 0)
+                    {
+                        args->enable_metrics[2] = true;
+                    }
+                    else if (strcmp(token, "duplication") == 0)
+                    {
+                        args->enable_metrics[3] = true;
+                    }
+                    else if (strcmp(token, "halstead") == 0)
+                    {
+                        args->enable_metrics[4] = true;
+                    }
+                    token = strtok(NULL, ",");
                 }
-                break;
+            }
+            break;
 
-            case 'b':
-                args->verbosity_level = atoi(optarg);
-                if (args->verbosity_level < 0 || args->verbosity_level > 3) {
-                    LOG_ERROR("Invalid verbosity level: %d", args->verbosity_level);
-                    return CQ_ERROR_INVALID_ARGUMENT;
-                }
-                break;
-
-            case 'c':
-                // Load configuration file
-                // TODO: Implement config loading
-                LOG_WARNING("Config file loading not yet implemented: %s", optarg);
-                break;
-
-            case 'h':
-                args->show_help = true;
-                break;
-
-            case 'e':
-                args->show_version = true;
-                break;
-
-            case '?':
-                // getopt_long already printed an error message
+        case 'b':
+            args->verbosity_level = atoi(optarg);
+            if (args->verbosity_level < 0 || args->verbosity_level > 3)
+            {
+                LOG_ERROR("Invalid verbosity level: %d", args->verbosity_level);
                 return CQ_ERROR_INVALID_ARGUMENT;
+            }
+            break;
 
-            default:
-                LOG_ERROR("Unknown option: %c", opt);
-                return CQ_ERROR_INVALID_ARGUMENT;
+        case 'c':
+            // Load configuration file
+            // TODO: Implement config loading
+            LOG_WARNING("Config file loading not yet implemented: %s", optarg);
+            break;
+
+        case 'h':
+            args->show_help = true;
+            break;
+
+        case 'e':
+            args->show_version = true;
+            break;
+
+        case '?':
+            // getopt_long already printed an error message
+            return CQ_ERROR_INVALID_ARGUMENT;
+
+        default:
+            LOG_ERROR("Unknown option: %c", opt);
+            return CQ_ERROR_INVALID_ARGUMENT;
         }
     }
 
     // Check for non-option arguments
-    if (optind < argc) {
+    if (optind < argc)
+    {
         LOG_WARNING("Ignoring non-option arguments:");
-        while (optind < argc) {
+        while (optind < argc)
+        {
             LOG_WARNING("  %s", argv[optind++]);
         }
     }
@@ -145,7 +176,8 @@ CQError parse_cli_args(int argc, char *argv[], CLIArgs* args) {
     return CQ_SUCCESS;
 }
 
-void display_help(void) {
+void display_help(void)
+{
     printf("CQAnalyzer v%s - Code Quality Analyzer with 3D Visualization\n", CQANALYZER_VERSION);
     printf("\n");
     display_usage();
@@ -171,6 +203,7 @@ void display_help(void) {
     printf("For more information, visit: https://github.com/ChubbyChuckles/CQAnalyzer\n");
 }
 
-void display_usage(void) {
+void display_usage(void)
+{
     printf("Usage: cqanalyzer [OPTIONS]\n");
 }

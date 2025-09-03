@@ -10,7 +10,8 @@
  * Provides functions to manage 3D scene objects and rendering.
  */
 
-typedef struct {
+typedef struct
+{
     float position[3];
     float color[4];
     float scale[3];
@@ -34,7 +35,7 @@ void scene_shutdown(void);
  * @param object Object to add
  * @return CQ_SUCCESS on success, error code on failure
  */
-CQError scene_add_object(const SceneObject* object);
+CQError scene_add_object(const SceneObject *object);
 
 /**
  * @brief Remove object from scene

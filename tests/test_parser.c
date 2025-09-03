@@ -8,7 +8,8 @@
 /**
  * @brief Test file scanning
  */
-void test_file_scanner(void) {
+void test_file_scanner(void)
+{
     // TODO: Implement file scanner tests
     CU_PASS("File scanner test placeholder");
 }
@@ -16,7 +17,8 @@ void test_file_scanner(void) {
 /**
  * @brief Test AST parsing
  */
-void test_ast_parser(void) {
+void test_ast_parser(void)
+{
     CU_ASSERT_EQUAL(ast_parser_init(), CQ_SUCCESS);
     // TODO: Implement AST parser tests
     ast_parser_shutdown();
@@ -26,7 +28,8 @@ void test_ast_parser(void) {
 /**
  * @brief Test language support
  */
-void test_language_support(void) {
+void test_language_support(void)
+{
     CU_ASSERT_EQUAL(detect_language("test.c"), LANG_C);
     CU_ASSERT_EQUAL(detect_language("test.cpp"), LANG_CPP);
     CU_ASSERT_EQUAL(detect_language("test.java"), LANG_JAVA);
@@ -36,7 +39,8 @@ void test_language_support(void) {
 /**
  * @brief Add parser tests to suite
  */
-void add_parser_tests(CU_pSuite suite) {
+void add_parser_tests(CU_pSuite suite)
+{
     CU_add_test(suite, "File Scanner Test", test_file_scanner);
     CU_add_test(suite, "AST Parser Test", test_ast_parser);
     CU_add_test(suite, "Language Support Test", test_language_support);
