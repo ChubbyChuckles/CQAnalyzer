@@ -1,0 +1,9 @@
+### commands
+
+Read the "roadmaps/implementation_plan.txt" and choose the next feature in line to be implemented. Implement the feature and when it is done go back to the "roadmaps/implementation_plan.txt" and mark the feature as done.
+
+
+### style
+
+Read the "improve_style.txt" and choose the next feature in line to be implemented. Implement the feature and when it is done go back to the "improve_style.txt" and mark the feature as done.
+
