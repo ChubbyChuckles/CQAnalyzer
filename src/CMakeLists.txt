@@ -10,6 +10,11 @@ add_library(cqanalyzer_parser STATIC
 
 target_include_directories(cqanalyzer_parser PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/../include
+    ${LIBCLANG_INCLUDE_DIRS}
+)
+
+target_link_libraries(cqanalyzer_parser
+    ${LIBCLANG_LIBRARY}
 )
 
 # Analyzer module

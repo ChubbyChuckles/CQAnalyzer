@@ -3,6 +3,7 @@
 
 src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/parser/ast_parser.c \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
   /usr/include/features-time64.h \
@@ -11,6 +12,10 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: /home/chubbychuckles
   /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -20,6 +25,7 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: /home/chubbychuckles
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -28,7 +34,11 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: /home/chubbychuckles
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -38,7 +48,16 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/ast_parser.c.o: /home/chubbychuckles
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
+  /usr/lib/llvm-18/include/clang-c/BuildSystem.h \
+  /usr/lib/llvm-18/include/clang-c/CXDiagnostic.h \
+  /usr/lib/llvm-18/include/clang-c/CXErrorCode.h \
+  /usr/lib/llvm-18/include/clang-c/CXFile.h \
+  /usr/lib/llvm-18/include/clang-c/CXSourceLocation.h \
+  /usr/lib/llvm-18/include/clang-c/CXString.h \
+  /usr/lib/llvm-18/include/clang-c/ExternC.h \
+  /usr/lib/llvm-18/include/clang-c/Index.h \
+  /usr/lib/llvm-18/include/clang-c/Platform.h
 
 src/CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/parser/file_scanner.c \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
@@ -56,8 +75,13 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.o: /home/chubbychuckl
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/dirent.h \
   /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -75,10 +99,16 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/file_scanner.c.o: /home/chubbychuckl
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
@@ -135,116 +165,162 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/language_support.c.o: /home/chubbych
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/parser/language_support.c:
-
-/usr/include/x86_64-linux-gnu/sys/stat.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/dirent.h:
-
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/src/parser/file_scanner.c:
-
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/stdc-predef.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/features-time64.h:
-
-/usr/include/stdint.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/unistd.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h:
-
-/usr/include/stdio.h:
-
 /usr/include/strings.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/ctype.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h:
+/usr/include/x86_64-linux-gnu/sys/stat.h:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/src/parser/ast_parser.c:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+/usr/include/unistd.h:
 
 /usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/stat.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/usr/include/string.h:
+/usr/lib/llvm-18/include/clang-c/Index.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/lib/llvm-18/include/clang-c/CXSourceLocation.h:
+
+/usr/lib/llvm-18/include/clang-c/ExternC.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
+/usr/include/dirent.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
+/usr/include/string.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/lib/llvm-18/include/clang-c/BuildSystem.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+
+/usr/lib/llvm-18/include/clang-c/CXDiagnostic.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h:
+
+/usr/lib/llvm-18/include/clang-c/CXFile.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
 /usr/include/x86_64-linux-gnu/bits/dirent.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/parser/language_support.c:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features-time64.h:
+
+/usr/lib/llvm-18/include/clang-c/CXErrorCode.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+/usr/lib/llvm-18/include/clang-c/CXString.h:
+
+/usr/lib/llvm-18/include/clang-c/Platform.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/parser/ast_parser.c:
+
+/home/chubbychuckles/Programming/CQAnalyzer/src/parser/file_scanner.c:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h:

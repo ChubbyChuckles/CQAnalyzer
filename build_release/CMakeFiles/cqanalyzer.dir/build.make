@@ -109,6 +109,7 @@ bin/cqanalyzer: lib/libcqanalyzer_parser.a
 bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libGLX.so
 bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libGLU.so
+bin/cqanalyzer: /usr/lib/x86_64-linux-gnu/libclang-18.so
 bin/cqanalyzer: CMakeFiles/cqanalyzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable bin/cqanalyzer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer.dir/link.txt --verbose=$(VERBOSE)
