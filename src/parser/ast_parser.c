@@ -159,42 +159,41 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
             LOG_DEBUG("Found function: %s at line %u", name, line);
 
             // Create function info
-            FunctionInfo *func = calloc(1, sizeof(FunctionInfo));
-            if (func)
-            {
-                strncpy(func->name, name, sizeof(func->name) - 1);
-                func->location.line = line;
-                func->location.column = column;
-                func->location.offset = offset;
+            FunctionInfo func_data = {0};
+            func_data.name_id = string_pool_intern(&ast_data->project->string_pool, name);
+            func_data.location.line = line;
+            func_data.location.column = column;
+            func_data.location.offset = offset;
 
-                // Get return type
-                CXType return_type = clang_getCursorResultType(cursor);
-                CXString type_spelling = clang_getTypeSpelling(return_type);
-                const char *type_str = clang_getCString(type_spelling);
-                strncpy(func->return_type, type_str, sizeof(func->return_type) - 1);
-                clang_disposeString(type_spelling);
+            // Get return type
+            CXType return_type = clang_getCursorResultType(cursor);
+            CXString type_spelling = clang_getTypeSpelling(return_type);
+            const char *type_str = clang_getCString(type_spelling);
+            func_data.return_type_id = string_pool_intern(&ast_data->project->string_pool, type_str);
+            clang_disposeString(type_spelling);
 
-                // Count parameters
-                int num_args = clang_Cursor_getNumArguments(cursor);
-                func->parameter_count = num_args;
+            // Count parameters
+            int num_args = clang_Cursor_getNumArguments(cursor);
+            func_data.parameter_count = num_args;
 
-                // Calculate cyclomatic complexity
-                int decision_count = 0;
-                count_decision_points(cursor, &decision_count);
-                func->complexity = 1 + decision_count; // Base complexity + decision points
+            // Calculate cyclomatic complexity
+            int decision_count = 0;
+            count_decision_points(cursor, &decision_count);
+            func_data.complexity = 1 + decision_count; // Base complexity + decision points
 
-                // Calculate nesting depth
-                int max_nesting = 0;
-                calculate_function_nesting_depth(cursor, &max_nesting);
-                func->nesting_depth = max_nesting;
+            // Calculate nesting depth
+            int max_nesting = 0;
+            calculate_function_nesting_depth(cursor, &max_nesting);
+            func_data.nesting_depth = max_nesting;
 
-                LOG_DEBUG("Function %s complexity: %u, nesting depth: %u", name, func->complexity, func->nesting_depth);
+            LOG_DEBUG("Function %s complexity: %u, nesting depth: %u", name, func_data.complexity, func_data.nesting_depth);
 
-                // Add to project's function list
-                func->next = ast_data->project->files->functions;
-                ast_data->project->files->functions = func;
-                ast_data->project->files->function_count++;
-                ast_data->project->total_functions++;
+            // Add to project's function array
+            uint32_t func_id;
+            if (project_add_function(ast_data->project, &func_data, &func_id) == CQ_SUCCESS) {
+                LOG_DEBUG("Added function %s with ID %u", name, func_id);
+            } else {
+                LOG_ERROR("Failed to add function %s", name);
             }
             break;
         }
@@ -206,19 +205,18 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
                       kind == CXCursor_StructDecl ? "struct" : "class", name, line);
 
             // Create class info
-            ClassInfo *class_info = calloc(1, sizeof(ClassInfo));
-            if (class_info)
-            {
-                strncpy(class_info->name, name, sizeof(class_info->name) - 1);
-                class_info->location.line = line;
-                class_info->location.column = column;
-                class_info->location.offset = offset;
+            ClassInfo class_data = {0};
+            class_data.name_id = string_pool_intern(&ast_data->project->string_pool, name);
+            class_data.location.line = line;
+            class_data.location.column = column;
+            class_data.location.offset = offset;
 
-                // Add to project's class list
-                class_info->next = ast_data->project->files->classes;
-                ast_data->project->files->classes = class_info;
-                ast_data->project->files->class_count++;
-                ast_data->project->total_classes++;
+            // Add to project's class array
+            uint32_t class_id;
+            if (project_add_class(ast_data->project, &class_data, &class_id) == CQ_SUCCESS) {
+                LOG_DEBUG("Added class %s with ID %u", name, class_id);
+            } else {
+                LOG_ERROR("Failed to add class %s", name);
             }
             break;
         }
@@ -228,29 +226,29 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
             LOG_DEBUG("Found variable: %s at line %u", name, line);
 
             // Create variable info
-            VariableInfo *var = calloc(1, sizeof(VariableInfo));
-            if (var)
+            VariableInfo var_data = {0};
+            var_data.name_id = string_pool_intern(&ast_data->project->string_pool, name);
+            var_data.location.line = line;
+            var_data.location.column = column;
+            var_data.location.offset = offset;
+            var_data.usage_count = 0; // Will be updated during usage tracking
+
+            // Get variable type
+            CXType var_type = clang_getCursorType(cursor);
+            CXString type_spelling = clang_getTypeSpelling(var_type);
+            const char *type_str = clang_getCString(type_spelling);
+            if (type_str)
             {
-                strncpy(var->name, name, sizeof(var->name) - 1);
-                var->location.line = line;
-                var->location.column = column;
-                var->location.offset = offset;
-                var->usage_count = 0; // Will be updated during usage tracking
+                var_data.type_id = string_pool_intern(&ast_data->project->string_pool, type_str);
+            }
+            clang_disposeString(type_spelling);
 
-                // Get variable type
-                CXType var_type = clang_getCursorType(cursor);
-                CXString type_spelling = clang_getTypeSpelling(var_type);
-                const char *type_str = clang_getCString(type_spelling);
-                if (type_str)
-                {
-                    strncpy(var->type, type_str, sizeof(var->type) - 1);
-                }
-                clang_disposeString(type_spelling);
-
-                // Add to file's variable list
-                var->next = ast_data->project->files->variables;
-                ast_data->project->files->variables = var;
-                ast_data->project->files->variable_count++;
+            // Add to project's variable array
+            uint32_t var_id;
+            if (project_add_variable(ast_data->project, &var_data, &var_id) == CQ_SUCCESS) {
+                LOG_DEBUG("Added variable %s with ID %u", name, var_id);
+            } else {
+                LOG_ERROR("Failed to add variable %s", name);
             }
             break;
         }
@@ -261,29 +259,29 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
             LOG_DEBUG("Found reference to: %s at line %u", name, line);
 
             // Track usage for variables
-            VariableInfo *var = ast_data->project->files->variables;
-            while (var)
-            {
-                if (strcmp(var->name, name) == 0)
-                {
-                    var->usage_count++;
-                    LOG_DEBUG("Incremented usage count for variable %s to %u", name, var->usage_count);
-                    break;
+            for (uint32_t i = 0; i < ast_data->project->variables.count; i++) {
+                VariableInfo *var = variable_array_get(&ast_data->project->variables, i);
+                if (var) {
+                    const char *var_name = string_pool_get(&ast_data->project->string_pool, var->name_id);
+                    if (strcmp(var_name, name) == 0) {
+                        var->usage_count++;
+                        LOG_DEBUG("Incremented usage count for variable %s to %u", name, var->usage_count);
+                        break;
+                    }
                 }
-                var = var->next;
             }
 
             // Track usage for functions
-            FunctionInfo *func = ast_data->project->files->functions;
-            while (func)
-            {
-                if (strcmp(func->name, name) == 0)
-                {
-                    func->usage_count++;
-                    LOG_DEBUG("Incremented usage count for function %s to %u", name, func->usage_count);
-                    break;
+            for (uint32_t i = 0; i < ast_data->project->functions.count; i++) {
+                FunctionInfo *func = function_array_get(&ast_data->project->functions, i);
+                if (func) {
+                    const char *func_name = string_pool_get(&ast_data->project->string_pool, func->name_id);
+                    if (strcmp(func_name, name) == 0) {
+                        func->usage_count++;
+                        LOG_DEBUG("Incremented usage count for function %s to %u", name, func->usage_count);
+                        break;
+                    }
                 }
-                func = func->next;
             }
             break;
         }
@@ -304,30 +302,30 @@ static void traverse_ast(CXCursor root_cursor, ASTData *ast_data)
 {
     LOG_INFO("Starting AST traversal");
 
-    // Create file info for this translation unit
-    ast_data->project->files = calloc(1, sizeof(FileInfo));
-    if (!ast_data->project->files)
-    {
-        LOG_ERROR("Memory allocation failed for file info");
-        return;
-    }
-
     // Get file name from translation unit
     CXFile file;
     clang_getFileLocation(clang_getCursorLocation(root_cursor), &file, NULL, NULL, NULL);
+    const char *filename_str = NULL;
     if (file)
     {
         CXString filename = clang_getFileName(file);
-        const char *filename_str = clang_getCString(filename);
-        if (filename_str)
-        {
-            strncpy(ast_data->project->files->filepath, filename_str,
-                   sizeof(ast_data->project->files->filepath) - 1);
-        }
+        filename_str = clang_getCString(filename);
         clang_disposeString(filename);
     }
 
-    ast_data->project->file_count = 1;
+    // Create file info using proper initialization
+    FileInfo file_info = {0};
+    if (filename_str) {
+        file_info.filepath_id = string_pool_intern(&ast_data->project->string_pool, filename_str);
+    }
+    file_info.language = LANG_C; // Assume C for now, could be detected
+
+    // Add file to project
+    FileInfo *added_file;
+    if (project_add_file(ast_data->project, filename_str, LANG_C, &added_file) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to add file to project");
+        return;
+    }
 
     // Create visitor context
     VisitorContext context = {
@@ -489,11 +487,23 @@ void *parse_source_file(const char *filepath)
         return NULL;
     }
 
-    // Set project path
-    if (strlen(project_root) < sizeof(ast_data->project->root_path))
-    {
-        strcpy(ast_data->project->root_path, project_root);
+    // Initialize project with proper data structures
+    if (project_init(ast_data->project, project_root, 100) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to initialize project data structures");
+        free(ast_data->project);
+        free(ast_data);
+        clang_disposeTranslationUnit(tu);
+        preprocessor_free(preproc_ctx);
+        // Free allocated args
+        for (int i = 0; i < arg_count; i++)
+        {
+            free((void *)args[i]);
+        }
+        return NULL;
     }
+
+    // Set project path
+    ast_data->project->root_path_id = string_pool_intern(&ast_data->project->string_pool, project_root);
 
     // Traverse AST and extract information
     CXCursor root_cursor = clang_getTranslationUnitCursor(tu);
@@ -562,44 +572,8 @@ void free_ast_data(void *data)
     // Free project data
     if (ast_data->project)
     {
-        // Free all files
-        FileInfo *file = ast_data->project->files;
-        while (file)
-        {
-            FileInfo *next_file = file->next;
-
-            // Free functions
-            FunctionInfo *func = file->functions;
-            while (func)
-            {
-                FunctionInfo *next_func = func->next;
-                free(func);
-                func = next_func;
-            }
-
-            // Free classes
-            ClassInfo *class_info = file->classes;
-            while (class_info)
-            {
-                ClassInfo *next_class = class_info->next;
-                free(class_info);
-                class_info = next_class;
-            }
-
-            // Free variables
-            VariableInfo *var = file->variables;
-            while (var)
-            {
-                VariableInfo *next_var = var->next;
-                free(var);
-                var = next_var;
-            }
-
-            free(file);
-            file = next_file;
-        }
-
-        free(ast_data->project);
+        // The project_destroy function will handle freeing all arrays and string pool
+        project_destroy(ast_data->project);
     }
 
     free(ast_data);

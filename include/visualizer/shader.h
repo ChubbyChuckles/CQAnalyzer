@@ -71,4 +71,34 @@ void shader_set_float(const Shader *shader, const char *name, float value);
  */
 void shader_set_vec3(const Shader *shader, const char *name, float x, float y, float z);
 
+/**
+ * @brief Set uniform vec4 value
+ *
+ * @param shader Shader program
+ * @param name Uniform name
+ * @param x X component
+ * @param y Y component
+ * @param z Z component
+ * @param w W component
+ */
+void shader_set_vec4(const Shader *shader, const char *name, float x, float y, float z, float w);
+
+/**
+ * @brief Set uniform matrix 4x4 value
+ *
+ * @param shader Shader program
+ * @param name Uniform name
+ * @param matrix Matrix data (column-major)
+ */
+void shader_set_mat4(const Shader *shader, const char *name, const float matrix[16]);
+
+/**
+ * @brief Set uniform int value
+ *
+ * @param shader Shader program
+ * @param name Uniform name
+ * @param value Integer value
+ */
+void shader_set_int(const Shader *shader, const char *name, int value);
+
 #endif // SHADER_H

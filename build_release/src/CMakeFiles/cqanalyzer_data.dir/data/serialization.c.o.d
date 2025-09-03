@@ -22,7 +22,8 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/data/serialization.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
@@ -31,4 +32,5 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/data/data_store.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h

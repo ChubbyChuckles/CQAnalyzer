@@ -74,4 +74,21 @@ void camera_rotate(Camera *camera, float yaw, float pitch);
  */
 void camera_zoom(Camera *camera, float factor);
 
+/**
+ * @brief Get view matrix for the camera
+ *
+ * @param camera Camera to get view matrix from
+ * @param view_matrix Output 4x4 view matrix (column-major)
+ */
+void camera_get_view_matrix(const Camera *camera, float view_matrix[16]);
+
+/**
+ * @brief Get perspective projection matrix
+ *
+ * @param camera Camera to get projection matrix from
+ * @param aspect_ratio Aspect ratio (width/height)
+ * @param projection_matrix Output 4x4 projection matrix (column-major)
+ */
+void camera_get_projection_matrix(const Camera *camera, float aspect_ratio, float projection_matrix[16]);
+
 #endif // CAMERA_H

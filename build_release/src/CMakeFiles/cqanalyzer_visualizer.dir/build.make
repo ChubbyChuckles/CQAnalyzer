@@ -125,12 +125,42 @@ src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.s"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/shader.c -o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.s
 
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o: src/CMakeFiles/cqanalyzer_visualizer.dir/flags.make
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/text_renderer.c
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o: src/CMakeFiles/cqanalyzer_visualizer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o -MF CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o.d -o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/text_renderer.c
+
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/text_renderer.c > CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.i
+
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/text_renderer.c -o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.s
+
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o: src/CMakeFiles/cqanalyzer_visualizer.dir/flags.make
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/transforms.c
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o: src/CMakeFiles/cqanalyzer_visualizer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o -MF CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o.d -o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/transforms.c
+
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/transforms.c > CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.i
+
+src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/visualizer/transforms.c -o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.s
+
 # Object files for target cqanalyzer_visualizer
 cqanalyzer_visualizer_OBJECTS = \
 "CMakeFiles/cqanalyzer_visualizer.dir/visualizer/renderer.c.o" \
 "CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.o" \
 "CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.o" \
-"CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.o"
+"CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.o" \
+"CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o" \
+"CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o"
 
 # External object files for target cqanalyzer_visualizer
 cqanalyzer_visualizer_EXTERNAL_OBJECTS =
@@ -139,9 +169,11 @@ lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/visuali
 lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.o
 lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.o
 lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.o
+lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o
+lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o
 lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/build.make
 lib/libcqanalyzer_visualizer.a: src/CMakeFiles/cqanalyzer_visualizer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library ../lib/libcqanalyzer_visualizer.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library ../lib/libcqanalyzer_visualizer.a"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -P CMakeFiles/cqanalyzer_visualizer.dir/cmake_clean_target.cmake
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_visualizer.dir/link.txt --verbose=$(VERBOSE)
 

@@ -16,6 +16,7 @@ target_include_directories(cqanalyzer_parser PUBLIC
 )
 
 target_link_libraries(cqanalyzer_parser
+    cqanalyzer_data
     ${LIBCLANG_LIBRARY}
 )
 
@@ -37,6 +38,7 @@ target_link_libraries(cqanalyzer_analyzer
 
 # Data module
 add_library(cqanalyzer_data STATIC
+    data/ast_types.c
     data/data_store.c
     data/metric_aggregator.c
     data/serialization.c
@@ -56,6 +58,8 @@ add_library(cqanalyzer_visualizer STATIC
     visualizer/camera.c
     visualizer/scene.c
     visualizer/shader.c
+    visualizer/text_renderer.c
+    visualizer/transforms.c
 )
 
 target_include_directories(cqanalyzer_visualizer PUBLIC
@@ -68,6 +72,7 @@ target_link_libraries(cqanalyzer_visualizer
     ${GLFW3_LIBRARIES}
     ${GLEW_LIBRARIES}
     ${GLM_LIBRARIES}
+    ${FREETYPE_LIBRARIES}
 )
 
 # UI module

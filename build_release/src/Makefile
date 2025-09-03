@@ -351,6 +351,30 @@ analyzer/metric_calculator.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_analyzer.dir/build.make src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.s
 .PHONY : analyzer/metric_calculator.c.s
 
+data/ast_types.o: data/ast_types.c.o
+.PHONY : data/ast_types.o
+
+# target to build an object file
+data/ast_types.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_data.dir/build.make src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o
+.PHONY : data/ast_types.c.o
+
+data/ast_types.i: data/ast_types.c.i
+.PHONY : data/ast_types.i
+
+# target to preprocess a source file
+data/ast_types.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_data.dir/build.make src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.i
+.PHONY : data/ast_types.c.i
+
+data/ast_types.s: data/ast_types.c.s
+.PHONY : data/ast_types.s
+
+# target to generate assembly for a file
+data/ast_types.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_data.dir/build.make src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.s
+.PHONY : data/ast_types.c.s
+
 data/data_store.o: data/data_store.c.o
 .PHONY : data/data_store.o
 
@@ -807,6 +831,54 @@ visualizer/shader.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.s
 .PHONY : visualizer/shader.c.s
 
+visualizer/text_renderer.o: visualizer/text_renderer.c.o
+.PHONY : visualizer/text_renderer.o
+
+# target to build an object file
+visualizer/text_renderer.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o
+.PHONY : visualizer/text_renderer.c.o
+
+visualizer/text_renderer.i: visualizer/text_renderer.c.i
+.PHONY : visualizer/text_renderer.i
+
+# target to preprocess a source file
+visualizer/text_renderer.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.i
+.PHONY : visualizer/text_renderer.c.i
+
+visualizer/text_renderer.s: visualizer/text_renderer.c.s
+.PHONY : visualizer/text_renderer.s
+
+# target to generate assembly for a file
+visualizer/text_renderer.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.s
+.PHONY : visualizer/text_renderer.c.s
+
+visualizer/transforms.o: visualizer/transforms.c.o
+.PHONY : visualizer/transforms.o
+
+# target to build an object file
+visualizer/transforms.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o
+.PHONY : visualizer/transforms.c.o
+
+visualizer/transforms.i: visualizer/transforms.c.i
+.PHONY : visualizer/transforms.i
+
+# target to preprocess a source file
+visualizer/transforms.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.i
+.PHONY : visualizer/transforms.c.i
+
+visualizer/transforms.s: visualizer/transforms.c.s
+.PHONY : visualizer/transforms.s
+
+# target to generate assembly for a file
+visualizer/transforms.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_visualizer.dir/build.make src/CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.s
+.PHONY : visualizer/transforms.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -838,6 +910,9 @@ help:
 	@echo "... analyzer/metric_calculator.o"
 	@echo "... analyzer/metric_calculator.i"
 	@echo "... analyzer/metric_calculator.s"
+	@echo "... data/ast_types.o"
+	@echo "... data/ast_types.i"
+	@echo "... data/ast_types.s"
 	@echo "... data/data_store.o"
 	@echo "... data/data_store.i"
 	@echo "... data/data_store.s"
@@ -895,6 +970,12 @@ help:
 	@echo "... visualizer/shader.o"
 	@echo "... visualizer/shader.i"
 	@echo "... visualizer/shader.s"
+	@echo "... visualizer/text_renderer.o"
+	@echo "... visualizer/text_renderer.i"
+	@echo "... visualizer/text_renderer.s"
+	@echo "... visualizer/transforms.o"
+	@echo "... visualizer/transforms.i"
+	@echo "... visualizer/transforms.s"
 .PHONY : help
 
 

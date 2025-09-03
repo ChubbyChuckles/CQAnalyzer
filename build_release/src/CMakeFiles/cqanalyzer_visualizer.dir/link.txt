@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../lib/libcqanalyzer_visualizer.a CMakeFiles/cqanalyzer_visualizer.dir/visualizer/renderer.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.o
+/usr/bin/ar qc ../lib/libcqanalyzer_visualizer.a CMakeFiles/cqanalyzer_visualizer.dir/visualizer/renderer.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/camera.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/scene.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/shader.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/text_renderer.c.o CMakeFiles/cqanalyzer_visualizer.dir/visualizer/transforms.c.o
 /usr/bin/ranlib ../lib/libcqanalyzer_visualizer.a

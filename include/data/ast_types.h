@@ -2,9 +2,11 @@
 #define AST_TYPES_H
 
 #include "cqanalyzer.h"
-#include "dependency_graph.h"
 #include <stdint.h>
 #include <stdbool.h>
+
+// Forward declaration for DependencyGraph to avoid circular dependency
+typedef struct DependencyGraph DependencyGraph;
 
 /**
  * @file ast_types.h

@@ -2,6 +2,7 @@
 #define METRIC_CALCULATOR_H
 
 #include "cqanalyzer.h"
+#include "data/ast_types.h"
 
 /**
  * @file metric_calculator.h
@@ -83,7 +84,7 @@ double calculate_comment_density(int comment_loc, int physical_loc);
  * @param class_info Pointer to class information
  * @return Cohesion value (0.0 to 1.0)
  */
-double calculate_class_cohesion(const struct ClassInfo *class_info);
+double calculate_class_cohesion(const ClassInfo *class_info, const Project *project);
 
 /**
  * @brief Calculate class coupling metric
@@ -95,8 +96,8 @@ double calculate_class_cohesion(const struct ClassInfo *class_info);
  * @param all_classes Pointer to list of all classes in the project
  * @return Coupling value (0.0 to 1.0)
  */
-double calculate_class_coupling(const struct ClassInfo *class_info,
-                               const struct ClassInfo *all_classes);
+double calculate_class_coupling(const ClassInfo *class_info,
+                               const Project *project);
 
 /**
  * @brief Normalization method enumeration

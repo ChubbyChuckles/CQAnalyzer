@@ -110,6 +110,11 @@ bin/test_parser: CMakeFiles/test_parser.dir/src/cqanalyzer.c.o
 bin/test_parser: CMakeFiles/test_parser.dir/build.make
 bin/test_parser: lib/libcqanalyzer_parser.a
 bin/test_parser: lib/libcqanalyzer_utils.a
+bin/test_parser: lib/libcqanalyzer_data.a
+bin/test_parser: lib/libcqanalyzer_analyzer.a
+bin/test_parser: lib/libcqanalyzer_parser.a
+bin/test_parser: lib/libcqanalyzer_data.a
+bin/test_parser: lib/libcqanalyzer_analyzer.a
 bin/test_parser: /usr/lib/x86_64-linux-gnu/libclang-18.so
 bin/test_parser: CMakeFiles/test_parser.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable bin/test_parser"

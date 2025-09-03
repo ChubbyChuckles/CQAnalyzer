@@ -137,22 +137,22 @@ static void *parse_python_file(const char *filepath, SupportedLanguage language)
         return NULL;
     }
 
-    // Set basic project info
-    strncpy(ast_data->project->root_path, filepath, sizeof(ast_data->project->root_path) - 1);
-
-    // Create file info
-    ast_data->project->files = calloc(1, sizeof(FileInfo));
-    if (!ast_data->project->files)
-    {
-        LOG_ERROR("Memory allocation failed for Python file info");
+    // Initialize project with proper data structures
+    if (project_init(ast_data->project, filepath, 10) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to initialize project data structures");
         free(ast_data->project);
         free(ast_data);
         return NULL;
     }
 
-    strncpy(ast_data->project->files->filepath, filepath, sizeof(ast_data->project->files->filepath) - 1);
-    ast_data->project->files->language = language;
-    ast_data->project->file_count = 1;
+    // Add file to project
+    FileInfo *added_file;
+    if (project_add_file(ast_data->project, filepath, language, &added_file) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to add file to project");
+        project_destroy(ast_data->project);
+        free(ast_data);
+        return NULL;
+    }
 
     LOG_INFO("Python file parsing completed (basic implementation)");
     return ast_data;
@@ -198,20 +198,22 @@ static void *parse_java_file(const char *filepath, SupportedLanguage language)
         return NULL;
     }
 
-    strncpy(ast_data->project->root_path, filepath, sizeof(ast_data->project->root_path) - 1);
-
-    ast_data->project->files = calloc(1, sizeof(FileInfo));
-    if (!ast_data->project->files)
-    {
-        LOG_ERROR("Memory allocation failed for Java file info");
+    // Initialize project with proper data structures
+    if (project_init(ast_data->project, filepath, 10) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to initialize project data structures");
         free(ast_data->project);
         free(ast_data);
         return NULL;
     }
 
-    strncpy(ast_data->project->files->filepath, filepath, sizeof(ast_data->project->files->filepath) - 1);
-    ast_data->project->files->language = language;
-    ast_data->project->file_count = 1;
+    // Add file to project
+    FileInfo *added_file;
+    if (project_add_file(ast_data->project, filepath, language, &added_file) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to add file to project");
+        project_destroy(ast_data->project);
+        free(ast_data);
+        return NULL;
+    }
 
     LOG_INFO("Java file parsing completed (basic implementation)");
     return ast_data;
@@ -257,20 +259,22 @@ static void *parse_javascript_file(const char *filepath, SupportedLanguage langu
         return NULL;
     }
 
-    strncpy(ast_data->project->root_path, filepath, sizeof(ast_data->project->root_path) - 1);
-
-    ast_data->project->files = calloc(1, sizeof(FileInfo));
-    if (!ast_data->project->files)
-    {
-        LOG_ERROR("Memory allocation failed for JavaScript file info");
+    // Initialize project with proper data structures
+    if (project_init(ast_data->project, filepath, 10) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to initialize project data structures");
         free(ast_data->project);
         free(ast_data);
         return NULL;
     }
 
-    strncpy(ast_data->project->files->filepath, filepath, sizeof(ast_data->project->files->filepath) - 1);
-    ast_data->project->files->language = language;
-    ast_data->project->file_count = 1;
+    // Add file to project
+    FileInfo *added_file;
+    if (project_add_file(ast_data->project, filepath, language, &added_file) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to add file to project");
+        project_destroy(ast_data->project);
+        free(ast_data);
+        return NULL;
+    }
 
     LOG_INFO("JavaScript file parsing completed (basic implementation)");
     return ast_data;
@@ -316,20 +320,22 @@ static void *parse_typescript_file(const char *filepath, SupportedLanguage langu
         return NULL;
     }
 
-    strncpy(ast_data->project->root_path, filepath, sizeof(ast_data->project->root_path) - 1);
-
-    ast_data->project->files = calloc(1, sizeof(FileInfo));
-    if (!ast_data->project->files)
-    {
-        LOG_ERROR("Memory allocation failed for TypeScript file info");
+    // Initialize project with proper data structures
+    if (project_init(ast_data->project, filepath, 10) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to initialize project data structures");
         free(ast_data->project);
         free(ast_data);
         return NULL;
     }
 
-    strncpy(ast_data->project->files->filepath, filepath, sizeof(ast_data->project->files->filepath) - 1);
-    ast_data->project->files->language = language;
-    ast_data->project->file_count = 1;
+    // Add file to project
+    FileInfo *added_file;
+    if (project_add_file(ast_data->project, filepath, language, &added_file) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to add file to project");
+        project_destroy(ast_data->project);
+        free(ast_data);
+        return NULL;
+    }
 
     LOG_INFO("TypeScript file parsing completed (basic implementation)");
     return ast_data;
@@ -414,8 +420,19 @@ void *parse_project(const char *project_path, int max_files, void (*progress_cal
         return NULL;
     }
 
-    // Set project root path
-    strncpy(project_ast->project->root_path, project_path, sizeof(project_ast->project->root_path) - 1);
+    // Initialize project with proper data structures
+    if (project_init(project_ast->project, project_path, max_files) != CQ_SUCCESS) {
+        LOG_ERROR("Failed to initialize project data structures");
+        free(project_ast->project);
+        free(project_ast);
+        // Free allocated file paths
+        for (int i = 0; i < file_count; i++)
+        {
+            free(file_paths[i]);
+        }
+        free(file_paths);
+        return NULL;
+    }
 
     // Parse each file
     FileInfo *last_file = NULL;
@@ -501,10 +518,9 @@ void *parse_project(const char *project_path, int max_files, void (*progress_cal
     // Calculate total errors
     int total_errors = access_errors + parse_errors + skipped_files;
 
-    // Set final project statistics
-    project_ast->project->file_count = parsed_count;
-    project_ast->project->total_functions = 0; // Would be calculated from actual parsing
-    project_ast->project->total_classes = 0;   // Would be calculated from actual parsing
+    // The project statistics are automatically maintained by the array structures
+    // parsed_count is already reflected in project->files.count
+    // total_functions and total_classes are maintained by the respective arrays
 
     // Log comprehensive parsing results
     LOG_INFO("Project parsing completed:");

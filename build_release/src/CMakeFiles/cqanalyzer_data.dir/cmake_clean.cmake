@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "../lib/libcqanalyzer_data.a"
   "../lib/libcqanalyzer_data.pdb"
+  "CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o"
+  "CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o.d"
   "CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o"
   "CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o.d"
   "CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o"

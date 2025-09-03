@@ -232,11 +232,11 @@ double calculate_comment_density(int comment_loc, int physical_loc)
     return (double)comment_loc / (double)physical_loc * 100.0;
 }
 
-double calculate_class_cohesion(const struct ClassInfo *class_info)
+double calculate_class_cohesion(const ClassInfo *class_info, const Project *project)
 {
-    if (!class_info)
+    if (!class_info || !project)
     {
-        LOG_ERROR("Invalid class info for cohesion calculation");
+        LOG_ERROR("Invalid parameters for cohesion calculation");
         return 0.0;
     }
 
@@ -259,16 +259,17 @@ double calculate_class_cohesion(const struct ClassInfo *class_info)
     if (cohesion > 1.0)
         cohesion = 1.0;
 
+    const char *class_name = string_pool_get(&project->string_pool, class_info->name_id);
     LOG_INFO("Class cohesion for %s: methods=%u, fields=%u, cohesion=%.2f",
-             class_info->name, method_count, field_count, cohesion);
+             class_name, method_count, field_count, cohesion);
 
     return cohesion;
 }
 
-double calculate_class_coupling(const struct ClassInfo *class_info,
-                               const struct ClassInfo *all_classes)
+double calculate_class_coupling(const ClassInfo *class_info,
+                               const Project *project)
 {
-    if (!class_info || !all_classes)
+    if (!class_info || !project)
     {
         LOG_ERROR("Invalid parameters for coupling calculation");
         return 0.0;
@@ -278,15 +279,7 @@ double calculate_class_coupling(const struct ClassInfo *class_info,
     // This is a simplified implementation - in practice, we'd analyze
     // method calls, field accesses, and inheritance relationships
 
-    uint32_t total_classes = 0;
-
-    // Count total classes in the project
-    const struct ClassInfo *current = all_classes;
-    while (current)
-    {
-        total_classes++;
-        current = current->next;
-    }
+    uint32_t total_classes = project->classes.count;
 
     if (total_classes <= 1)
     {
@@ -303,8 +296,9 @@ double calculate_class_coupling(const struct ClassInfo *class_info,
     // Normalize to 0.0-1.0 range
     double coupling = coupling_ratio > 1.0 ? 1.0 : coupling_ratio;
 
+    const char *class_name = string_pool_get(&project->string_pool, class_info->name_id);
     LOG_INFO("Class coupling for %s: size=%u, total_classes=%u, coupling=%.2f",
-             class_info->name, class_size, total_classes, coupling);
+             class_name, class_size, total_classes, coupling);
 
     return coupling;
 }

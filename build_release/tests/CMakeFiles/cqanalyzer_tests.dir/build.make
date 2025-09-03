@@ -179,9 +179,12 @@ bin/cqanalyzer_tests: lib/libcqanalyzer_visualizer.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_ui.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_utils.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_visualizer.a
-bin/cqanalyzer_tests: lib/libcqanalyzer_data.a
-bin/cqanalyzer_tests: lib/libcqanalyzer_analyzer.a
 bin/cqanalyzer_tests: lib/libcqanalyzer_parser.a
+bin/cqanalyzer_tests: lib/libcqanalyzer_analyzer.a
+bin/cqanalyzer_tests: lib/libcqanalyzer_data.a
+bin/cqanalyzer_tests: lib/libcqanalyzer_parser.a
+bin/cqanalyzer_tests: lib/libcqanalyzer_analyzer.a
+bin/cqanalyzer_tests: lib/libcqanalyzer_data.a
 bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libclang-18.so
 bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 bin/cqanalyzer_tests: /usr/lib/x86_64-linux-gnu/libGLX.so

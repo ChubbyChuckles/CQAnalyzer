@@ -69,10 +69,24 @@ include src/CMakeFiles/cqanalyzer_data.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/cqanalyzer_data.dir/flags.make
 
+src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o: src/CMakeFiles/cqanalyzer_data.dir/flags.make
+src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/data/ast_types.c
+src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o: src/CMakeFiles/cqanalyzer_data.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o -MF CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o.d -o CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/data/ast_types.c
+
+src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/data/ast_types.c > CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.i
+
+src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/data/ast_types.c -o CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.s
+
 src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o: src/CMakeFiles/cqanalyzer_data.dir/flags.make
 src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/data/data_store.c
 src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o: src/CMakeFiles/cqanalyzer_data.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o -MF CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o.d -o CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/data/data_store.c
 
 src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.i: cmake_force
@@ -86,7 +100,7 @@ src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.s: cmake_force
 src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o: src/CMakeFiles/cqanalyzer_data.dir/flags.make
 src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/data/metric_aggregator.c
 src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o: src/CMakeFiles/cqanalyzer_data.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o -MF CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o.d -o CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/data/metric_aggregator.c
 
 src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.i: cmake_force
@@ -100,7 +114,7 @@ src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.s: cmake_force
 src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: src/CMakeFiles/cqanalyzer_data.dir/flags.make
 src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/data/serialization.c
 src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: src/CMakeFiles/cqanalyzer_data.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o -MF CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o.d -o CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/data/serialization.c
 
 src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.i: cmake_force
@@ -113,6 +127,7 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.s: cmake_force
 
 # Object files for target cqanalyzer_data
 cqanalyzer_data_OBJECTS = \
+"CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o" \
 "CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o" \
 "CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o" \
 "CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o"
@@ -120,12 +135,13 @@ cqanalyzer_data_OBJECTS = \
 # External object files for target cqanalyzer_data
 cqanalyzer_data_EXTERNAL_OBJECTS =
 
+lib/libcqanalyzer_data.a: src/CMakeFiles/cqanalyzer_data.dir/data/ast_types.c.o
 lib/libcqanalyzer_data.a: src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o
 lib/libcqanalyzer_data.a: src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o
 lib/libcqanalyzer_data.a: src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o
 lib/libcqanalyzer_data.a: src/CMakeFiles/cqanalyzer_data.dir/build.make
 lib/libcqanalyzer_data.a: src/CMakeFiles/cqanalyzer_data.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library ../lib/libcqanalyzer_data.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library ../lib/libcqanalyzer_data.a"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -P CMakeFiles/cqanalyzer_data.dir/cmake_clean_target.cmake
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_data.dir/link.txt --verbose=$(VERBOSE)
 

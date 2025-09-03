@@ -5,6 +5,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+// Forward declaration for Project to avoid circular dependency
+typedef struct Project Project;
+
 /**
  * @file dependency_graph.h
  * @brief Data structures for representing code dependencies

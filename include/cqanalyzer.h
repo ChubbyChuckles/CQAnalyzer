@@ -50,13 +50,7 @@ typedef enum
     LANG_UNKNOWN
 } SupportedLanguage;
 
-// Forward declarations for core structures
-typedef struct Project Project;
-typedef struct FileInfo FileInfo;
-typedef struct FunctionInfo FunctionInfo;
-typedef struct ClassInfo ClassInfo;
-typedef struct MetricData MetricData;
-typedef struct VisualizationData VisualizationData;
+// Core structures are defined in their respective header files
 
 // Common data structures
 typedef struct

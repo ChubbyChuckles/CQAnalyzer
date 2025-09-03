@@ -40,4 +40,6 @@ src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/data/data_store.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/utils/memory.h \
+ /usr/include/string.h
