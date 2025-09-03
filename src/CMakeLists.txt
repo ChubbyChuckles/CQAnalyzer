@@ -24,6 +24,7 @@ add_library(cqanalyzer_analyzer STATIC
     analyzer/metric_calculator.c
     analyzer/complexity_analyzer.c
     analyzer/duplication_detector.c
+    analyzer/dead_code_detector.c
 )
 
 target_include_directories(cqanalyzer_analyzer PUBLIC

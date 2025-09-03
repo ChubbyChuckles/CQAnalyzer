@@ -55,4 +55,5 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h

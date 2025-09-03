@@ -6,6 +6,7 @@
 #include <clang-c/Index.h>
 
 #include "analyzer/metric_calculator.h"
+#include "data/ast_types.h"
 #include "utils/logger.h"
 
 int calculate_cyclomatic_complexity(void *ast_data)
@@ -212,4 +213,188 @@ double calculate_maintainability_index(int complexity, int loc, double comment_r
         mi = 100.0;
 
     return mi;
+}
+
+/**
+ * @brief Calculate comment density ratio
+ *
+ * @param comment_loc Number of comment lines
+ * @param physical_loc Total physical lines of code
+ * @return Comment density as percentage (0.0 to 100.0)
+ */
+double calculate_comment_density(int comment_loc, int physical_loc)
+{
+    if (physical_loc <= 0)
+    {
+        return 0.0;
+    }
+
+    return (double)comment_loc / (double)physical_loc * 100.0;
+}
+
+double calculate_class_cohesion(const struct ClassInfo *class_info)
+{
+    if (!class_info)
+    {
+        LOG_ERROR("Invalid class info for cohesion calculation");
+        return 0.0;
+    }
+
+    // Basic cohesion calculation based on method-to-field ratio
+    // Higher method count relative to fields suggests better cohesion
+    // This is a simplified metric - in practice, we'd analyze method interactions
+
+    uint32_t method_count = class_info->method_count;
+    uint32_t field_count = class_info->field_count;
+
+    if (field_count == 0)
+    {
+        // No fields - cohesion depends on method count
+        return method_count > 0 ? 0.5 : 0.0;
+    }
+
+    // Calculate cohesion as method-to-field ratio, capped at 1.0
+    double cohesion = (double)method_count / (double)field_count;
+
+    if (cohesion > 1.0)
+        cohesion = 1.0;
+
+    LOG_INFO("Class cohesion for %s: methods=%u, fields=%u, cohesion=%.2f",
+             class_info->name, method_count, field_count, cohesion);
+
+    return cohesion;
+}
+
+double calculate_class_coupling(const struct ClassInfo *class_info,
+                               const struct ClassInfo *all_classes)
+{
+    if (!class_info || !all_classes)
+    {
+        LOG_ERROR("Invalid parameters for coupling calculation");
+        return 0.0;
+    }
+
+    // Basic coupling calculation based on class relationships
+    // This is a simplified implementation - in practice, we'd analyze
+    // method calls, field accesses, and inheritance relationships
+
+    uint32_t total_classes = 0;
+
+    // Count total classes in the project
+    const struct ClassInfo *current = all_classes;
+    while (current)
+    {
+        total_classes++;
+        current = current->next;
+    }
+
+    if (total_classes <= 1)
+    {
+        return 0.0; // No coupling possible with 0 or 1 classes
+    }
+
+    // Simplified coupling calculation
+    // In a real implementation, this would analyze actual dependencies
+    // For now, we use a basic heuristic based on class size and project size
+
+    uint32_t class_size = class_info->method_count + class_info->field_count;
+    double coupling_ratio = (double)class_size / (double)total_classes;
+
+    // Normalize to 0.0-1.0 range
+    double coupling = coupling_ratio > 1.0 ? 1.0 : coupling_ratio;
+
+    LOG_INFO("Class coupling for %s: size=%u, total_classes=%u, coupling=%.2f",
+             class_info->name, class_size, total_classes, coupling);
+
+    return coupling;
+}
+
+/**
+ * @brief Normalize a metric value using specified method
+ */
+double normalize_metric(double value, double min_val, double max_val,
+                       double mean, double std_dev, NormalizationMethod method)
+{
+    if (method == NORMALIZATION_MIN_MAX)
+    {
+        // Min-max normalization: (x - min) / (max - min)
+        if (max_val == min_val)
+        {
+            return 0.5; // Return middle value if all values are the same
+        }
+        double normalized = (value - min_val) / (max_val - min_val);
+
+        // Clamp to [0, 1] range
+        if (normalized < 0.0) normalized = 0.0;
+        if (normalized > 1.0) normalized = 1.0;
+
+        return normalized;
+    }
+    else if (method == NORMALIZATION_Z_SCORE)
+    {
+        // Z-score normalization: (x - mean) / std_dev
+        if (std_dev == 0.0)
+        {
+            return 0.0; // Return 0 if no variation
+        }
+        return (value - mean) / std_dev;
+    }
+    else if (method == NORMALIZATION_ROBUST)
+    {
+        // For robust normalization, we need median and IQR
+        // This is a simplified version - in practice, you'd calculate these
+        LOG_WARNING("Robust normalization not fully implemented - using min-max fallback");
+        return normalize_metric(value, min_val, max_val, mean, std_dev, NORMALIZATION_MIN_MAX);
+    }
+
+    LOG_ERROR("Unknown normalization method: %d", method);
+    return 0.0;
+}
+
+/**
+ * @brief Scale a normalized metric for visualization
+ */
+double scale_metric(double normalized_value, double target_min, double target_max)
+{
+    // Scale from [0, 1] to [target_min, target_max]
+    return target_min + (normalized_value * (target_max - target_min));
+}
+
+/**
+ * @brief Normalize an array of metric values
+ */
+CQError normalize_metric_array(const double *values, size_t count,
+                              NormalizationMethod method, double *output)
+{
+    if (!values || !output || count == 0)
+    {
+        return CQ_ERROR_INVALID_ARGUMENT;
+    }
+
+    // Calculate statistics needed for normalization
+    double min_val = values[0];
+    double max_val = values[0];
+    double sum = values[0];
+    double sum_sq = values[0] * values[0];
+
+    for (size_t i = 1; i < count; i++)
+    {
+        if (values[i] < min_val) min_val = values[i];
+        if (values[i] > max_val) max_val = values[i];
+        sum += values[i];
+        sum_sq += values[i] * values[i];
+    }
+
+    double mean = sum / count;
+    double variance = (sum_sq / count) - (mean * mean);
+    double std_dev = sqrt(variance);
+
+    // Normalize each value
+    for (size_t i = 0; i < count; i++)
+    {
+        output[i] = normalize_metric(values[i], min_val, max_val, mean, std_dev, method);
+    }
+
+    LOG_INFO("Normalized %zu metric values using method %d", count, method);
+    return CQ_SUCCESS;
 }

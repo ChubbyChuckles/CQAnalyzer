@@ -12,6 +12,14 @@
  * from various sources (command line, config files, environment variables).
  */
 
+// Metric configuration structure
+typedef struct
+{
+    double weight;      // Weight for this metric in overall score
+    double threshold;   // Threshold value for warnings/errors
+    bool enabled;       // Whether this metric is enabled
+} MetricConfig;
+
 // Configuration structure
 typedef struct
 {
@@ -20,9 +28,27 @@ typedef struct
     int log_outputs;
     char default_project_path[MAX_PATH_LENGTH];
     bool enable_visualization;
-    bool enable_metrics[32];
+    bool enable_metrics[32];  // Legacy support
     int max_file_size_mb;
     int thread_count;
+
+    // Metric-specific configurations
+    MetricConfig cyclomatic_complexity;
+    MetricConfig lines_of_code;
+    MetricConfig halstead_volume;
+    MetricConfig halstead_difficulty;
+    MetricConfig halstead_effort;
+    MetricConfig halstead_time;
+    MetricConfig halstead_bugs;
+    MetricConfig maintainability_index;
+    MetricConfig comment_density;
+    MetricConfig class_cohesion;
+    MetricConfig class_coupling;
+
+    // Overall quality thresholds
+    double overall_quality_threshold;
+    double warning_threshold;
+    double error_threshold;
 } Config;
 
 /**
@@ -94,5 +120,34 @@ int config_get_int(const char *key, int default_value);
  * @return Configuration value as boolean
  */
 bool config_get_bool(const char *key, bool default_value);
+
+/**
+ * @brief Get metric configuration by name
+ *
+ * @param metric_name Name of the metric (e.g., "cyclomatic_complexity")
+ * @return Pointer to metric configuration, or NULL if not found
+ */
+const MetricConfig *config_get_metric_config(const char *metric_name);
+
+/**
+ * @brief Get overall quality threshold
+ *
+ * @return Overall quality threshold value
+ */
+double config_get_overall_quality_threshold(void);
+
+/**
+ * @brief Get warning threshold
+ *
+ * @return Warning threshold value
+ */
+double config_get_warning_threshold(void);
+
+/**
+ * @brief Get error threshold
+ *
+ * @return Error threshold value
+ */
+double config_get_error_threshold(void);
 
 #endif // CONFIG_H

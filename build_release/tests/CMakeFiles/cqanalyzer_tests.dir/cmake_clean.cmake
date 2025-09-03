@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cqanalyzer_tests.dir/test_main.c.o.d"
   "CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o"
   "CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o.d"
+  "CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o"
+  "CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o.d"
   "CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o"
   "CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o.d"
 )

@@ -28,4 +28,13 @@ CQError analyze_function_complexity(void *ast_data, int *complexity);
  */
 CQError analyze_file_complexity(const char *filepath, int *complexity);
 
+/**
+ * @brief Calculate nesting depth of control structures in a function
+ *
+ * @param ast_data Parsed AST data for a function
+ * @param nesting_depth Output nesting depth value (maximum depth found)
+ * @return CQ_SUCCESS on success, error code on failure
+ */
+CQError calculate_nesting_depth(void *ast_data, int *nesting_depth);
+
 #endif // COMPLEXITY_ANALYZER_H

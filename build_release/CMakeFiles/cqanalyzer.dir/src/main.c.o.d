@@ -35,4 +35,7 @@ CMakeFiles/cqanalyzer.dir/src/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/config.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/ui/cli_interface.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/ui/cli_interface.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/ui/progress_display.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h

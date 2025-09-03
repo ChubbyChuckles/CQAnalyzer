@@ -50,4 +50,7 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_analyzer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/complexity_analyzer.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/duplication_detector.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/duplication_detector.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/dead_code_detector.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h

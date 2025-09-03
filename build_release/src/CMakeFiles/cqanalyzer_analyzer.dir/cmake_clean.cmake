@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../lib/libcqanalyzer_analyzer.pdb"
   "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/complexity_analyzer.c.o"
   "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/complexity_analyzer.c.o.d"
+  "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o"
+  "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o.d"
   "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o"
   "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o.d"
   "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o"

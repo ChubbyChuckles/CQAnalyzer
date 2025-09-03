@@ -111,11 +111,26 @@ src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.s: cmake_
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.s"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/duplication_detector.c -o CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.s
 
+src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o: src/CMakeFiles/cqanalyzer_analyzer.dir/flags.make
+src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/dead_code_detector.c
+src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o: src/CMakeFiles/cqanalyzer_analyzer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o -MF CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o.d -o CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o -c /home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/dead_code_detector.c
+
+src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.i"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/dead_code_detector.c > CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.i
+
+src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.s"
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chubbychuckles/Programming/CQAnalyzer/src/analyzer/dead_code_detector.c -o CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.s
+
 # Object files for target cqanalyzer_analyzer
 cqanalyzer_analyzer_OBJECTS = \
 "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o" \
 "CMakeFiles/cqanalyzer_analyzer.dir/analyzer/complexity_analyzer.c.o" \
-"CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o"
+"CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o" \
+"CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o"
 
 # External object files for target cqanalyzer_analyzer
 cqanalyzer_analyzer_EXTERNAL_OBJECTS =
@@ -123,9 +138,10 @@ cqanalyzer_analyzer_EXTERNAL_OBJECTS =
 lib/libcqanalyzer_analyzer.a: src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/metric_calculator.c.o
 lib/libcqanalyzer_analyzer.a: src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/complexity_analyzer.c.o
 lib/libcqanalyzer_analyzer.a: src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/duplication_detector.c.o
+lib/libcqanalyzer_analyzer.a: src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o
 lib/libcqanalyzer_analyzer.a: src/CMakeFiles/cqanalyzer_analyzer.dir/build.make
 lib/libcqanalyzer_analyzer.a: src/CMakeFiles/cqanalyzer_analyzer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library ../lib/libcqanalyzer_analyzer.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chubbychuckles/Programming/CQAnalyzer/build_release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library ../lib/libcqanalyzer_analyzer.a"
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -P CMakeFiles/cqanalyzer_analyzer.dir/cmake_clean_target.cmake
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cqanalyzer_analyzer.dir/link.txt --verbose=$(VERBOSE)
 

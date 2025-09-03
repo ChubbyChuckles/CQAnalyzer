@@ -20,6 +20,7 @@ typedef struct {
     ASTData *ast_data;
     FunctionInfo *current_function;
     int complexity_count;
+    VariableInfo *current_variables;
 } VisitorContext;
 
 /**
@@ -65,6 +66,71 @@ static enum CXChildVisitResult count_decision_points_visitor(CXCursor cursor, CX
  */
 static void count_decision_points(CXCursor cursor, int *count) {
     clang_visitChildren(cursor, count_decision_points_visitor, count);
+}
+
+/**
+ * @brief Context for nesting depth visitor
+ */
+typedef struct {
+    int current_depth;
+    int max_depth;
+} NestingContext;
+
+/**
+ * @brief Visitor function for calculating nesting depth
+ */
+static enum CXChildVisitResult calculate_nesting_visitor(CXCursor cursor, CXCursor parent, CXClientData client_data) {
+    NestingContext *context = (NestingContext *)client_data;
+    enum CXCursorKind kind = clang_getCursorKind(cursor);
+
+    // Check if this is a control structure that increases nesting
+    int is_control_structure = 0;
+    switch (kind) {
+        case CXCursor_IfStmt:
+        case CXCursor_WhileStmt:
+        case CXCursor_ForStmt:
+        case CXCursor_DoStmt:
+        case CXCursor_SwitchStmt:
+            is_control_structure = 1;
+            break;
+        default:
+            break;
+    }
+
+    if (is_control_structure) {
+        // Increase depth for this control structure
+        context->current_depth++;
+
+        // Update max depth if current is greater
+        if (context->current_depth > context->max_depth) {
+            context->max_depth = context->current_depth;
+        }
+
+        // Visit children with increased depth
+        clang_visitChildren(cursor, calculate_nesting_visitor, client_data);
+
+        // Decrease depth when leaving this control structure
+        context->current_depth--;
+
+        return CXChildVisit_Continue;
+    }
+
+    // For non-control structures, just continue visiting children
+    return CXChildVisit_Recurse;
+}
+
+/**
+ * @brief Calculate nesting depth for a function cursor
+ */
+static void calculate_function_nesting_depth(CXCursor function_cursor, int *max_depth) {
+    NestingContext context = {
+        .current_depth = 0,
+        .max_depth = 0
+    };
+
+    clang_visitChildren(function_cursor, calculate_nesting_visitor, &context);
+
+    *max_depth = context.max_depth;
 }
 
 /**
@@ -117,7 +183,12 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
                 count_decision_points(cursor, &decision_count);
                 func->complexity = 1 + decision_count; // Base complexity + decision points
 
-                LOG_DEBUG("Function %s complexity: %u", name, func->complexity);
+                // Calculate nesting depth
+                int max_nesting = 0;
+                calculate_function_nesting_depth(cursor, &max_nesting);
+                func->nesting_depth = max_nesting;
+
+                LOG_DEBUG("Function %s complexity: %u, nesting depth: %u", name, func->complexity, func->nesting_depth);
 
                 // Add to project's function list
                 func->next = ast_data->project->files->functions;
@@ -148,6 +219,71 @@ static enum CXChildVisitResult ast_visitor(CXCursor cursor, CXCursor parent, CXC
                 ast_data->project->files->classes = class_info;
                 ast_data->project->files->class_count++;
                 ast_data->project->total_classes++;
+            }
+            break;
+        }
+
+        case CXCursor_VarDecl:
+        {
+            LOG_DEBUG("Found variable: %s at line %u", name, line);
+
+            // Create variable info
+            VariableInfo *var = calloc(1, sizeof(VariableInfo));
+            if (var)
+            {
+                strncpy(var->name, name, sizeof(var->name) - 1);
+                var->location.line = line;
+                var->location.column = column;
+                var->location.offset = offset;
+                var->usage_count = 0; // Will be updated during usage tracking
+
+                // Get variable type
+                CXType var_type = clang_getCursorType(cursor);
+                CXString type_spelling = clang_getTypeSpelling(var_type);
+                const char *type_str = clang_getCString(type_spelling);
+                if (type_str)
+                {
+                    strncpy(var->type, type_str, sizeof(var->type) - 1);
+                }
+                clang_disposeString(type_spelling);
+
+                // Add to file's variable list
+                var->next = ast_data->project->files->variables;
+                ast_data->project->files->variables = var;
+                ast_data->project->files->variable_count++;
+            }
+            break;
+        }
+
+        case CXCursor_DeclRefExpr:
+        {
+            // This is a reference to a declared symbol (variable or function usage)
+            LOG_DEBUG("Found reference to: %s at line %u", name, line);
+
+            // Track usage for variables
+            VariableInfo *var = ast_data->project->files->variables;
+            while (var)
+            {
+                if (strcmp(var->name, name) == 0)
+                {
+                    var->usage_count++;
+                    LOG_DEBUG("Incremented usage count for variable %s to %u", name, var->usage_count);
+                    break;
+                }
+                var = var->next;
+            }
+
+            // Track usage for functions
+            FunctionInfo *func = ast_data->project->files->functions;
+            while (func)
+            {
+                if (strcmp(func->name, name) == 0)
+                {
+                    func->usage_count++;
+                    LOG_DEBUG("Incremented usage count for function %s to %u", name, func->usage_count);
+                    break;
+                }
+                func = func->next;
             }
             break;
         }
@@ -448,6 +584,15 @@ void free_ast_data(void *data)
                 ClassInfo *next_class = class_info->next;
                 free(class_info);
                 class_info = next_class;
+            }
+
+            // Free variables
+            VariableInfo *var = file->variables;
+            while (var)
+            {
+                VariableInfo *next_var = var->next;
+                free(var);
+                var = next_var;
             }
 
             free(file);

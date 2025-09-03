@@ -15,6 +15,7 @@ add_executable(cqanalyzer_tests
     test_parser.c
     test_analyzer.c
     test_data.c
+    test_ui.c
 )
 
 # Link with main libraries and CUnit

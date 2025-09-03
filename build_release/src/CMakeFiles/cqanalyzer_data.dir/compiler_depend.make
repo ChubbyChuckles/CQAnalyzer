@@ -43,21 +43,32 @@ src/CMakeFiles/cqanalyzer_data.dir/data/data_store.c.o: /home/chubbychuckles/Pro
 
 src/CMakeFiles/cqanalyzer_data.dir/data/metric_aggregator.c.o: /home/chubbychuckles/Programming/CQAnalyzer/src/data/metric_aggregator.c \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/data/data_store.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/data/metric_aggregator.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/math.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -116,9 +127,17 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: /home/chubbychuckles/
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 
+/home/chubbychuckles/Programming/CQAnalyzer/src/data/serialization.c:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
 /home/chubbychuckles/Programming/CQAnalyzer/include/data/serialization.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/src/data/serialization.c:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/data/metric_aggregator.h:
 
@@ -128,9 +147,13 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: /home/chubbychuckles/
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/features-time64.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/stdint.h:
 
@@ -154,6 +177,8 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: /home/chubbychuckles/
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
+/usr/include/math.h:
+
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
@@ -163,6 +188,8 @@ src/CMakeFiles/cqanalyzer_data.dir/data/serialization.c.o: /home/chubbychuckles/
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/src/data/data_store.c:
 

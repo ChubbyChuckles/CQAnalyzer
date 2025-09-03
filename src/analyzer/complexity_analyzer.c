@@ -12,12 +12,14 @@ CQError analyze_function_complexity(void *ast_data, int *complexity)
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    // TODO: Implement function complexity analysis
-    // TODO: Count control flow statements
-    // TODO: Calculate cyclomatic complexity
+    // Cast to FunctionInfo structure
+    FunctionInfo *func_info = (FunctionInfo *)ast_data;
 
-    LOG_WARNING("Function complexity analysis not yet implemented");
-    *complexity = 1; // Default complexity
+    // The complexity is already calculated during AST parsing
+    // and stored in the FunctionInfo structure
+    *complexity = func_info->complexity;
+
+    LOG_DEBUG("Function %s complexity: %d", func_info->name, *complexity);
 
     return CQ_SUCCESS;
 }
@@ -81,6 +83,26 @@ CQError analyze_file_complexity(const char *filepath, int *complexity)
 
     // Clean up
     free_ast_data(ast_data);
+
+    return CQ_SUCCESS;
+}
+
+
+CQError calculate_nesting_depth(void *ast_data, int *nesting_depth)
+{
+    if (!ast_data || !nesting_depth)
+    {
+        return CQ_ERROR_INVALID_ARGUMENT;
+    }
+
+    // Cast to FunctionInfo structure
+    FunctionInfo *func_info = (FunctionInfo *)ast_data;
+
+    // The nesting depth is already calculated during AST parsing
+    // and stored in the FunctionInfo structure
+    *nesting_depth = func_info->nesting_depth;
+
+    LOG_DEBUG("Function %s nesting depth: %d", func_info->name, *nesting_depth);
 
     return CQ_SUCCESS;
 }

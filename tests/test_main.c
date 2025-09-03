@@ -45,6 +45,15 @@ int main(int argc, char *argv[])
 
     // Add tests to suites
     // Note: Test functions are defined in separate files
+    extern void add_utils_tests(CU_pSuite);
+    extern void add_parser_tests(CU_pSuite);
+    extern void add_analyzer_tests(CU_pSuite);
+    extern void add_ui_tests(CU_pSuite);
+
+    add_utils_tests(utils_suite);
+    add_parser_tests(parser_suite);
+    add_analyzer_tests(analyzer_suite);
+    add_ui_tests(data_suite); // Add UI tests to data suite for now
 
     // Run tests
     CU_basic_set_mode(CU_BRM_VERBOSE);

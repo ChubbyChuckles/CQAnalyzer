@@ -281,6 +281,30 @@ test_parser.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.s
 .PHONY : test_parser.c.s
 
+test_ui.o: test_ui.c.o
+.PHONY : test_ui.o
+
+# target to build an object file
+test_ui.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o
+.PHONY : test_ui.c.o
+
+test_ui.i: test_ui.c.i
+.PHONY : test_ui.i
+
+# target to preprocess a source file
+test_ui.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.i
+.PHONY : test_ui.c.i
+
+test_ui.s: test_ui.c.s
+.PHONY : test_ui.s
+
+# target to generate assembly for a file
+test_ui.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/cqanalyzer_tests.dir/build.make tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.s
+.PHONY : test_ui.c.s
+
 test_utils.o: test_utils.c.o
 .PHONY : test_utils.o
 
@@ -331,6 +355,9 @@ help:
 	@echo "... test_parser.o"
 	@echo "... test_parser.i"
 	@echo "... test_parser.s"
+	@echo "... test_ui.o"
+	@echo "... test_ui.i"
+	@echo "... test_ui.s"
 	@echo "... test_utils.o"
 	@echo "... test_utils.i"
 	@echo "... test_utils.s"

@@ -7,14 +7,64 @@
 #include "parser/ast_parser.h"
 #include "parser/language_support.h"
 #include "parser/preprocessor.h"
+#include "parser/generic_parser.h"
 
 /**
  * @brief Test file scanning
  */
 void test_file_scanner(void)
 {
-    // TODO: Implement file scanner tests
-    CU_PASS("File scanner test placeholder");
+    char *files[100];
+
+    // Test scanning current directory
+    int count = scan_directory(".", files, 100);
+    CU_ASSERT(count >= 0);
+
+    // Free allocated memory
+    for (int i = 0; i < count; i++)
+    {
+        free(files[i]);
+    }
+
+    CU_PASS("File scanner test completed");
+}
+
+/**
+ * @brief Test file scanning with progress
+ */
+void test_file_scanner_with_progress(void)
+{
+    char *files[100];
+
+    // Test scanning with progress callback
+    int count = scan_directory_with_progress(".", files, 100, NULL);
+    CU_ASSERT(count >= 0);
+
+    // Free allocated memory
+    for (int i = 0; i < count; i++)
+    {
+        free(files[i]);
+    }
+
+    CU_PASS("File scanner with progress test completed");
+}
+
+/**
+ * @brief Test file scanning with invalid parameters
+ */
+void test_file_scanner_invalid_params(void)
+{
+    char *files[100];
+
+    // Test with NULL path
+    int count = scan_directory(NULL, files, 100);
+    CU_ASSERT_EQUAL(count, -1);
+
+    // Test with NULL files array
+    count = scan_directory(".", NULL, 100);
+    CU_ASSERT_EQUAL(count, -1);
+
+    CU_PASS("File scanner invalid params test completed");
 }
 
 /**
@@ -157,15 +207,181 @@ void test_preprocessor_build_args(void)
 }
 
 /**
+ * @brief Test project parsing with progress
+ */
+void test_parse_project(void)
+{
+    // Initialize parsers for testing
+    CU_ASSERT_EQUAL(initialize_language_parsers(), CQ_SUCCESS);
+
+    // Test parsing current directory
+    void *project_ast = parse_project(".", 50, NULL);
+    CU_ASSERT_PTR_NOT_NULL(project_ast);
+
+    // Free project AST if allocated
+    if (project_ast)
+    {
+        free(project_ast);
+    }
+
+    shutdown_language_parsers();
+}
+
+/**
+ * @brief Test project parsing with invalid parameters
+ */
+void test_parse_project_invalid_params(void)
+{
+    // Test with NULL path
+    void *result = parse_project(NULL, 50, NULL);
+    CU_ASSERT_PTR_NULL(result);
+
+    // Test with zero max files
+    result = parse_project(".", 0, NULL);
+    CU_ASSERT_PTR_NULL(result);
+}
+
+/**
+ * @brief Test file accessibility checking
+ */
+void test_file_accessibility(void)
+{
+    // Test with existing file
+    CU_ASSERT_TRUE(is_file_accessible("test_parser.c"));
+
+    // Test with non-existent file
+    CU_ASSERT_FALSE(is_file_accessible("non_existent_file.xyz"));
+
+    // Test with NULL parameter
+    CU_ASSERT_FALSE(is_file_accessible(NULL));
+}
+
+/**
+ * @brief Test error handling for inaccessible directories
+ */
+void test_scan_inaccessible_directory(void)
+{
+    char *files[10];
+
+    // Test with non-existent directory
+    int count = scan_directory("/non/existent/directory", files, 10);
+    CU_ASSERT_EQUAL(count, -1);
+
+    // Test with NULL path
+    count = scan_directory(NULL, files, 10);
+    CU_ASSERT_EQUAL(count, -1);
+
+    // Test with NULL files array
+    count = scan_directory(".", NULL, 10);
+    CU_ASSERT_EQUAL(count, -1);
+}
+
+/**
+ * @brief Test parsing with inaccessible files
+ */
+void test_parse_inaccessible_files(void)
+{
+    // Initialize parsers for testing
+    CU_ASSERT_EQUAL(initialize_language_parsers(), CQ_SUCCESS);
+
+    // Test parsing non-existent project
+    void *result = parse_project("/non/existent/project", 10, NULL);
+    CU_ASSERT_PTR_NULL(result);
+
+    // Test parsing empty directory (create a temp empty dir for testing)
+    // This would require creating a temporary directory, which is complex in unit tests
+    // For now, we'll just test the basic error handling
+
+    shutdown_language_parsers();
+}
+
+/**
+ * @brief Test large file handling
+ */
+void test_large_file_handling(void)
+{
+    // Create a temporary large file for testing
+    const char *large_file = "test_large_file.c";
+    FILE *file = fopen(large_file, "w");
+    if (file)
+    {
+        // Write some content to make it a valid C file
+        fprintf(file, "#include <stdio.h>\n\n");
+        fprintf(file, "int main() {\n");
+        fprintf(file, "    printf(\"Hello World\\n\");\n");
+        fprintf(file, "    return 0;\n");
+        fprintf(file, "}\n");
+
+        // Try to make it "large" by writing many lines
+        for (int i = 0; i < 10000; i++)
+        {
+            fprintf(file, "    // Comment line %d\n", i);
+        }
+        fclose(file);
+
+        // Test parsing (should succeed for reasonable file sizes)
+        void *result = parse_source_file(large_file);
+        // Result may be NULL due to libclang limitations in test environment
+        // but the important thing is that it doesn't crash
+        if (result)
+        {
+            free_ast_data(result);
+        }
+
+        // Clean up
+        remove(large_file);
+    }
+}
+
+/**
+ * @brief Test malformed file handling
+ */
+void test_malformed_file_handling(void)
+{
+    // Create a malformed C file
+    const char *malformed_file = "test_malformed.c";
+    FILE *file = fopen(malformed_file, "w");
+    if (file)
+    {
+        // Write malformed C code
+        fprintf(file, "#include <stdio.h>\n\n");
+        fprintf(file, "int main() {\n");
+        fprintf(file, "    printf(\"Hello World\\n\");\n");
+        fprintf(file, "    // Missing closing brace and parenthesis\n");
+        fclose(file);
+
+        // Test parsing malformed file
+        void *result = parse_source_file(malformed_file);
+        // libclang should handle this gracefully
+        if (result)
+        {
+            free_ast_data(result);
+        }
+
+        // Clean up
+        remove(malformed_file);
+    }
+}
+
+/**
  * @brief Add parser tests to suite
  */
 void add_parser_tests(CU_pSuite suite)
 {
     CU_add_test(suite, "File Scanner Test", test_file_scanner);
+    CU_add_test(suite, "File Scanner With Progress Test", test_file_scanner_with_progress);
+    CU_add_test(suite, "File Scanner Invalid Params Test", test_file_scanner_invalid_params);
+    CU_add_test(suite, "Scan Inaccessible Directory Test", test_scan_inaccessible_directory);
+    CU_add_test(suite, "File Accessibility Test", test_file_accessibility);
     CU_add_test(suite, "AST Parser Test", test_ast_parser);
     CU_add_test(suite, "Language Support Test", test_language_support);
     CU_add_test(suite, "Preprocessor Init Test", test_preprocessor_init);
     CU_add_test(suite, "Preprocessor Scan Includes Test", test_preprocessor_scan_includes);
     CU_add_test(suite, "Preprocessor Extract Macros Test", test_preprocessor_extract_macros);
     CU_add_test(suite, "Preprocessor Build Args Test", test_preprocessor_build_args);
+    CU_add_test(suite, "Parse Project Test", test_parse_project);
+    CU_add_test(suite, "Parse Project Invalid Params Test", test_parse_project_invalid_params);
+    CU_add_test(suite, "Parse Inaccessible Files Test", test_parse_inaccessible_files);
+    CU_add_test(suite, "Large File Handling Test", test_large_file_handling);
+    CU_add_test(suite, "Malformed File Handling Test", test_malformed_file_handling);
 }

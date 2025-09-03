@@ -279,6 +279,30 @@ analyzer/complexity_analyzer.c.s:
 	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_analyzer.dir/build.make src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/complexity_analyzer.c.s
 .PHONY : analyzer/complexity_analyzer.c.s
 
+analyzer/dead_code_detector.o: analyzer/dead_code_detector.c.o
+.PHONY : analyzer/dead_code_detector.o
+
+# target to build an object file
+analyzer/dead_code_detector.c.o:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_analyzer.dir/build.make src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.o
+.PHONY : analyzer/dead_code_detector.c.o
+
+analyzer/dead_code_detector.i: analyzer/dead_code_detector.c.i
+.PHONY : analyzer/dead_code_detector.i
+
+# target to preprocess a source file
+analyzer/dead_code_detector.c.i:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_analyzer.dir/build.make src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.i
+.PHONY : analyzer/dead_code_detector.c.i
+
+analyzer/dead_code_detector.s: analyzer/dead_code_detector.c.s
+.PHONY : analyzer/dead_code_detector.s
+
+# target to generate assembly for a file
+analyzer/dead_code_detector.c.s:
+	cd /home/chubbychuckles/Programming/CQAnalyzer/build_release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/cqanalyzer_analyzer.dir/build.make src/CMakeFiles/cqanalyzer_analyzer.dir/analyzer/dead_code_detector.c.s
+.PHONY : analyzer/dead_code_detector.c.s
+
 analyzer/duplication_detector.o: analyzer/duplication_detector.c.o
 .PHONY : analyzer/duplication_detector.o
 
@@ -805,6 +829,9 @@ help:
 	@echo "... analyzer/complexity_analyzer.o"
 	@echo "... analyzer/complexity_analyzer.i"
 	@echo "... analyzer/complexity_analyzer.s"
+	@echo "... analyzer/dead_code_detector.o"
+	@echo "... analyzer/dead_code_detector.i"
+	@echo "... analyzer/dead_code_detector.s"
 	@echo "... analyzer/duplication_detector.o"
 	@echo "... analyzer/duplication_detector.i"
 	@echo "... analyzer/duplication_detector.s"

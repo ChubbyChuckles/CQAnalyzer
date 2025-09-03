@@ -52,4 +52,6 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h \
- /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h

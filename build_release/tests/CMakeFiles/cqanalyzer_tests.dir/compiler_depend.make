@@ -3,9 +3,12 @@
 
 tests/CMakeFiles/cqanalyzer_tests.dir/test_analyzer.c.o: /home/chubbychuckles/Programming/CQAnalyzer/tests/test_analyzer.c \
   /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/complexity_analyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/dead_code_detector.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/duplication_detector.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/metric_calculator.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
   /usr/include/CUnit/Basic.h \
   /usr/include/CUnit/CUError.h \
   /usr/include/CUnit/CUnit.h \
@@ -186,9 +189,12 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_main.c.o: /home/chubbychuckles/Progra
 
 tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o: /home/chubbychuckles/Programming/CQAnalyzer/tests/test_parser.c \
   /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h \
   /home/chubbychuckles/Programming/CQAnalyzer/include/parser/language_support.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h \
   /usr/include/CUnit/Basic.h \
   /usr/include/CUnit/CUError.h \
   /usr/include/CUnit/CUnit.h \
@@ -205,6 +211,7 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o: /home/chubbychuckles/Prog
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
@@ -224,6 +231,69 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_parser.c.o: /home/chubbychuckles/Prog
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+
+tests/CMakeFiles/cqanalyzer_tests.dir/test_ui.c.o: /home/chubbychuckles/Programming/CQAnalyzer/tests/test_ui.c \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
+  /home/chubbychuckles/Programming/CQAnalyzer/include/ui/progress_display.h \
+  /usr/include/CUnit/Basic.h \
+  /usr/include/CUnit/CUError.h \
+  /usr/include/CUnit/CUnit.h \
+  /usr/include/CUnit/TestDB.h \
+  /usr/include/CUnit/TestRun.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/math.h \
+  /usr/include/setjmp.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -312,9 +382,13 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 
+/home/chubbychuckles/Programming/CQAnalyzer/tests/test_utils.c:
+
+/home/chubbychuckles/Programming/CQAnalyzer/tests/test_ui.c:
+
 /usr/include/stdlib.h:
 
-/home/chubbychuckles/Programming/CQAnalyzer/tests/test_utils.c:
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/preprocessor.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/utils/string_utils.h:
 
@@ -334,6 +408,14 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
+/home/chubbychuckles/Programming/CQAnalyzer/include/utils/config.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
@@ -343,8 +425,6 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 /usr/include/CUnit/CUnit.h:
 
 /usr/include/CUnit/TestDB.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/string.h:
 
@@ -362,9 +442,9 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 
 /usr/include/stdio.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
 /home/chubbychuckles/Programming/CQAnalyzer/include/utils/memory.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/stdc-predef.h:
 
@@ -374,6 +454,8 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 
 /usr/include/math.h:
 
+/home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h:
@@ -382,13 +464,21 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
 /usr/include/features-time64.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/tests/test_analyzer.c:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/analyzer/dead_code_detector.h:
+
+/home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h:
 
 /home/chubbychuckles/Programming/CQAnalyzer/include/data/metric_aggregator.h:
 
@@ -398,13 +488,11 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+/home/chubbychuckles/Programming/CQAnalyzer/include/ui/progress_display.h:
 
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
@@ -414,19 +502,17 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
 /usr/include/CUnit/CUError.h:
 
-/usr/include/asm-generic/errno-base.h:
+/usr/include/errno.h:
 
-/usr/include/asm-generic/errno.h:
+/usr/include/CUnit/TestRun.h:
 
 /usr/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/usr/include/CUnit/TestRun.h:
-
-/usr/include/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
@@ -461,7 +547,3 @@ tests/CMakeFiles/cqanalyzer_tests.dir/test_utils.c.o: /home/chubbychuckles/Progr
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/home/chubbychuckles/Programming/CQAnalyzer/include/utils/config.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:

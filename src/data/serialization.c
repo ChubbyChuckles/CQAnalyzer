@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "data/serialization.h"
+#include "data/data_store.h"
 #include "utils/logger.h"
 
 CQError serialize_to_json(const char *filepath)
@@ -10,12 +13,7 @@ CQError serialize_to_json(const char *filepath)
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    // TODO: Implement JSON serialization
-    // TODO: Convert data store to JSON format
-    // TODO: Write to file
-
-    LOG_WARNING("JSON serialization not yet implemented");
-    return CQ_ERROR_UNKNOWN;
+    return data_store_serialize_json(filepath);
 }
 
 CQError deserialize_from_json(const char *filepath)
@@ -25,11 +23,9 @@ CQError deserialize_from_json(const char *filepath)
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    // TODO: Implement JSON deserialization
-    // TODO: Parse JSON file
-    // TODO: Load data into data store
-
-    LOG_WARNING("JSON deserialization not yet implemented");
+    // JSON deserialization is more complex and would require a JSON parser
+    // For now, we'll only support binary format for loading cached results
+    LOG_WARNING("JSON deserialization not implemented - use binary format for caching");
     return CQ_ERROR_UNKNOWN;
 }
 
@@ -40,12 +36,7 @@ CQError export_to_csv(const char *filepath)
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    // TODO: Implement CSV export
-    // TODO: Format metrics as CSV
-    // TODO: Write to file
-
-    LOG_WARNING("CSV export not yet implemented");
-    return CQ_ERROR_UNKNOWN;
+    return data_store_export_csv(filepath);
 }
 
 CQError save_binary_results(const char *filepath)
@@ -55,12 +46,7 @@ CQError save_binary_results(const char *filepath)
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    // TODO: Implement binary serialization
-    // TODO: Serialize data structures
-    // TODO: Write to binary file
-
-    LOG_WARNING("Binary save not yet implemented");
-    return CQ_ERROR_UNKNOWN;
+    return data_store_serialize_binary(filepath);
 }
 
 CQError load_binary_results(const char *filepath)
@@ -70,10 +56,5 @@ CQError load_binary_results(const char *filepath)
         return CQ_ERROR_INVALID_ARGUMENT;
     }
 
-    // TODO: Implement binary deserialization
-    // TODO: Read binary file
-    // TODO: Deserialize data structures
-
-    LOG_WARNING("Binary load not yet implemented");
-    return CQ_ERROR_UNKNOWN;
+    return data_store_deserialize_binary(filepath);
 }

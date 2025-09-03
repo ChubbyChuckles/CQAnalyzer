@@ -24,6 +24,9 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/generic_parser.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/cqanalyzer.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
@@ -34,4 +37,5 @@ src/CMakeFiles/cqanalyzer_parser.dir/parser/generic_parser.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/data/ast_types.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/parser/ast_parser.h \
+ /home/chubbychuckles/Programming/CQAnalyzer/include/parser/file_scanner.h \
  /home/chubbychuckles/Programming/CQAnalyzer/include/utils/logger.h

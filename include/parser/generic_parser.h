@@ -41,4 +41,14 @@ CQError initialize_language_parsers(void);
  */
 void shutdown_language_parsers(void);
 
+/**
+ * @brief Parse an entire project with progress reporting
+ *
+ * @param project_path Path to the project root directory
+ * @param max_files Maximum number of files to parse
+ * @param progress_callback Optional progress callback function
+ * @return Pointer to parsed project AST data, or NULL on error
+ */
+void *parse_project(const char *project_path, int max_files, void (*progress_callback)(int, int, const char *));
+
 #endif // GENERIC_PARSER_H
